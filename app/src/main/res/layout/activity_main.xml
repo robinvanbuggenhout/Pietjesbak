@@ -7,12 +7,137 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/naamSpeler1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="35dp"
+        android:text="@string"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/naamSpeler2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:text="@string"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/naamSpeler1" />
+
+    <TextView
+        android:id="@+id/puntenSpeler1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="35dp"
+        android:text="@string"
+        app:layout_constraintStart_toEndOf="@+id/naamSpeler1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/puntenSpeler2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
+        android:text="@string"
+        app:layout_constraintStart_toEndOf="@+id/naamSpeler2"
+        app:layout_constraintTop_toBottomOf="@+id/puntenSpeler1" />
+
+    <TextView
+        android:id="@+id/beurtSpeler1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="35dp"
+        android:text="@string"
+        app:layout_constraintStart_toEndOf="@+id/puntenSpeler1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/beurtSpeler2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:text="@string"
+        app:layout_constraintStart_toEndOf="@+id/puntenSpeler2"
+        app:layout_constraintTop_toBottomOf="@+id/beurtSpeler1" />
+
+    <TextView
+        android:id="@+id/worpSpeler1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="35dp"
+        android:text="@string"
+        app:layout_constraintStart_toEndOf="@+id/beurtSpeler1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/worpSpeler2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:text="@string"
+        app:layout_constraintStart_toEndOf="@+id/beurtSpeler2"
+        app:layout_constraintTop_toBottomOf="@+id/worpSpeler1" />
+
+    <Button
+        android:id="@+id/button_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="352dp"
+        android:layout_marginBottom="20dp"
+        android:text="PASS"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/naamSpeler2" />
+
+    <Button
+        android:id="@+id/button_werp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:text="WERP"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/worpSpeler2" />
+
+    <CheckBox
+        android:id="@+id/dobbelsteen1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
+        android:text="@string"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/naamSpeler2" />
+
+    <CheckBox
+        android:id="@+id/dobbelsteen2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:text="@string"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dobbelsteen1" />
+
+    <CheckBox
+        android:id="@+id/dobbelsteen3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:text="@string"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dobbelsteen2" />
 
 </android.support.constraint.ConstraintLayout>
