@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "361809950046",
+    "firebase_url": "https://pietjesbak-b5ffc.firebaseio.com",
+    "project_id": "pietjesbak-b5ffc",
+    "storage_bucket": "pietjesbak-b5ffc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:361809950046:android:35549814f68c0e7d",
+        "android_client_info": {
+          "package_name": "com.example.android.pietjesbak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "361809950046-bh144n97vr9fgp7lj582rf2j5uupn4tp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8PqFCnmGbAtH6eD9r1yI455u2RSdcH1E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
