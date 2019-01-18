@@ -47,9 +47,9 @@ public class MainActivity extends AppCompatActivity {
         // werp = (Button) findViewById(R.id.werp);
 
         //Dobbelstenen
-        dobbelsteen1 = (CheckBox) findViewById(R.id.dobbelsteen1);
-        dobbelsteen2 = (CheckBox) findViewById(R.id.dobbelsteen2);
-        dobbelsteen3 = (CheckBox) findViewById(R.id.dobbelsteen3);
+        // dobbelsteen1 = (CheckBox) findViewById(R.id.dobbelsteen1);
+        // dobbelsteen2 = (CheckBox) findViewById(R.id.dobbelsteen2);
+        // dobbelsteen3 = (CheckBox) findViewById(R.id.dobbelsteen3);
 
         //Indien je op 'werp' klikt gebeurt dit
         /* werp.setOnClickListener(new View.OnClickListener() {
@@ -77,5 +77,8 @@ public class MainActivity extends AppCompatActivity {
         TextView myText = (TextView)findViewById(R.id.t_aantal);
         String myString = String.valueOf(number);
         myText.setText(myString);
+    }
+
+    public void checkButton(View view) {
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -86,47 +86,47 @@
         app:layout_constraintStart_toEndOf="@+id/beurtSpeler2"
         app:layout_constraintTop_toBottomOf="@+id/worpSpeler1" />
 
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/radioGroup">
+
+        <RadioButton
+            android:id="@+id/radio_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_1"
+            android:onClick="checkButton"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/radio_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_2"
+            android:onClick="checkButton"/>
+
+        <RadioButton
+            android:id="@+id/radio_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_3"
+            android:onClick="checkButton"/>
+
+    </RadioGroup>
+
     <Button
         android:id="@+id/pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="352dp"
-        android:layout_marginBottom="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/b_werp"
+        android:layout_marginEnd="51dp"
         android:text="@string/pass"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/naamSpeler2" />
-
-    <CheckBox
-        android:id="@+id/dobbelsteen1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="60dp"
-        android:text="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/naamSpeler2" />
-
-    <CheckBox
-        android:id="@+id/dobbelsteen2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:text="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dobbelsteen1" />
-
-    <CheckBox
-        android:id="@+id/dobbelsteen3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:text="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dobbelsteen2" />
 
     <TextView
         android:id="@+id/t_aantal"
@@ -144,9 +144,9 @@
         android:id="@+id/b_werp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="352dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/beurtSpeler1"
+        android:layout_marginBottom="109dp"
         android:onClick="generate"
         android:text="@string/werp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -154,4 +154,4 @@
         app:layout_constraintTop_toBottomOf="@+id/worpSpeler2"
         tools:ignore="MissingConstraints" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
