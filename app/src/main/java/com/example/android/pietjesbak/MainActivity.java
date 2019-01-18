@@ -47,11 +47,8 @@ public class MainActivity extends AppCompatActivity {
     //Dobbelstenen
     CheckBox dobbelsteen1, dobbelsteen2, dobbelsteen3;
 
-<<<<<<< HEAD
-=======
     private RadioGroup radioGroup;
     private RadioButton radioButton;
->>>>>>> 3a29ded108713cec35dc955a47e870b2ecd07b94
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
