@@ -82,7 +82,26 @@ public class MainActivity extends AppCompatActivity {
 
     //Indien je op 'werp' klikt gebeurt dit
     public void generate(View view) {
-        if (ogen == 1) {
+
+        Random rand = new Random();
+
+        int number = rand.nextInt(6)+1;
+        int number2 = rand.nextInt(6)+1;
+        int number3 = rand.nextInt(6)+1;
+
+        TextView myText = (TextView)findViewById(R.id.t_aantal);
+        TextView myText2 = (TextView)findViewById(R.id.t_aantal2);
+        TextView myText3 = (TextView)findViewById(R.id.t_aantal3);
+
+        String myString = String.valueOf(number);
+        String myString2 = String.valueOf(number2);
+        String myString3 = String.valueOf(number3);
+
+        myText.setText(myString);
+        myText2.setText(myString2);
+        myText3.setText(myString3);
+
+        /* if (ogen == 1) {
             Random rand = new Random();
             int number = rand.nextInt(6)+1;
             TextView myText = (TextView)findViewById(R.id.t_aantal);
@@ -103,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
             String myString = String.valueOf(number);
             myText.setText(myString);
             ogen = 1;
-        }
+        }*/
     }
 
     public void checkButton(View view) {
