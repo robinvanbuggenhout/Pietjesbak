@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,84 +7,68 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/naamSpeler1"
+        android:id="@+id/t_aantal"
         android:layout_width="wrap_content"
-        android:layout_height="16dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="35dp"
-        android:text=""
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:text="@string/aantal"
+        android:textAlignment="textStart"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="24dp" />
 
     <TextView
-        android:id="@+id/naamSpeler2"
+        android:id="@+id/t_aantal2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:text=""
+        android:layout_marginStart="28dp"
+        android:text="@string/aantal"
+        android:textAlignment="textStart"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/naamSpeler1" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="61dp" />
 
     <TextView
-        android:id="@+id/puntenSpeler1"
+        android:id="@+id/t_aantal3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="35dp"
-        android:text=""
-        app:layout_constraintStart_toEndOf="@+id/naamSpeler1"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/aantal"
+        android:textAlignment="textStart"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/t_aantal3"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="98dp" />
 
     <TextView
-        android:id="@+id/puntenSpeler2"
-        android:layout_width="wrap_content"
+        android:id="@+id/score"
+        android:layout_width="113dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="20dp"
-        android:text=""
-        app:layout_constraintStart_toEndOf="@+id/naamSpeler2"
-        app:layout_constraintTop_toBottomOf="@+id/puntenSpeler1" />
+        android:layout_alignParentEnd="true"
+        android:text="@string/score"
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="241dp"
+        tools:layout_editor_absoluteY="24dp" />
 
     <TextView
-        android:id="@+id/beurtSpeler1"
-        android:layout_width="wrap_content"
+        android:id="@+id/score2"
+        android:layout_width="113dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="35dp"
-        android:text=""
-        app:layout_constraintStart_toEndOf="@+id/puntenSpeler1"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/beurtSpeler2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
-        android:text=""
-        app:layout_constraintStart_toEndOf="@+id/puntenSpeler2"
-        app:layout_constraintTop_toBottomOf="@+id/beurtSpeler1" />
-
-    <TextView
-        android:id="@+id/worpSpeler1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="35dp"
-        android:text=""
-        app:layout_constraintStart_toEndOf="@+id/beurtSpeler1"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/worpSpeler2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
-        android:text=""
-        app:layout_constraintStart_toEndOf="@+id/beurtSpeler2"
-        app:layout_constraintTop_toBottomOf="@+id/worpSpeler1" />
+        android:layout_alignParentEnd="true"
+        android:text="@string/score_2"
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="241dp"
+        tools:layout_editor_absoluteY="61dp" />
 
     <RadioGroup
         android:id="@+id/radio"
@@ -92,32 +76,34 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="26dp">
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="171dp"
+        tools:layout_editor_absoluteY="299dp">
 
         <RadioButton
             android:id="@+id/radio_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:textSize="20sp"
             android:onClick="checkButton"
-            android:text="@string/_1" />
+            android:text="@string/_1"
+            android:textSize="20sp" />
 
         <RadioButton
             android:id="@+id/radio_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
             android:onClick="checkButton"
-            android:text="@string/_2" />
+            android:text="@string/_2"
+            android:textSize="20sp" />
 
         <RadioButton
             android:id="@+id/radio_three"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
             android:onClick="checkButton"
-            android:text="@string/_3" />
+            android:text="@string/_3"
+            android:textSize="20sp" />
 
     </RadioGroup>
 
@@ -127,52 +113,25 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/score"
         android:layout_alignTop="@+id/b_werp"
+        android:layout_marginBottom="36dp"
+        android:layout_marginStart="92dp"
         android:text="@string/pass"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/naamSpeler2" />
-
-    <TextView
-        android:id="@+id/t_aantal"
-        android:layout_width="86dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/naamSpeler1"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="39dp"
-        android:text="@string/aantal"
-        android:textAlignment="textStart"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="394dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/b_werp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/puntenSpeler1"
-        android:layout_marginBottom="38dp"
-        android:textSize="20sp"
+        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="92dp"
         android:onClick="generate"
         android:text="@string/werp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/worpSpeler2"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/score"
-        android:layout_width="113dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/naamSpeler2"
-        android:layout_marginEnd="42dp"
-        android:text="Score"
-        android:textAlignment="textEnd"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

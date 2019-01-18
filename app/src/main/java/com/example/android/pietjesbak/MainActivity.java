@@ -38,13 +38,13 @@ public class MainActivity extends AppCompatActivity {
 
         //Speler 1
         naamSpeler1 = (TextView) findViewById(R.id.naamSpeler1);
-        puntenSpeler1 = (TextView) findViewById(R.id.puntenSpeler1);
+        puntenSpeler1 = (TextView) findViewById(R.id.score);
         beurtSpeler1 = (TextView) findViewById(R.id.beurtSpeler1);
         worpSpeler1 = (TextView) findViewById(R.id.worpSpeler1);
 
         //Speler 2
         naamSpeler2 = (TextView) findViewById(R.id.naamSpeler2);
-        puntenSpeler2 = (TextView) findViewById(R.id.puntenSpeler2);
+        puntenSpeler2 = (TextView) findViewById(R.id.score2);
         beurtSpeler2 = (TextView) findViewById(R.id.beurtSpeler2);
         worpSpeler2 = (TextView) findViewById(R.id.worpSpeler2);
 
