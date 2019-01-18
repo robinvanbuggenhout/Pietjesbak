@@ -9,15 +9,13 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-import static com.example.android.pietjesbak.R.id.puntenSpeler2;
-
 public class MainActivity extends AppCompatActivity {
     //DECLARATIE
     //Speler 1
-    TextView naamSpeler1, puntenSpeler1, beurtSpeler1, worpSpeler1;
+    TextView naamSpeler1, puntenSpeler1, beurtSpeler1, worpSpeler1, worp2Speler1, worp3Speler1;
 
     //Speler 2
-    TextView naamSpeler2, puntenSpeler2, beurtSpeler2, worpSpeler2;
+    TextView naamSpeler2, puntenSpeler2, beurtSpeler2, worpSpeler2, worp2Speler2, worp3Speler2;
 
     //Buttons
     Button pas, werp;
@@ -31,16 +29,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Speler 1
-        naamSpeler1 = (TextView) findViewById(R.id.naamSpeler1);
-        puntenSpeler1 = (TextView) findViewById(R.id.puntenSpeler1);
-        beurtSpeler1 = (TextView) findViewById(R.id.beurtSpeler1);
-        worpSpeler1 = (TextView) findViewById(R.id.worpSpeler1);
+        // naamSpeler1 = (TextView) findViewById(R.id.naamSpeler1);
+        puntenSpeler1 = (TextView) findViewById(R.id.score);
+        beurtSpeler1 = (TextView) findViewById(R.id.beurt);
+        worpSpeler1 = (TextView) findViewById(R.id.t_aantal);
+        worp2Speler1 = (TextView) findViewById(R.id.t_aantal2);
+        worp3Speler1 = (TextView) findViewById(R.id.t_aantal3);
 
         //Speler 2
-        naamSpeler2 = (TextView) findViewById(R.id.naamSpeler2);
-        puntenSpeler2 = (TextView) findViewById(R.id.puntenSpeler2);
-        beurtSpeler2 = (TextView) findViewById(R.id.beurtSpeler2);
-        worpSpeler2 = (TextView) findViewById(R.id.worpSpeler2);
+        // naamSpeler2 = (TextView) findViewById(R.id.naamSpeler2);
+        puntenSpeler2 = (TextView) findViewById(R.id.score2);
+        beurtSpeler2 = (TextView) findViewById(R.id.beurt);
+        worpSpeler2 = (TextView) findViewById(R.id.t_aantal);
+        worp2Speler2 = (TextView) findViewById(R.id.t_aantal2);
+        worp3Speler2 = (TextView) findViewById(R.id.t_aantal3);
 
         //Buttons
         // pas = (Button) findViewById(R.id.pass);
@@ -70,13 +72,35 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+<<<<<<< HEAD
+=======
+    int ogen = 1;
+
+>>>>>>> 43cece11adad0d101fce8597a2d8d737b7e8808b
     //Indien je op 'werp' klikt gebeurt dit
     public void generate(View view) {
-        Random rand = new Random();
-        int number = rand.nextInt(6)+1;
-        TextView myText = (TextView)findViewById(R.id.t_aantal);
-        String myString = String.valueOf(number);
-        myText.setText(myString);
+        if (ogen == 1) {
+            Random rand = new Random();
+            int number = rand.nextInt(6)+1;
+            TextView myText = (TextView)findViewById(R.id.t_aantal);
+            String myString = String.valueOf(number);
+            myText.setText(myString);
+            ogen = 2;
+        } else if (ogen == 2) {
+            Random rand = new Random();
+            int number = rand.nextInt(6)+1;
+            TextView myText = (TextView)findViewById(R.id.t_aantal2);
+            String myString = String.valueOf(number);
+            myText.setText(myString);
+            ogen = 3;
+        } else {
+            Random rand = new Random();
+            int number = rand.nextInt(6)+1;
+            TextView myText = (TextView)findViewById(R.id.t_aantal3);
+            String myString = String.valueOf(number);
+            myText.setText(myString);
+            ogen = 1;
+        }
     }
 
     public void checkButton(View view) {
