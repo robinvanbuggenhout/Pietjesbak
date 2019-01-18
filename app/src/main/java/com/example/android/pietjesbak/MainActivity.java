@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
             }
+
         });
 
         //Indien je op 'pass' klikt gebeurt dit
