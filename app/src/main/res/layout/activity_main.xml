@@ -87,32 +87,37 @@
         app:layout_constraintTop_toBottomOf="@+id/worpSpeler1" />
 
     <RadioGroup
+        android:id="@+id/radio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:id="@+id/radio">
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp">
 
         <RadioButton
             android:id="@+id/radio_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_1"
+            android:checked="true"
+            android:textSize="20sp"
             android:onClick="checkButton"
-            android:checked="true"/>
+            android:text="@string/_1" />
 
         <RadioButton
             android:id="@+id/radio_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_2"
-            android:onClick="checkButton"/>
+            android:textSize="20sp"
+            android:onClick="checkButton"
+            android:text="@string/_2" />
 
         <RadioButton
             android:id="@+id/radio_three"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_3"
-            android:onClick="checkButton"/>
+            android:textSize="20sp"
+            android:onClick="checkButton"
+            android:text="@string/_3" />
 
     </RadioGroup>
 
@@ -120,10 +125,10 @@
         android:id="@+id/pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/score"
         android:layout_alignTop="@+id/b_werp"
-        android:layout_marginEnd="27dp"
         android:text="@string/pass"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/naamSpeler2" />
@@ -131,9 +136,10 @@
     <TextView
         android:id="@+id/t_aantal"
         android:layout_width="86dp"
-        android:layout_height="35dp"
-        android:layout_alignStart="@+id/naamSpeler1"
-        android:layout_alignTop="@+id/naamSpeler2"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/naamSpeler1"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="39dp"
         android:text="@string/aantal"
         android:textAlignment="textStart"
         android:textSize="20sp"
@@ -147,8 +153,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/beurtSpeler1"
-        android:layout_marginBottom="109dp"
+        android:layout_alignStart="@+id/puntenSpeler1"
+        android:layout_marginBottom="38dp"
+        android:textSize="20sp"
         android:onClick="generate"
         android:text="@string/werp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -160,9 +167,9 @@
         android:id="@+id/score"
         android:layout_width="113dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/naamSpeler1"
-        android:layout_alignEnd="@+id/pass"
-        android:layout_marginBottom="5dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/naamSpeler2"
+        android:layout_marginEnd="42dp"
         android:text="Score"
         android:textAlignment="textEnd"
         android:textSize="20sp"
