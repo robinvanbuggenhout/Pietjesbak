@@ -5,10 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Random;
 
@@ -25,9 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
     //Dobbelstenen
     CheckBox dobbelsteen1, dobbelsteen2, dobbelsteen3;
-
-    private RadioGroup radioGroup;
-    private RadioButton radioButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,9 +72,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+<<<<<<< HEAD
+=======
     int ogen = 1;
     TextView myText = (TextView) findViewById(R.id.t_aantal);
 
+>>>>>>> 43cece11adad0d101fce8597a2d8d737b7e8808b
     //Indien je op 'werp' klikt gebeurt dit
     public void generate(View view) {
         for (int i=1; i == 3; i++) {
@@ -116,6 +113,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void checkButton(View view) {
-        
+
     }
 }
