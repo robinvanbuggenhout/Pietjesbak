@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         dobbelsteen3 = (CheckBox) findViewById(R.id.dobbelsteen3);
 
         //Indien je op 'werp' klikt gebeurt dit
-        werp.setOnClickListener(new View.OnClickListener() {
+        /* werp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
             }
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
             }
-        });
+        }); */
 
 
     }
