@@ -5,7 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -23,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
     //Dobbelstenen
     CheckBox dobbelsteen1, dobbelsteen2, dobbelsteen3;
 
+    private RadioGroup radioGroup;
+    private RadioButton radioButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         // naamSpeler1 = (TextView) findViewById(R.id.naamSpeler1);
         puntenSpeler1 = (TextView) findViewById(R.id.score);
         beurtSpeler1 = (TextView) findViewById(R.id.beurt);
-        worpSpeler1 = (TextView) findViewById(R.id.t_aantal1);
+        worpSpeler1 = (TextView) findViewById(R.id.t_aantal);
         worp2Speler1 = (TextView) findViewById(R.id.t_aantal2);
         worp3Speler1 = (TextView) findViewById(R.id.t_aantal3);
 
@@ -40,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         // naamSpeler2 = (TextView) findViewById(R.id.naamSpeler2);
         puntenSpeler2 = (TextView) findViewById(R.id.score2);
         beurtSpeler2 = (TextView) findViewById(R.id.beurt);
-        worpSpeler2 = (TextView) findViewById(R.id.t_aantal1);
+        worpSpeler2 = (TextView) findViewById(R.id.t_aantal);
         worp2Speler2 = (TextView) findViewById(R.id.t_aantal2);
         worp3Speler2 = (TextView) findViewById(R.id.t_aantal3);
 
@@ -72,26 +78,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-<<<<<<< HEAD
-=======
     int ogen = 1;
-    TextView myText = (TextView) findViewById(R.id.t_aantal);
 
->>>>>>> 43cece11adad0d101fce8597a2d8d737b7e8808b
     //Indien je op 'werp' klikt gebeurt dit
     public void generate(View view) {
-        for (int i=1; i == 3; i++) {
-            Random rand = new Random();
-            int number = rand.nextInt(6) + 1;
-            String num = Integer.toString(i);
-            myText = myText+num;
-            String myString = String.valueOf(number);
-            myText.setText(myString);
-        }
-        /*if (ogen == 1) {
+        if (ogen == 1) {
             Random rand = new Random();
             int number = rand.nextInt(6)+1;
-            TextView myText = (TextView)findViewById(R.id.t_aantal1);
+            TextView myText = (TextView)findViewById(R.id.t_aantal);
             String myString = String.valueOf(number);
             myText.setText(myString);
             ogen = 2;
@@ -109,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
             String myString = String.valueOf(number);
             myText.setText(myString);
             ogen = 1;
-        }*/
+        }
     }
 
     public void checkButton(View view) {
