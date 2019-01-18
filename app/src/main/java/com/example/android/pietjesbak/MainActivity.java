@@ -76,18 +76,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-
-        @Override
-        public void onCheckedChanged(RadioGroup group, int checkedId)
-        {
-            RadioButton checkedRadioButton = (RadioButton) findViewById(checkedId);
-            String text = checkedRadioButton.getText().toString();
-            Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
-        }
-    });
-
     //Indien je op 'werp' klikt gebeurt dit
     public void generate(View view) {
         Random rand = new Random();
@@ -96,11 +84,8 @@ public class MainActivity extends AppCompatActivity {
         String myString = String.valueOf(number);
         myText.setText(myString);
     }
-<<<<<<< HEAD
 
     public void checkButton(View view) {
         
     }
-=======
->>>>>>> 5ff68ca53ac0ae020db1652225e4940f0d596b69
 }
