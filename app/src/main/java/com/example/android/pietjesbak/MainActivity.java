@@ -45,12 +45,12 @@ public class MainActivity extends AppCompatActivity {
 
         btn = findViewById(R.id.button);
 
-        et = findViewById(R.id.editext);
+        et = findViewById(R.id.edittext);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this.SecondActivity.class);
+                Intent i = new Intent(MainActivity.this,SecondActivity.class);
                     st = et.getText().toString();
                     i.putExtra("value",st);
                     startActivity(i);
