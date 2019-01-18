@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Buttons
         pas = (Button) findViewById(R.id.button_pass);
-        werp = (Button) findViewById(R.id.button_werp);
+        werp = (Button) findViewById(R.id.werp);
 
         //Dobbelstenen
         dobbelsteen1 = (CheckBox) findViewById(R.id.dobbelsteen1);
