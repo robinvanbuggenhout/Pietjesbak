@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
         worpSpeler2 = (TextView) findViewById(R.id.worpSpeler2);
 
         //Buttons
-        pas = (Button) findViewById(R.id.button_pass);
-        werp = (Button) findViewById(R.id.werp);
+        // pas = (Button) findViewById(R.id.pass);
+        // werp = (Button) findViewById(R.id.werp);
 
         //Dobbelstenen
         dobbelsteen1 = (CheckBox) findViewById(R.id.dobbelsteen1);
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
     public void generate(View view) {
         Random rand = new Random();
         int number = rand.nextInt(6)+1;
-        TextView myText = (TextView)findViewById(R.id.aantal);
+        TextView myText = (TextView)findViewById(R.id.t_aantal);
         String myString = String.valueOf(number);
         myText.setText(myString);
     }
