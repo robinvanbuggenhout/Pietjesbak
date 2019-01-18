@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import java.util.Random;
+
 import static com.example.android.pietjesbak.R.id.puntenSpeler2;
 
 public class MainActivity extends AppCompatActivity {
@@ -42,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Buttons
         pas = (Button) findViewById(R.id.button_pass);
-        werp = (Button) findViewById(R.id.button_werp);
+        werp = (Button) findViewById(R.id.werp);
 
         //Dobbelstenen
         dobbelsteen1 = (CheckBox) findViewById(R.id.dobbelsteen1);
@@ -53,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
         werp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
             }
+
         });
 
         //Indien je op 'pass' klikt gebeurt dit
@@ -66,5 +68,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    //Indien je op 'werp' klikt gebeurt dit
+    public void generate(View view) {
+        Random rand = new Random();
+        int number = rand.nextInt(6)+1;
+        TextView myText = (TextView)findViewById(R.id.aantal);
+        String myString = String.valueOf(number);
+        myText.setText(myString);
     }
 }

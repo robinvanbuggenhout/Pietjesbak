@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/naamSpeler1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="16dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="35dp"
         android:text="@string"
@@ -93,22 +93,10 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="352dp"
         android:layout_marginBottom="20dp"
-        android:text="PASS"
+        android:text="@string/pass"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/naamSpeler2" />
-
-    <Button
-        android:id="@+id/button_werp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="20dp"
-        android:text="WERP"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/worpSpeler2" />
 
     <CheckBox
         android:id="@+id/dobbelsteen1"
@@ -139,5 +127,32 @@
         android:text="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dobbelsteen2" />
+
+    <TextView
+        android:id="@+id/aantal"
+        android:layout_width="86dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="148dp"
+        android:text="@string/aantal"
+        android:textAlignment="center"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="394dp" />
+
+    <Button
+        android:id="@+id/werp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="352dp"
+        android:onClick="generate"
+        android:text="@string/werp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/worpSpeler2"
+        tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>
