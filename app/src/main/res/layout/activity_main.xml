@@ -6,8 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <EditText
+        android:id="@+id/edittext"
+        android:layout_width="217dp"
+        android:layout_height="52dp"
+        android:hint="@string/type_in_something"
+        android:inputType=""
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="137dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edittext"
+        android:layout_marginEnd="132dp"
+        android:text="@string/submit"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="217dp" />
+
     <TextView
-        android:id="@+id/t_aantal1"
+        android:id="@+id/t_aantal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"

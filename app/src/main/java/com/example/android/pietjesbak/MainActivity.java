@@ -1,11 +1,16 @@
 package com.example.android.pietjesbak;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -22,6 +27,7 @@ import java.util.Random;
 //PASS: de beurt gaat over naar de andere speler
 
 public class MainActivity extends AppCompatActivity {
+
     //DECLARATIE
     //Speler 1
     TextView naamSpeler1, puntenSpeler1, beurtSpeler1, worpSpeler1, worp2Speler1, worp3Speler1;
@@ -30,22 +36,50 @@ public class MainActivity extends AppCompatActivity {
     TextView naamSpeler2, puntenSpeler2, beurtSpeler2, worpSpeler2, worp2Speler2, worp3Speler2;
 
     //Buttons
-    Button pas, werp;
+    Button btn, pas, werp;
+
+    // EditText
+    EditText et;
+
+    // String
+    String st;
 
     //Dobbelstenen
     CheckBox dobbelsteen1, dobbelsteen2, dobbelsteen3;
 
+<<<<<<< HEAD
+=======
+    private RadioGroup radioGroup;
+    private RadioButton radioButton;
+>>>>>>> 3a29ded108713cec35dc955a47e870b2ecd07b94
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        btn = findViewById(R.id.button);
+
+        et = findViewById(R.id.edittext);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,SecondActivity.class);
+                    st = et.getText().toString();
+                    i.putExtra("value",st);
+                    startActivity(i);
+                    finish();
+            }
+        });
+
+
+
         //Speler 1
         // naamSpeler1 = (TextView) findViewById(R.id.naamSpeler1);
         puntenSpeler1 = (TextView) findViewById(R.id.score);
         beurtSpeler1 = (TextView) findViewById(R.id.beurt);
-        worpSpeler1 = (TextView) findViewById(R.id.t_aantal1);
+        worpSpeler1 = (TextView) findViewById(R.id.t_aantal);
         worp2Speler1 = (TextView) findViewById(R.id.t_aantal2);
         worp3Speler1 = (TextView) findViewById(R.id.t_aantal3);
 
@@ -53,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         // naamSpeler2 = (TextView) findViewById(R.id.naamSpeler2);
         puntenSpeler2 = (TextView) findViewById(R.id.score2);
         beurtSpeler2 = (TextView) findViewById(R.id.beurt);
-        worpSpeler2 = (TextView) findViewById(R.id.t_aantal1);
+        worpSpeler2 = (TextView) findViewById(R.id.t_aantal);
         worp2Speler2 = (TextView) findViewById(R.id.t_aantal2);
         worp3Speler2 = (TextView) findViewById(R.id.t_aantal3);
 
@@ -87,15 +121,43 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+<<<<<<< HEAD
     int ogen = 1;
 
     //Indien je op 'werp' klikt gebeurt dit
     public void generate(View view) {
         if (ogen == 1) {
 
+=======
+    // int ogen = 1;
+
+    //Indien je op 'werp' klikt gebeurt dit
+    public void generate(View view) {
+
+        Random rand = new Random();
+
+        int number = rand.nextInt(6)+1;
+        int number2 = rand.nextInt(6)+1;
+        int number3 = rand.nextInt(6)+1;
+
+        TextView myText = (TextView)findViewById(R.id.t_aantal);
+        TextView myText2 = (TextView)findViewById(R.id.t_aantal2);
+        TextView myText3 = (TextView)findViewById(R.id.t_aantal3);
+
+        String myString = String.valueOf(number);
+        String myString2 = String.valueOf(number2);
+        String myString3 = String.valueOf(number3);
+
+        myText.setText(myString);
+        myText2.setText(myString2);
+        myText3.setText(myString3);
+
+        /* if (ogen == 1) {
+>>>>>>> 3a29ded108713cec35dc955a47e870b2ecd07b94
             Random rand = new Random();
 
             int number = rand.nextInt(6)+1;
+<<<<<<< HEAD
             int number2 = rand.nextInt(6)+1;
             int number3 = rand.nextInt(6)+1;
 
@@ -103,6 +165,9 @@ public class MainActivity extends AppCompatActivity {
             TextView myText2 = (TextView)findViewById(R.id.t_aantal2);
             TextView myText3 = (TextView)findViewById(R.id.t_aantal3);
 
+=======
+            TextView myText = (TextView)findViewById(R.id.t_aantal);
+>>>>>>> 3a29ded108713cec35dc955a47e870b2ecd07b94
             String myString = String.valueOf(number);
             String myString2 = String.valueOf(number2);
             String myString3 = String.valueOf(number3);

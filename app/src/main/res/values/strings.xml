@@ -9,4 +9,6 @@
     <string name="score_2">Score 2</string>
     <string name="score">Score</string>
     <string name="beurt">Beurt</string>
+    <string name="submit">Submit</string>
+    <string name="type_in_something">Type in something...</string>
 </resources>
