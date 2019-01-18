@@ -106,7 +106,7 @@
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="20dp"
         android:text="WERP"
-        android:onClick="Werp"
+        android:onClick="n"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/worpSpeler2" />
@@ -140,5 +140,28 @@
         android:text="@string"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dobbelsteen2" />
+
+    <TextView
+        android:id="@+id/aantal"
+        android:layout_width="86dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="148dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="394dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="generate"
+        android:layout_centerHorizontal="true"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="447dp"
+        tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>

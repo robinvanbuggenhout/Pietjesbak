@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import java.util.Random;
+
 import static com.example.android.pietjesbak.R.id.puntenSpeler2;
 
 public class MainActivity extends AppCompatActivity {
@@ -55,9 +57,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
             }
 
-            private void print(String hello) {
-            }
-
         });
 
         //Indien je op 'pass' klikt gebeurt dit
@@ -69,5 +68,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    //Indien je op 'werp' klikt gebeurt dit
+    public void generate(View view) {
+        Random rand = new Random();
+        int number = rand.nextInt(6)+1;
+        TextView myText = (TextView)findViewById(R.id.aantal);
+        String myString = String.valueOf(number);
+        myText.setText(myString);
     }
 }
