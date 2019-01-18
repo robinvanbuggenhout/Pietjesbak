@@ -9,6 +9,18 @@ import android.widget.TextView;
 
 import java.util.Random;
 
+//SPELREGELS
+//GOOIEN: eerste keer met drie dobbelstenen, nadien kan je kiezen met welke dobbelstenen je verder gooit
+//  -> Je moet dobbelstenen kunnen 'vast' zetten
+//STREEPJES: je begint met vijf streepjes, indien je een ronde wint mag je een streepje wegdoen
+//  -> Streepje aftrekken van de winnaar en nadien het totaal terug tonen
+//PUNTEN: 1 oog = 100 punten, 6 ogen = 60 punten, 5, 4, 3, 2 ogen = 5, 4, 3, 2 punten
+//  -> Optellen met een case-statement. Indien 1 = 100 punten, indien 6 = 60 punten
+//  -> Drie apen: 1,1,1, Soixante-neuf: 6,5,4, Zand: driemaal dezelfde waarde
+//  -> Extra: indien het gelijk is moet er nogmaals gegooid worden
+//  -> Extra: indien 1,1,1 dan wint deze speler automatisch
+//PASS: de beurt gaat over naar de andere speler
+
 public class MainActivity extends AppCompatActivity {
     //DECLARATIE
     //Speler 1
@@ -22,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Dobbelstenen
     CheckBox dobbelsteen1, dobbelsteen2, dobbelsteen3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,55 +74,44 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+
         //Indien je op 'pass' klikt gebeurt dit
+        //De beurt gaat naar de andere speler
         pas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         }); */
-
-
     }
 
-<<<<<<< HEAD
-=======
-    int ogen = 1;
-    TextView myText = (TextView) findViewById(R.id.t_aantal);
 
->>>>>>> 43cece11adad0d101fce8597a2d8d737b7e8808b
+
+    int ogen = 1;
+
     //Indien je op 'werp' klikt gebeurt dit
     public void generate(View view) {
-        for (int i=1; i == 3; i++) {
+        if (ogen == 1) {
+
             Random rand = new Random();
-            int number = rand.nextInt(6) + 1;
-            String num = Integer.toString(i);
-            myText = myText+num;
-            String myString = String.valueOf(number);
-            myText.setText(myString);
-        }
-        /*if (ogen == 1) {
-            Random rand = new Random();
+
             int number = rand.nextInt(6)+1;
+            int number2 = rand.nextInt(6)+1;
+            int number3 = rand.nextInt(6)+1;
+
             TextView myText = (TextView)findViewById(R.id.t_aantal1);
+            TextView myText2 = (TextView)findViewById(R.id.t_aantal2);
+            TextView myText3 = (TextView)findViewById(R.id.t_aantal3);
+
             String myString = String.valueOf(number);
+            String myString2 = String.valueOf(number2);
+            String myString3 = String.valueOf(number3);
+
             myText.setText(myString);
-            ogen = 2;
-        } else if (ogen == 2) {
-            Random rand = new Random();
-            int number = rand.nextInt(6)+1;
-            TextView myText = (TextView)findViewById(R.id.t_aantal2);
-            String myString = String.valueOf(number);
-            myText.setText(myString);
-            ogen = 3;
-        } else {
-            Random rand = new Random();
-            int number = rand.nextInt(6)+1;
-            TextView myText = (TextView)findViewById(R.id.t_aantal3);
-            String myString = String.valueOf(number);
-            myText.setText(myString);
-            ogen = 1;
-        }*/
+            myText2.setText(myString2);
+            myText3.setText(myString3);
+
+        }
     }
 
     public void checkButton(View view) {
