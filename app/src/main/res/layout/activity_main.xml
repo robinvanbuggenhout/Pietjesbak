@@ -84,7 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="28dp"
         android:layout_marginTop="8dp"
-        android:text="Beurt"
+        android:text="@string/beurt"
         android:textAlignment="textEnd"
         android:textSize="20sp"
         android:textStyle="bold"
