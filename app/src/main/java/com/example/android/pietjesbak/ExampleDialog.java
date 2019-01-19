@@ -12,9 +12,15 @@ public class ExampleDialog extends AppCompatDialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Volgende speler")
-                .setMessage("De volgende speler mag gooien")
-                .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+        builder.setTitle("Passen")
+                .setMessage("Hiermee geef je de beurt aan de volgende speler.")
+                .setNegativeButton("Doorspelen", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                })
+                .setPositiveButton("Passen", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
