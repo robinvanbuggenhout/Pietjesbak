@@ -16,6 +16,7 @@ import java.util.Random;
 
 //SPELREGELS
 //
+//
 //GOOIEN: eerste keer met drie dobbelstenen, nadien kan je kiezen met welke dobbelstenen je verder gooit
 //  -> Je moet dobbelstenen kunnen 'vast' zetten
 //STREEPJES: je begint met vijf streepjes, indien je een ronde wint mag je een streepje wegdoen
