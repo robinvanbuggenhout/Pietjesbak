@@ -1,6 +1,7 @@
 package com.example.android.pietjesbak;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -57,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
         tv.setText(st);
         tv2.setText(st2);
 
+        tv.setTypeface(tv.getTypeface(), Typeface.BOLD);
+
         //Speler 1
         // naamSpeler1 = (TextView) findViewById(R.id.naamSpeler1);
         puntenSpeler1 = (TextView) findViewById(R.id.score);
@@ -98,29 +101,40 @@ public class MainActivity extends AppCompatActivity {
         beurtAantal.setText(String.valueOf(numberOfRolls));
 
         //Indien het aantal rolls op 0 komt gaat het terug nr drie
-        // if (beurtSpeler1==true) {
+         if (beurtSpeler1==true) {
+             if (numberOfRolls == 0) {
+                 //volgende = false;
+                 numberOfRolls = 4;
+                 //Opmaak veranderen van de namen
+                 tv2.setTypeface(tv.getTypeface(), Typeface.NORMAL);
+                 tv.setTypeface(tv.getTypeface(), Typeface.BOLD);
+                 beurtSpeler1 = false;
+             }
+         }
 
-            if (numberOfRolls == 0) {
-                volgende = false;
-            }
-
+         else {
+             if (numberOfRolls == 0) {
+                 numberOfRolls = 4;
+                 tv.setTypeface(tv.getTypeface(), Typeface.NORMAL);
+                 tv2.setTypeface(tv.getTypeface(), Typeface.BOLD);
+                 beurtSpeler1 = true;
+             }
+         }
+            /*
             if (volgende == true) {
-
-                tv.setTypeface(tv.getTypeface(), Typeface.BOLD);
-                tv2.setTypeface(tv.getTypeface(), Typeface.REGULAR);
-
+                tv2.setTypeface(tv.getTypeface(), Typeface.NORMAL);
                 numberOfRolls = 4;
 
             } else if (volgende == false) {
-                tv.setTypeface(tv.getTypeface(), Typeface.REGULAR);
+                tv.setTypeface(tv.getTypeface(), Typeface.NORMAL);
                 tv2.setTypeface(tv.getTypeface(), Typeface.BOLD);
 
                 numberOfRolls = 4;
-            }
+            }*/
         // }
 
         //Score berekenen: aparte klasse om de score te berekenen
-        berekenScore();
+        //berekenScore();
 
         //Dialoog voor bevesteging om te passen
 
@@ -163,6 +177,7 @@ public class MainActivity extends AppCompatActivity {
 
       puntenSpeler1.setText(String.valueOf(punten));
 
+      /*
       switch(number) {
         case 1:
           punten += 100;
@@ -227,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
         case 6:
           punten += 60;
         break;
-      }
+      }*/
 
       //Punten tonen op het scherm
       //puntenSpeler1.setText(String.valueOf(punten));
