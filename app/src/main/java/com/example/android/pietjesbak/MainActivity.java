@@ -39,9 +39,12 @@ public class MainActivity extends AppCompatActivity {
     Button pas, werp;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     TextView tv, tv2;
     String st, st2;
 =======
+=======
+>>>>>>> 9f7ea21a080d69d0f69e255dce86e1c94c99d6c9
     //Namen in het spel
     TextView tv;
     String st;
