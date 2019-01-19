@@ -100,7 +100,6 @@ public class MainActivity extends AppCompatActivity {
         }); */
     }
 
-
     int ogen = 1;
 
     //Indien je op 'werp' klikt gebeurt dit
