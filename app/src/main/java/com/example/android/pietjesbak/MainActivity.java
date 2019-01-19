@@ -20,11 +20,7 @@ import java.util.Random;
 //  -> Je moet dobbelstenen kunnen 'vast' zetten
 //STREEPJES: je begint met vijf streepjes, indien je een ronde wint mag je een streepje wegdoen
 //  -> Streepje aftrekken van de winnaar en nadien het totaal terug tonen
-//PUNTEN: 1 oog = 100 punten, 6 ogen = 60 punten, 5, 4, 3, 2 ogen = 5, 4, 3, 2 punten
-//  -> Optellen met een case-statement. Indien 1 = 100 punten, indien 6 = 60 punten
-//  -> Drie apen: 1,1,1, Soixante-neuf: 6,5,4, Zand: driemaal dezelfde waarde
-//  -> Extra: indien het gelijk is moet er nogmaals gegooid worden
-//  -> Extra: indien 1,1,1 dan wint deze speler automatisch
+
 //PASS: de beurt gaat over naar de andere speler
 
 public class MainActivity extends AppCompatActivity {
@@ -44,7 +40,10 @@ public class MainActivity extends AppCompatActivity {
 
     //Nodige gegevens
     int numberOfRolls = 3;
+    int punten;
     boolean beurtSpeler1 = true;
+
+    boolean volgende = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,19 +98,37 @@ public class MainActivity extends AppCompatActivity {
         beurtAantal.setText(String.valueOf(numberOfRolls));
 
         //Indien het aantal rolls op 0 komt gaat het terug nr drie
-        if (beurtSpeler1==true) {
-            if (numberOfRolls==0) {
-                numberOfRolls = 3;
+        // if (beurtSpeler1==true) {
+
+            if (numberOfRolls == 0) {
+                volgende = false;
             }
-        }
+
+            if (volgende == true) {
+
+                tv.setTypeface(tv.getTypeface(), Typeface.BOLD);
+                tv2.setTypeface(tv.getTypeface(), Typeface.REGULAR);
+
+                numberOfRolls = 4;
+
+            } else if (volgende == false) {
+                tv.setTypeface(tv.getTypeface(), Typeface.REGULAR);
+                tv2.setTypeface(tv.getTypeface(), Typeface.BOLD);
+
+                numberOfRolls = 4;
+            }
+        // }
 
         //Score berekenen: aparte klasse om de score te berekenen
         berekenScore();
 
         //Dialoog voor bevesteging om te passen
-        if (numberOfRolls == 0) {
-            openDialog();
-        }
+
+        /*
+            if (numberOfRolls == 0) {
+                openDialog();
+            }
+        */
 
         //3 random getallen laten genereren
         Random rand = new Random();
@@ -123,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
         TextView myText2 = (TextView) findViewById(R.id.t_aantal2);
         TextView myText3 = (TextView) findViewById(R.id.t_aantal3);
 
+        //Waarde van de dobbelstenen
         String myString = String.valueOf(number);
         String myString2 = String.valueOf(number2);
         String myString3 = String.valueOf(number3);
@@ -130,9 +148,89 @@ public class MainActivity extends AppCompatActivity {
         myText.setText(myString);
         myText2.setText(myString2);
         myText3.setText(myString3);
+
     }
 
+
+    //PUNTEN: 1 oog = 100 punten, 6 ogen = 60 punten, 5, 4, 3, 2 ogen = 5, 4, 3, 2 punten
+    //  -> Optellen met een case-statement. Indien 1 = 100 punten, indien 6 = 60 punten
+    //  -> Drie apen: 1,1,1, Soixante-neuf: 6,5,4, Zand: driemaal dezelfde waarde
+    //  -> Extra: indien het gelijk is moet er nogmaals gegooid worden
+    //  -> Extra: indien 1,1,1 dan wint deze speler automatisch
     private void berekenScore() {
+      //Score berekenen
+      //Dobbelsteen 1
+
+      puntenSpeler1.setText(String.valueOf(punten));
+
+      switch(number) {
+        case 1:
+          punten += 100;
+        break;
+        case 2:
+          punten += 2;
+        break;
+        case 3:
+          punten +=  3;
+        break;
+        case 4:
+          punten +=  4;
+        break;
+        case 5:
+          punten += 5;
+        break;
+        case 6:
+          punten += 60;
+        break;
+
+      }
+
+      //Dobbelsteen 2
+      switch(number2) {
+        case 1:
+          punten += 100;
+        break;
+        case 2:
+          punten += 2;
+        break;
+        case 3:
+          punten += 3;
+        break;
+        case 4:
+          punten += 4;
+        break;
+        case 5:
+          punten += 5;
+        break;
+        case 6:
+          punten += 60;
+        break;
+      }
+
+      //Dobbelsteen 3
+      switch(number3) {
+        case 1:
+          punten += 100;
+        break;
+        case 2:
+          punten += 2;
+        break;
+        case 3:
+          punten += 3;
+        break;
+        case 4:
+          punten += 4;
+        break;
+        case 5:
+          punten += 5;
+        break;
+        case 6:
+          punten += 60;
+        break;
+      }
+
+      //Punten tonen op het scherm
+      //puntenSpeler1.setText(String.valueOf(punten));
 
     }
 
