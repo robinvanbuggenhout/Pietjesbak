@@ -13,10 +13,10 @@ public class SecondActivity extends AppCompatActivity {
     Button btn;
 
     // EditText
-    EditText et;
+    EditText et, et2;
 
     // String
-    String st;
+    String st, st2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +26,16 @@ public class SecondActivity extends AppCompatActivity {
         btn = findViewById(R.id.button);
 
         et = findViewById(R.id.edittext);
+        et2 = findViewById(R.id.edittext2);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(SecondActivity.this,MainActivity.class);
                 st = et.getText().toString();
+                st2 = et2.getText().toString();
                 i.putExtra("Value",st);
+                i.putExtra("Value2",st2);
                 startActivity(i);
                 finish();
             }

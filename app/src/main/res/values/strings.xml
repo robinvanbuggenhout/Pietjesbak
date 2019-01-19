@@ -11,4 +11,8 @@
     <string name="beurt">Beurt</string>
     <string name="submit">Submit</string>
     <string name="type_in_something">Type in something...</string>
+    <string name="player_2">Player 2</string>
+    <string name="player_1">Player 1</string>
+    <string name="value2">Value2</string>
+    <string name="value">Value</string>
 </resources>

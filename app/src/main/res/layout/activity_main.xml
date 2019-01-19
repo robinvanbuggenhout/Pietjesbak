@@ -8,6 +8,7 @@
 
     <TextView
         android:id="@+id/textView"
+<<<<<<< HEAD
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -18,6 +19,27 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/t_aantal" />
+=======
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/value"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="24dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/value2"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="24dp" />
+>>>>>>> 3fcfe98e930bebd4a8a9a191f9aed9de5f60443a
 
     <TextView
         android:id="@+id/t_aantal"
