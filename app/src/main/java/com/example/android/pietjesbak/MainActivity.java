@@ -138,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Als je op pass klikt moet je eerst weten welke speler momenteel aan de beurt is en moet die veranderen naar de andere speler
     public void pass(View view) {
+
         if (beurtSpeler1==true){
             beurtSpeler1 = false;
         }
@@ -145,7 +146,5 @@ public class MainActivity extends AppCompatActivity {
             beurtSpeler1 = true;
         }
 
- 
     }
-
 }
