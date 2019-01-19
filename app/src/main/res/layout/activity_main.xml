@@ -14,7 +14,6 @@
         android:layout_marginTop="149dp"
         android:text="@string/value"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/t_aantal"
         tools:ignore="MissingConstraints" />
@@ -27,7 +26,6 @@
         android:layout_marginTop="30dp"
         android:text="@string/value2"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="MissingConstraints" />

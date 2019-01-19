@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
     }
 
     public void openDialog() {
@@ -92,20 +93,27 @@ public class MainActivity extends AppCompatActivity {
 
     //Indien je op 'werp' klikt gebeurt dit
     public void generate(View view) {
-
         //Aantal worpen verminderen
         //  -> TODO: Indien het op nul komt dan moet de beurt naar de andere gaan
         numberOfRolls -= 1;
         beurtAantal.setText(String.valueOf(numberOfRolls));
 
-        //Score berekenen
-        brekenScore();
+        //Indien het aantal rolls op 0 komt gaat het terug nr drie
+        if (beurtSpeler1==true) {
+            if (numberOfRolls==0) {
+                numberOfRolls = 3;
+            }
+        }
 
+        //Score berekenen: aparte klasse om de score te berekenen
+        berekenScore();
 
+        //Dialoog voor bevesteging om te passen
         if (numberOfRolls == 0) {
             openDialog();
         }
 
+        //3 random getallen laten genereren
         Random rand = new Random();
         int number = rand.nextInt(6) + 1;
         int number2 = rand.nextInt(6) + 1;
@@ -124,16 +132,17 @@ public class MainActivity extends AppCompatActivity {
         myText3.setText(myString3);
     }
 
-    private void brekenScore() {
+    private void berekenScore() {
 
     }
 
+    //Als je op pass klikt moet je eerst weten welke speler momenteel aan de beurt is en moet die veranderen naar de andere speler
     public void pass(View view) {
         if (beurtSpeler1==true){
-
+            beurtSpeler1 = false;
         }
         else {
-
+            beurtSpeler1 = true;
         }
 
 
