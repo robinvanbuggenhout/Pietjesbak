@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     TextView naamSpeler2, puntenSpeler2, beurtSpeler2, worpSpeler2, worp2Speler2, worp3Speler2;
 
     //Buttons
-    Button btn, pas, werp;
+    Button pas, werp;
 
     TextView tv;
     String st;

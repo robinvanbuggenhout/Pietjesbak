@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class SecondActivity extends AppCompatActivity {
 
     //Buttons
-    Button btn, pas, werp;
+    Button btn;
 
     // EditText
     EditText et;
