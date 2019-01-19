@@ -8,33 +8,6 @@
 
     <TextView
         android:id="@+id/textView"
-<<<<<<< HEAD
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-<<<<<<< HEAD
-<<<<<<< HEAD
-        android:layout_marginTop="220dp"
-=======
-        android:layout_marginTop="141dp"
->>>>>>> parent of 4feb927... update
-=======
-        android:layout_marginTop="141dp"
->>>>>>> parent of 4feb927... update
-        android:gravity="center"
-        android:text="Value"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t_aantal" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of 4feb927... update
-=======
->>>>>>> parent of 4feb927... update
-=======
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/value"
@@ -43,47 +16,27 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="38dp"
         tools:layout_editor_absoluteY="24dp" />
->>>>>>> 4feb927f8dee874d558c519e7d0d5e6eab677f69
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="14dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:text="@string/value2"
-<<<<<<< HEAD
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="MissingConstraints" />
-
-=======
         android:textColor="@color/colorAccent"
         android:textSize="30sp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="24dp" />
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 4feb927f8dee874d558c519e7d0d5e6eab677f69
-=======
->>>>>>> 3fcfe98e930bebd4a8a9a191f9aed9de5f60443a
->>>>>>> parent of 4feb927... update
-=======
->>>>>>> 3fcfe98e930bebd4a8a9a191f9aed9de5f60443a
->>>>>>> parent of 4feb927... update
 
     <TextView
         android:id="@+id/t_aantal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="24dp"
         android:text="@string/aantal"
         android:textAlignment="textStart"
-        android:textSize="40sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -93,69 +46,52 @@
         android:id="@+id/t_aantal2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="10dp"
         android:text="@string/aantal"
         android:textAlignment="textStart"
-        android:textSize="40sp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/t_aantal3"
-        app:layout_constraintStart_toEndOf="@+id/t_aantal"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t_aantal"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/t_aantal3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
         android:text="@string/aantal"
         android:textAlignment="textStart"
-        android:textSize="40sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t_aantal2"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="113dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/score"
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        android:layout_marginTop="220dp"
-        android:layout_marginEnd="28dp"
-=======
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="24dp"
->>>>>>> 4feb927f8dee874d558c519e7d0d5e6eab677f69
-=======
-        android:layout_marginTop="208dp"
-        android:layout_marginEnd="28dp"
->>>>>>> parent of 4feb927... update
-=======
-        android:layout_marginTop="208dp"
-        android:layout_marginEnd="28dp"
->>>>>>> parent of 4feb927... update
-        android:text="@string/score"
-        android:textAlignment="textEnd"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t_aantal3"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
         android:id="@+id/score2"
-        android:layout_width="wrap_content"
+        android:layout_width="113dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="10dp"
         android:text="@string/score_2"
         android:textAlignment="textEnd"
         android:textSize="20sp"
@@ -168,8 +104,8 @@
         android:id="@+id/beurt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="9dp"
         android:layout_marginEnd="28dp"
+        android:layout_marginTop="8dp"
         android:text="@string/beurt"
         android:textAlignment="textEnd"
         android:textSize="20sp"
@@ -178,97 +114,31 @@
         app:layout_constraintTop_toBottomOf="@+id/score2"
         tools:ignore="MissingConstraints" />
 
-    <RadioGroup
-        android:id="@+id/radio"
-        android:layout_width="44dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginEnd="169dp"
-        android:layout_marginStart="171dp"
-        android:layout_marginTop="316dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
-
-        <RadioButton
-            android:id="@+id/radio_one"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:onClick="checkButton"
-            android:text="@string/_1"
-            android:textSize="20sp" />
-
-        <RadioButton
-            android:id="@+id/radio_two"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="checkButton"
-            android:text="@string/_2"
-            android:textSize="20sp" />
-
-        <RadioButton
-            android:id="@+id/radio_three"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="checkButton"
-            android:text="@string/_3"
-            android:textSize="20sp" />
-
-    </RadioGroup>
-
     <Button
         android:id="@+id/pass"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/score"
         android:layout_alignTop="@+id/b_werp"
-        android:layout_marginStart="24dp"
         android:layout_marginBottom="36dp"
-<<<<<<< HEAD
-        android:background="@drawable/reg_btn_style"
-=======
         android:layout_marginStart="88dp"
-<<<<<<< HEAD
->>>>>>> 4feb927f8dee874d558c519e7d0d5e6eab677f69
-=======
-        android:layout_marginTop="32dp"
->>>>>>> parent of f466b36... push
         android:text="@string/pass"
-        android:textColor="#ffffff"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radio"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/b_werp"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="24dp"
         android:layout_marginBottom="36dp"
-<<<<<<< HEAD
-        android:background="@drawable/reg_btn_style"
-=======
         android:layout_marginEnd="88dp"
-<<<<<<< HEAD
->>>>>>> 4feb927f8dee874d558c519e7d0d5e6eab677f69
-=======
-        android:layout_marginTop="32dp"
->>>>>>> parent of f466b36... push
         android:onClick="generate"
         android:text="@string/werp"
-        android:textColor="#ffffff"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radio"
-        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>
