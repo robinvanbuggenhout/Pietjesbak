@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-<<<<<<< HEAD
+
 
     int ogen = 1;
 
@@ -112,13 +112,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     // int ogen = 1;
-=======
+
     // int ogen = 1;
 
 
-    //Indien je op 'werp' klikt gebeurt dit
-    public void generate(View view) {
->>>>>>> 5e270a3f97ddf50b7f5665ba099a7052d9327ea3
+
 
         Random rand = new Random();
         int number = rand.nextInt(6) + 1;
@@ -163,6 +161,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void checkButton(View view) {
 
-    }*/
+    }
 }
-}
+
