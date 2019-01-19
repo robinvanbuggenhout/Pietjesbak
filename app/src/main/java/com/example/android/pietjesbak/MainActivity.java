@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
         myText2.setText(myString2);
         myText3.setText(myString3);
 
-        if (number == 1) {
+        /*if (number == 1) {
 
             punten += 100;
 
@@ -176,6 +176,27 @@ public class MainActivity extends AppCompatActivity {
         } else {
 
             punten += 6;
+
+        }*/
+        switch(number) {
+            case 1:
+                punten += 100;
+                break;
+            case 2:
+                punten += 2;
+                break;
+            case 3:
+                punten +=  3;
+                break;
+            case 4:
+                punten +=  4;
+                break;
+            case 5:
+                punten += 5;
+                break;
+            case 6:
+                punten += 60;
+                break;
 
         }
 
