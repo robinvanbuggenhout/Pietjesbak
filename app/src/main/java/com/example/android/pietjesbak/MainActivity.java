@@ -118,28 +118,24 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-<<<<<<< HEAD
+
     int ogen = 1;
 
     //Indien je op 'werp' klikt gebeurt dit
     public void generate(View view) {
-        if (ogen == 1) {
+        if (ogen == 1) { }
 
-=======
+
     // int ogen = 1;
 
-    //Indien je op 'werp' klikt gebeurt dit
-    public void generate(View view) {
-
         Random rand = new Random();
+        int number = rand.nextInt(6) + 1;
+        int number2 = rand.nextInt(6) + 1;
+        int number3 = rand.nextInt(6) + 1;
 
-        int number = rand.nextInt(6)+1;
-        int number2 = rand.nextInt(6)+1;
-        int number3 = rand.nextInt(6)+1;
-
-        TextView myText = (TextView)findViewById(R.id.t_aantal);
-        TextView myText2 = (TextView)findViewById(R.id.t_aantal2);
-        TextView myText3 = (TextView)findViewById(R.id.t_aantal3);
+        TextView myText = (TextView) findViewById(R.id.t_aantal);
+        TextView myText2 = (TextView) findViewById(R.id.t_aantal2);
+        TextView myText3 = (TextView) findViewById(R.id.t_aantal3);
 
         String myString = String.valueOf(number);
         String myString2 = String.valueOf(number2);
@@ -148,13 +144,12 @@ public class MainActivity extends AppCompatActivity {
         myText.setText(myString);
         myText2.setText(myString2);
         myText3.setText(myString3);
+    }
 
         /* if (ogen == 1) {
->>>>>>> 3a29ded108713cec35dc955a47e870b2ecd07b94
             Random rand = new Random();
 
             int number = rand.nextInt(6)+1;
-<<<<<<< HEAD
             int number2 = rand.nextInt(6)+1;
             int number3 = rand.nextInt(6)+1;
 
@@ -162,9 +157,7 @@ public class MainActivity extends AppCompatActivity {
             TextView myText2 = (TextView)findViewById(R.id.t_aantal2);
             TextView myText3 = (TextView)findViewById(R.id.t_aantal3);
 
-=======
             TextView myText = (TextView)findViewById(R.id.t_aantal);
->>>>>>> 3a29ded108713cec35dc955a47e870b2ecd07b94
             String myString = String.valueOf(number);
             String myString2 = String.valueOf(number2);
             String myString3 = String.valueOf(number3);
@@ -174,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
             myText3.setText(myString3);
 
         }
-    }
+    }*/
 
     public void checkButton(View view) {
 
