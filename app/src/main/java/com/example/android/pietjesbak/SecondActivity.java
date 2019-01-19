@@ -31,7 +31,7 @@ public class SecondActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this,SecondActivity.class);
+                Intent i = new Intent(SecondActivity.this,MainActivity.class);
                 st = et.getText().toString();
                 i.putExtra("value",st);
                 startActivity(i);
