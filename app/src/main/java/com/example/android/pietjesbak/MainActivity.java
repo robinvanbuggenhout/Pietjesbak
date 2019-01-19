@@ -16,7 +16,6 @@ import java.util.Random;
 
 //SPELREGELS
 //
-//
 //GOOIEN: eerste keer met drie dobbelstenen, nadien kan je kiezen met welke dobbelstenen je verder gooit
 //  -> Je moet dobbelstenen kunnen 'vast' zetten
 //STREEPJES: je begint met vijf streepjes, indien je een ronde wint mag je een streepje wegdoen
@@ -31,15 +30,18 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     //DECLARATIE
-
     //Speler 1
-    TextView naamSpeler1, puntenSpeler1, beurtSpeler1, worpSpeler1, worp2Speler1, worp3Speler1;
+    TextView puntenSpeler1, beurtAantal, worpSpeler1, worp2Speler1, worp3Speler1;
 
     //Speler 2
-    TextView naamSpeler2, puntenSpeler2, beurtSpeler2, worpSpeler2, worp2Speler2, worp3Speler2;
+    TextView puntenSpeler2, worpSpeler2, worp2Speler2, worp3Speler2;
 
+    //Namen ingeven en meenemen naar de MainActivity
     TextView tv, tv2;
     String st, st2;
+
+    //Nodige gegevens
+    int numberOfRolls = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         //Speler 1
         // naamSpeler1 = (TextView) findViewById(R.id.naamSpeler1);
         puntenSpeler1 = (TextView) findViewById(R.id.score);
-        beurtSpeler1 = (TextView) findViewById(R.id.beurt);
+        beurtAantal = (TextView) findViewById(R.id.beurt);
         worpSpeler1 = (TextView) findViewById(R.id.t_aantal);
         worp2Speler1 = (TextView) findViewById(R.id.t_aantal2);
         worp3Speler1 = (TextView) findViewById(R.id.t_aantal3);
@@ -64,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         //Speler 2
         // naamSpeler2 = (TextView) findViewById(R.id.naamSpeler2);
         puntenSpeler2 = (TextView) findViewById(R.id.score2);
-        beurtSpeler2 = (TextView) findViewById(R.id.beurt);
+        //beurtSpeler2 = (TextView) findViewById(R.id.beurt);
         worpSpeler2 = (TextView) findViewById(R.id.t_aantal);
         worp2Speler2 = (TextView) findViewById(R.id.t_aantal2);
         worp3Speler2 = (TextView) findViewById(R.id.t_aantal3);
@@ -73,6 +75,12 @@ public class MainActivity extends AppCompatActivity {
 
     //Indien je op 'werp' klikt gebeurt dit
     public void generate(View view) {
+
+        //Aantal worpen verminderen
+        //  -> TODO: Indien het op nul komt dan moet de beurt naar de andere gaan
+        numberOfRolls -= 1;
+        beurtAantal.setText(String.valueOf(numberOfRolls));
+
 
         Random rand = new Random();
         int number = rand.nextInt(6) + 1;
@@ -91,4 +99,12 @@ public class MainActivity extends AppCompatActivity {
         myText2.setText(myString2);
         myText3.setText(myString3);
     }
+
+
+
+
+
+
+
+
 }
