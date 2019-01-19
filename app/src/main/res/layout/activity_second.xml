@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondActivity">
+    tools:context=".SecondActivity"
+    android:background="#fff">
 
     <EditText
         android:id="@+id/edittext"
-        android:layout_width="217dp"
-        android:layout_height="52dp"
-        android:layout_marginEnd="83dp"
+        android:layout_width="296dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
         android:layout_marginTop="97dp"
+        android:layout_marginEnd="83dp"
+        android:background="@drawable/reg_edittext_style"
         android:hint="@string/player_1"
         android:inputType=""
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,11 +24,12 @@
 
     <EditText
         android:id="@+id/edittext2"
-        android:layout_width="217dp"
-        android:layout_height="52dp"
-        android:layout_marginEnd="83dp"
+        android:layout_width="296dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
         android:layout_marginTop="19dp"
+        android:layout_marginEnd="83dp"
+        android:background="@drawable/reg_edittext_style"
         android:hint="@string/player_2"
         android:inputType=""
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,13 +39,15 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="115dp"
+        android:layout_width="296dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edittext"
-        android:layout_marginBottom="60dp"
-        android:layout_marginEnd="134dp"
         android:layout_marginStart="135dp"
+        android:layout_marginEnd="134dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/reg_btn_style"
         android:text="@string/submit"
+        android:textColor="#ffffff"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

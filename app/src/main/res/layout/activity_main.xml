@@ -8,38 +8,31 @@
 
     <TextView
         android:id="@+id/textView"
-<<<<<<< HEAD
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="141dp"
+        android:layout_marginTop="220dp"
         android:gravity="center"
         android:text="Value"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/t_aantal" />
-=======
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/value"
-        android:textColor="@color/colorAccent"
-        android:textSize="30sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="38dp"
-        tools:layout_editor_absoluteY="24dp" />
+
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="14dp"
         android:text="@string/value2"
-        android:textColor="@color/colorAccent"
-        android:textSize="30sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="24dp" />
->>>>>>> 3fcfe98e930bebd4a8a9a191f9aed9de5f60443a
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="MissingConstraints" />
+
 
     <TextView
         android:id="@+id/t_aantal"
@@ -49,7 +42,7 @@
         android:layout_marginTop="40dp"
         android:text="@string/aantal"
         android:textAlignment="textStart"
-        android:textSize="20sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -64,7 +57,7 @@
         android:layout_marginEnd="8dp"
         android:text="@string/aantal"
         android:textAlignment="textStart"
-        android:textSize="20sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/t_aantal3"
         app:layout_constraintStart_toEndOf="@+id/t_aantal"
@@ -79,7 +72,7 @@
         android:layout_marginEnd="28dp"
         android:text="@string/aantal"
         android:textAlignment="textStart"
-        android:textSize="20sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -90,14 +83,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="208dp"
+        android:layout_marginTop="220dp"
         android:layout_marginEnd="28dp"
         android:text="@string/score"
         android:textAlignment="textEnd"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t_aantal3"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -129,79 +122,35 @@
         app:layout_constraintTop_toBottomOf="@+id/score2"
         tools:ignore="MissingConstraints" />
 
-    <RadioGroup
-        android:id="@+id/radio"
-        android:layout_width="44dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginEnd="169dp"
-        android:layout_marginStart="171dp"
-        android:layout_marginTop="316dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
-
-        <RadioButton
-            android:id="@+id/radio_one"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:onClick="checkButton"
-            android:text="@string/_1"
-            android:textSize="20sp" />
-
-        <RadioButton
-            android:id="@+id/radio_two"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="checkButton"
-            android:text="@string/_2"
-            android:textSize="20sp" />
-
-        <RadioButton
-            android:id="@+id/radio_three"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="checkButton"
-            android:text="@string/_3"
-            android:textSize="20sp" />
-
-    </RadioGroup>
-
     <Button
         android:id="@+id/pass"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/score"
         android:layout_alignTop="@+id/b_werp"
+        android:layout_marginStart="24dp"
         android:layout_marginBottom="36dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="32dp"
+        android:background="@drawable/reg_btn_style"
         android:text="@string/pass"
+        android:textColor="#ffffff"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radio"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/b_werp"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginEnd="24dp"
         android:layout_marginBottom="36dp"
-        android:layout_marginEnd="88dp"
-        android:layout_marginTop="32dp"
+        android:background="@drawable/reg_btn_style"
         android:onClick="generate"
         android:text="@string/werp"
+        android:textColor="#ffffff"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radio"
-        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>
