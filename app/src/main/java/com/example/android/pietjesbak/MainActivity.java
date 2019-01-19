@@ -36,12 +36,9 @@ public class MainActivity extends AppCompatActivity {
     TextView naamSpeler2, puntenSpeler2, beurtSpeler2, worpSpeler2, worp2Speler2, worp3Speler2;
 
     //Buttons
-    Button btn, pas, werp;
+    Button pas, werp;
 
-    // EditText
-    EditText et;
-
-    // String
+    TextView tv;
     String st;
 
     //Dobbelstenen
@@ -55,22 +52,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btn = findViewById(R.id.button);
-
-        et = findViewById(R.id.edittext);
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this,SecondActivity.class);
-                    st = et.getText().toString();
-                    i.putExtra("value",st);
-                    startActivity(i);
-                    finish();
-            }
-        });
-
-
+        tv = findViewById(R.id.textView);
+        st = getIntent().getExtras().getString("Value");
+        tv.setText(st);
 
         //Speler 1
         // naamSpeler1 = (TextView) findViewById(R.id.naamSpeler1);
@@ -118,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+<<<<<<< HEAD
 
     int ogen = 1;
 
@@ -127,6 +112,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     // int ogen = 1;
+=======
+    // int ogen = 1;
+
+
+    //Indien je op 'werp' klikt gebeurt dit
+    public void generate(View view) {
+>>>>>>> 5e270a3f97ddf50b7f5665ba099a7052d9327ea3
 
         Random rand = new Random();
         int number = rand.nextInt(6) + 1;
@@ -171,5 +163,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void checkButton(View view) {
 
-    }
+    }*/
+}
 }
