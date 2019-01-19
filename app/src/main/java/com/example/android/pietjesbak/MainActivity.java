@@ -105,7 +105,12 @@ public class MainActivity extends AppCompatActivity {
 
     //Indien je op 'werp' klikt gebeurt dit
     public void generate(View view) {
+<<<<<<< HEAD
         if (ogen == 1) { }
+=======
+        if (ogen == 1) {
+        }
+>>>>>>> dc71d7afaff1348ed15a6831a66f48f6213be80f
 
         Random rand = new Random();
         int number = rand.nextInt(6) + 1;
@@ -146,11 +151,12 @@ public class MainActivity extends AppCompatActivity {
             myText3.setText(myString3);
 
         }
-    }
+    }*/
 
     public void checkButton(View view) {
 
     }
+<<<<<<< HEAD
 }*/
 
 
@@ -164,5 +170,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+=======
+>>>>>>> dc71d7afaff1348ed15a6831a66f48f6213be80f
 }
+
 
