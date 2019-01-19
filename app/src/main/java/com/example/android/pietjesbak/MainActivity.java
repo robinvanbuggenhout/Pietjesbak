@@ -43,12 +43,6 @@ public class MainActivity extends AppCompatActivity {
     String st, st2;
 
 
-    //Dobbelstenen
-    CheckBox dobbelsteen1, dobbelsteen2, dobbelsteen3;
-
-    private RadioGroup radioGroup;
-    private RadioButton radioButton;
-=======
     TextView tv, tv2;
     String st, st2;
 
