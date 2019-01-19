@@ -153,31 +153,6 @@ public class MainActivity extends AppCompatActivity {
         myText2.setText(myString2);
         myText3.setText(myString3);
 
-        /*if (number == 1) {
-
-            punten += 100;
-
-        } else if (number == 2) {
-
-            punten += 2;
-
-        } else if (number == 3) {
-
-            punten += 3;
-
-        } else if (number == 4) {
-
-            punten += 4;
-
-        } else if (number == 5) {
-
-            punten += 5;
-
-        } else {
-
-            punten += 6;
-
-        }*/
         switch(number) {
             case 1:
                 punten += 100;
@@ -197,7 +172,6 @@ public class MainActivity extends AppCompatActivity {
             case 6:
                 punten += 60;
                 break;
-
         }
 
         String puntjesSpeler1 = String.valueOf(punten);
