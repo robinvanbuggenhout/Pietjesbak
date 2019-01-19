@@ -36,14 +36,11 @@ public class MainActivity extends AppCompatActivity {
     //Speler 2
     TextView naamSpeler2, puntenSpeler2, beurtSpeler2, worpSpeler2, worp2Speler2, worp3Speler2;
 
-<<<<<<< HEAD
     //Buttons
     Button pas, werp;
 
     TextView tv, tv2;
     String st, st2;
-
-
 
 
     //Dobbelstenen
@@ -54,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
 =======
     TextView tv, tv2;
     String st, st2;
->>>>>>> 4feb927f8dee874d558c519e7d0d5e6eab677f69
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

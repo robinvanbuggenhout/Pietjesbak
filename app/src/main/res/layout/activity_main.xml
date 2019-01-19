@@ -12,14 +12,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
+<<<<<<< HEAD
         android:layout_marginTop="220dp"
+=======
+        android:layout_marginTop="141dp"
+>>>>>>> parent of 4feb927... update
         android:gravity="center"
         android:text="Value"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/t_aantal" />
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 4feb927... update
 =======
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -51,14 +58,18 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="24dp" />
+<<<<<<< HEAD
 >>>>>>> 4feb927f8dee874d558c519e7d0d5e6eab677f69
+=======
+>>>>>>> 3fcfe98e930bebd4a8a9a191f9aed9de5f60443a
+>>>>>>> parent of 4feb927... update
 
     <TextView
         android:id="@+id/t_aantal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="40dp"
         android:text="@string/aantal"
         android:textAlignment="textStart"
         android:textSize="40sp"
@@ -71,35 +82,38 @@
         android:id="@+id/t_aantal2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/aantal"
         android:textAlignment="textStart"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t_aantal"
+        app:layout_constraintEnd_toStartOf="@+id/t_aantal3"
+        app:layout_constraintStart_toEndOf="@+id/t_aantal"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/t_aantal3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="28dp"
         android:text="@string/aantal"
         android:textAlignment="textStart"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t_aantal2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/score"
-        android:layout_width="113dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
+<<<<<<< HEAD
 <<<<<<< HEAD
         android:layout_marginTop="220dp"
         android:layout_marginEnd="28dp"
@@ -107,6 +121,10 @@
         android:layout_marginEnd="30dp"
         android:layout_marginTop="24dp"
 >>>>>>> 4feb927f8dee874d558c519e7d0d5e6eab677f69
+=======
+        android:layout_marginTop="208dp"
+        android:layout_marginEnd="28dp"
+>>>>>>> parent of 4feb927... update
         android:text="@string/score"
         android:textAlignment="textEnd"
         android:textSize="20sp"
@@ -117,11 +135,11 @@
 
     <TextView
         android:id="@+id/score2"
-        android:layout_width="113dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="28dp"
         android:text="@string/score_2"
         android:textAlignment="textEnd"
         android:textSize="20sp"
@@ -134,8 +152,8 @@
         android:id="@+id/beurt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
         android:layout_marginEnd="28dp"
-        android:layout_marginTop="8dp"
         android:text="@string/beurt"
         android:textAlignment="textEnd"
         android:textSize="20sp"
