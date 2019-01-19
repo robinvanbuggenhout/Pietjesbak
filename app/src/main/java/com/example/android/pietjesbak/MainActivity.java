@@ -102,21 +102,32 @@ public class MainActivity extends AppCompatActivity {
         beurtAantal.setText(String.valueOf(numberOfRolls));
 
         //Indien het aantal rolls op 0 komt gaat het terug nr drie
-        // if (beurtSpeler1==true) {
+         if (beurtSpeler1==true) {
+             if (numberOfRolls == 0) {
+                 //volgende = false;
+                 numberOfRolls = 4;
+                 //Opmaak veranderen van de namen
+                 tv2.setTypeface(tv.getTypeface(), Typeface.NORMAL);
+                 tv.setTypeface(tv.getTypeface(), Typeface.BOLD);
+                 beurtSpeler1 = false;
+             }
+         }
 
-            /*if (numberOfRolls == 0) {
-                volgende = false;
-            }
-
+         else {
+             if (numberOfRolls == 0) {
+                 numberOfRolls = 4;
+                 tv.setTypeface(tv.getTypeface(), Typeface.NORMAL);
+                 tv2.setTypeface(tv.getTypeface(), Typeface.BOLD);
+                 beurtSpeler1 = true;
+             }
+         }
+            /*
             if (volgende == true) {
-
-                //tv.setTypeface(tv.getTypeface(), Typeface.BOLD);
-                tv2.setTypeface(tv.getTypeface(), Typeface.REGULAR);
-
+                tv2.setTypeface(tv.getTypeface(), Typeface.NORMAL);
                 numberOfRolls = 4;
 
             } else if (volgende == false) {
-                tv.setTypeface(tv.getTypeface(), Typeface.REGULAR);
+                tv.setTypeface(tv.getTypeface(), Typeface.NORMAL);
                 tv2.setTypeface(tv.getTypeface(), Typeface.BOLD);
 
                 numberOfRolls = 4;
@@ -124,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
         // }
 
         //Score berekenen: aparte klasse om de score te berekenen
-        berekenScore();
+        //berekenScore();
 
         //Dialoog voor bevesteging om te passen
 
