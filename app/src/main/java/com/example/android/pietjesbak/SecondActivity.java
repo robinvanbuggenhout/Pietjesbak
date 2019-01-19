@@ -33,7 +33,7 @@ public class SecondActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(SecondActivity.this,MainActivity.class);
                 st = et.getText().toString();
-                i.putExtra("value",st);
+                i.putExtra("Value",st);
                 startActivity(i);
                 finish();
             }
