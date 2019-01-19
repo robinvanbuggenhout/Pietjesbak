@@ -20,7 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText userMail, userPassword;
     private Button btnLogin, btnLogin2;
     private FirebaseAuth mAuth;
-    private Intent MainActivity;
+    private Intent SecondActivity;
 
 
     @Override
@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.logBtn);
         btnLogin2 = findViewById(R.id.logBtn2);
         mAuth = FirebaseAuth.getInstance();
-        MainActivity = new Intent(this, com.example.android.pietjesbak.MainActivity.class);
+        SecondActivity = new Intent(this, com.example.android.pietjesbak.SecondActivity.class);
 
         btnLogin2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void updateUI() {
 
-        startActivity(MainActivity);
+        startActivity(SecondActivity);
         finish();
 
     }
