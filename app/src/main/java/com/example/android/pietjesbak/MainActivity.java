@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void berekenScore() {
-     
+
     }
 
     //Als je op pass klikt moet je eerst weten welke speler momenteel aan de beurt is en moet die veranderen naar de andere speler
@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
             beurtSpeler1 = true;
         }
 
-
+ 
     }
 
 }
