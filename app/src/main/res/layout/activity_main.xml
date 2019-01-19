@@ -178,6 +178,48 @@
         app:layout_constraintTop_toBottomOf="@+id/score2"
         tools:ignore="MissingConstraints" />
 
+    <RadioGroup
+        android:id="@+id/radio"
+        android:layout_width="44dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="169dp"
+        android:layout_marginStart="171dp"
+        android:layout_marginTop="316dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <RadioButton
+            android:id="@+id/radio_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:onClick="checkButton"
+            android:text="@string/_1"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/radio_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="checkButton"
+            android:text="@string/_2"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/radio_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkButton"
+            android:text="@string/_3"
+            android:textSize="20sp" />
+
+    </RadioGroup>
+
     <Button
         android:id="@+id/pass"
         android:layout_width="150dp"
@@ -190,12 +232,18 @@
         android:background="@drawable/reg_btn_style"
 =======
         android:layout_marginStart="88dp"
+<<<<<<< HEAD
 >>>>>>> 4feb927f8dee874d558c519e7d0d5e6eab677f69
+=======
+        android:layout_marginTop="32dp"
+>>>>>>> parent of f466b36... push
         android:text="@string/pass"
         android:textColor="#ffffff"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/b_werp"
@@ -208,13 +256,19 @@
         android:background="@drawable/reg_btn_style"
 =======
         android:layout_marginEnd="88dp"
+<<<<<<< HEAD
 >>>>>>> 4feb927f8dee874d558c519e7d0d5e6eab677f69
+=======
+        android:layout_marginTop="32dp"
+>>>>>>> parent of f466b36... push
         android:onClick="generate"
         android:text="@string/werp"
         android:textColor="#ffffff"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>
