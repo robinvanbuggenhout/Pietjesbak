@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Nodige gegevens
     int numberOfRolls = 3;
+    boolean beurtSpeler1 = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +98,10 @@ public class MainActivity extends AppCompatActivity {
         numberOfRolls -= 1;
         beurtAantal.setText(String.valueOf(numberOfRolls));
 
+        //Score berekenen
+        brekenScore();
+
+
         if (numberOfRolls == 0) {
             openDialog();
         }
@@ -119,7 +124,18 @@ public class MainActivity extends AppCompatActivity {
         myText3.setText(myString3);
     }
 
+    private void brekenScore() {
+
+    }
+
     public void pass(View view) {
+        if (beurtSpeler1==true){
+
+        }
+        else {
+
+        }
+
 
     }
 }
