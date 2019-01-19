@@ -100,36 +100,13 @@ public class MainActivity extends AppCompatActivity {
         }); */
     }
 
-<<<<<<< HEAD
-    //int ogen = 1;
-
-    //Indien je op 'werp' klikt gebeurt dit
-    public void generate(View view) {
-=======
-
-
-
-
 
     int ogen = 1;
 
     //Indien je op 'werp' klikt gebeurt dit
     public void generate(View view) {
-        if (ogen == 1) { }
-
-
-    // int ogen = 1;
-
-    // int ogen = 1;
-
-
-
-
-    //int ogen = 1;
-
-
-
->>>>>>> c22a6d43235731dc622dcf692f7b1301a146c205
+        if (ogen == 1) {
+        }
 
         Random rand = new Random();
         int number = rand.nextInt(6) + 1;
@@ -175,12 +152,6 @@ public class MainActivity extends AppCompatActivity {
     public void checkButton(View view) {
 
     }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-}*/
->>>>>>> c22a6d43235731dc622dcf692f7b1301a146c205
-
 }
+
 
