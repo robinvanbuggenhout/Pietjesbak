@@ -3,9 +3,6 @@
     <string name="werp">WERP</string>
     <string name="aantal">Ogen</string>
     <string name="pass">PASS</string>
-    <string name="_1">1</string>
-    <string name="_2">2</string>
-    <string name="_3">3</string>
     <string name="score_2">Score 2</string>
     <string name="score">Score</string>
     <string name="beurt">Beurt</string>
@@ -15,4 +12,5 @@
     <string name="player_1">Player 1</string>
     <string name="value2">Value2</string>
     <string name="value">Value</string>
+    <string name="_3">3</string>
 </resources>

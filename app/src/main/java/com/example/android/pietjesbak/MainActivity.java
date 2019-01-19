@@ -29,6 +29,8 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button button;
+
     //DECLARATIE
     //Speler 1
     TextView puntenSpeler1, beurtAantal, worpSpeler1, worp2Speler1, worp3Speler1;
@@ -71,6 +73,20 @@ public class MainActivity extends AppCompatActivity {
         worp2Speler2 = (TextView) findViewById(R.id.t_aantal2);
         worp3Speler2 = (TextView) findViewById(R.id.t_aantal3);
 
+        button = (Button) findViewById(R.id.pass);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog();
+            }
+        });
+
+    }
+
+    public void openDialog() {
+        ExampleDialog exampleDialog = new ExampleDialog();
+        exampleDialog.show(getSupportFragmentManager(), "example dialog");
     }
 
     //Indien je op 'werp' klikt gebeurt dit
@@ -81,6 +97,9 @@ public class MainActivity extends AppCompatActivity {
         numberOfRolls -= 1;
         beurtAantal.setText(String.valueOf(numberOfRolls));
 
+        if (numberOfRolls == 0) {
+            openDialog();
+        }
 
         Random rand = new Random();
         int number = rand.nextInt(6) + 1;
@@ -100,11 +119,7 @@ public class MainActivity extends AppCompatActivity {
         myText3.setText(myString3);
     }
 
+    public void pass(View view) {
 
-
-
-
-
-
-
+    }
 }
