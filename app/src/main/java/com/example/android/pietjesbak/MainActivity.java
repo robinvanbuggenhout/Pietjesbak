@@ -29,39 +29,15 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     //DECLARATIE
+
     //Speler 1
     TextView naamSpeler1, puntenSpeler1, beurtSpeler1, worpSpeler1, worp2Speler1, worp3Speler1;
 
     //Speler 2
     TextView naamSpeler2, puntenSpeler2, beurtSpeler2, worpSpeler2, worp2Speler2, worp3Speler2;
 
-    //Buttons
-    Button pas, werp;
-
-<<<<<<< HEAD
     TextView tv, tv2;
     String st, st2;
-
-
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of f466b36... push
-    TextView tv, tv2;
-    String st, st2;
-=======
-=======
->>>>>>> 9f7ea21a080d69d0f69e255dce86e1c94c99d6c9
-    //Namen in het spel
-    TextView tv;
-    String st;
->>>>>>> 9f7ea21a080d69d0f69e255dce86e1c94c99d6c9
-
-    //Dobbelstenen
-    CheckBox dobbelsteen1, dobbelsteen2, dobbelsteen3;
-
-    private RadioGroup radioGroup;
-    private RadioButton radioButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,44 +67,10 @@ public class MainActivity extends AppCompatActivity {
         worp2Speler2 = (TextView) findViewById(R.id.t_aantal2);
         worp3Speler2 = (TextView) findViewById(R.id.t_aantal3);
 
-        //Buttons
-        // pas = (Button) findViewById(R.id.pass);
-        // werp = (Button) findViewById(R.id.werp);
-
-        //Dobbelstenen
-        // dobbelsteen1 = (CheckBox) findViewById(R.id.dobbelsteen1);
-        // dobbelsteen2 = (CheckBox) findViewById(R.id.dobbelsteen2);
-        // dobbelsteen3 = (CheckBox) findViewById(R.id.dobbelsteen3);
-
-        //Indien je op 'werp' klikt gebeurt dit
-        /* werp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-
-        });
-
-
-        //Indien je op 'pass' klikt gebeurt dit
-        //De beurt gaat naar de andere speler
-        pas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        }); */
     }
-
-    int ogen = 1;
 
     //Indien je op 'werp' klikt gebeurt dit
     public void generate(View view) {
-<<<<<<< HEAD
-        if (ogen == 1) { }
-=======
-        if (ogen == 1) {
-        }
->>>>>>> dc71d7afaff1348ed15a6831a66f48f6213be80f
 
         Random rand = new Random();
         int number = rand.nextInt(6) + 1;
@@ -147,53 +89,4 @@ public class MainActivity extends AppCompatActivity {
         myText2.setText(myString2);
         myText3.setText(myString3);
     }
-<<<<<<< HEAD
 }
-=======
-
-        /* if (ogen == 1) {
-            Random rand = new Random();
-
-            int number = rand.nextInt(6)+1;
-            int number2 = rand.nextInt(6)+1;
-            int number3 = rand.nextInt(6)+1;
-
-            TextView myText = (TextView)findViewById(R.id.t_aantal1);
-            TextView myText2 = (TextView)findViewById(R.id.t_aantal2);
-            TextView myText3 = (TextView)findViewById(R.id.t_aantal3);
-
-            TextView myText = (TextView)findViewById(R.id.t_aantal);
-            String myString = String.valueOf(number);
-            String myString2 = String.valueOf(number2);
-            String myString3 = String.valueOf(number3);
-
-            myText.setText(myString);
-            myText2.setText(myString2);
-            myText3.setText(myString3);
-
-        }
-    }*/
-
-    public void checkButton(View view) {
-
-    }
-<<<<<<< HEAD
-}*/
-
-
-
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> dc71d7afaff1348ed15a6831a66f48f6213be80f
-}
-
-
->>>>>>> parent of f466b36... push
