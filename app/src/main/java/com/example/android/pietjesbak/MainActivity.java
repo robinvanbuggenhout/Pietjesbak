@@ -38,8 +38,14 @@ public class MainActivity extends AppCompatActivity {
     //Buttons
     Button pas, werp;
 
+<<<<<<< HEAD
+    TextView tv, tv2;
+    String st, st2;
+=======
+    //Namen in het spel
     TextView tv;
     String st;
+>>>>>>> 9f7ea21a080d69d0f69e255dce86e1c94c99d6c9
 
     //Dobbelstenen
     CheckBox dobbelsteen1, dobbelsteen2, dobbelsteen3;
@@ -53,8 +59,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         tv = findViewById(R.id.textView);
+        tv2 = findViewById(R.id.textView2);
         st = getIntent().getExtras().getString("Value");
+        st2 = getIntent().getExtras().getString("Value2");
         tv.setText(st);
+        tv2.setText(st2);
 
         //Speler 1
         // naamSpeler1 = (TextView) findViewById(R.id.naamSpeler1);
@@ -104,8 +113,12 @@ public class MainActivity extends AppCompatActivity {
 
     //Indien je op 'werp' klikt gebeurt dit
     public void generate(View view) {
+<<<<<<< HEAD
+        if (ogen == 1) { }
+=======
         if (ogen == 1) {
         }
+>>>>>>> dc71d7afaff1348ed15a6831a66f48f6213be80f
 
         Random rand = new Random();
         int number = rand.nextInt(6) + 1;
@@ -151,6 +164,22 @@ public class MainActivity extends AppCompatActivity {
     public void checkButton(View view) {
 
     }
+<<<<<<< HEAD
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+>>>>>>> dc71d7afaff1348ed15a6831a66f48f6213be80f
 }
 
 
