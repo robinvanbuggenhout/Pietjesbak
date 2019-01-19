@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     //Buttons
     Button pas, werp;
 
+    //Namen in het spel
     TextView tv;
     String st;
 
@@ -100,29 +101,11 @@ public class MainActivity extends AppCompatActivity {
         }); */
     }
 
-
-
-
-
-
     int ogen = 1;
 
     //Indien je op 'werp' klikt gebeurt dit
     public void generate(View view) {
         if (ogen == 1) { }
-
-
-    // int ogen = 1;
-
-    // int ogen = 1;
-
-
-
-
-    //int ogen = 1;
-
-
-
 
         Random rand = new Random();
         int number = rand.nextInt(6) + 1;
@@ -168,9 +151,18 @@ public class MainActivity extends AppCompatActivity {
     public void checkButton(View view) {
 
     }
-<<<<<<< HEAD
-=======
 }*/
+
+
+
+
+
+
+
+
+
+
+
 
 }
 
