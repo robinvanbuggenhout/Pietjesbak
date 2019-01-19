@@ -10,10 +10,23 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Value"
-        android:textSize="30sp"
+        android:text="@string/value"
         android:textColor="@color/colorAccent"
-        android:gravity="center" />
+        android:textSize="30sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="24dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/value2"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="24dp" />
 
     <TextView
         android:id="@+id/t_aantal"
