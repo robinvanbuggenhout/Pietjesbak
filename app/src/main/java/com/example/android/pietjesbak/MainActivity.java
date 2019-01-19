@@ -29,7 +29,11 @@ public class MainActivity extends AppCompatActivity {
 
     //DECLARATIE
     //Speler 1
-    TextView puntenSpeler1, beurtAantal, worpSpeler1, worp2Speler1, worp3Speler1;
+    TextView puntenSpeler1;
+    TextView beurtAantal;
+    TextView worpSpeler1;
+    TextView worp2Speler1;
+    TextView worp3Speler1;
 
     //Speler 2
     TextView puntenSpeler2, worpSpeler2, worp2Speler2, worp3Speler2;
@@ -40,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Nodige gegevens
     int numberOfRolls = 3;
-    int punten;
+    int punten = 0;
     boolean beurtSpeler1 = true;
 
     boolean volgende = true;
@@ -100,13 +104,13 @@ public class MainActivity extends AppCompatActivity {
         //Indien het aantal rolls op 0 komt gaat het terug nr drie
         // if (beurtSpeler1==true) {
 
-            if (numberOfRolls == 0) {
+            /*if (numberOfRolls == 0) {
                 volgende = false;
             }
 
             if (volgende == true) {
 
-                tv.setTypeface(tv.getTypeface(), Typeface.BOLD);
+                //tv.setTypeface(tv.getTypeface(), Typeface.BOLD);
                 tv2.setTypeface(tv.getTypeface(), Typeface.REGULAR);
 
                 numberOfRolls = 4;
@@ -116,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
                 tv2.setTypeface(tv.getTypeface(), Typeface.BOLD);
 
                 numberOfRolls = 4;
-            }
+            }*/
         // }
 
         //Score berekenen: aparte klasse om de score te berekenen
@@ -149,6 +153,35 @@ public class MainActivity extends AppCompatActivity {
         myText2.setText(myString2);
         myText3.setText(myString3);
 
+        if (number == 1) {
+
+            punten += 100;
+
+        } else if (number == 2) {
+
+            punten += 2;
+
+        } else if (number == 3) {
+
+            punten += 3;
+
+        } else if (number == 4) {
+
+            punten += 4;
+
+        } else if (number == 5) {
+
+            punten += 5;
+
+        } else {
+
+            punten += 6;
+
+        }
+
+        String puntjesSpeler1 = String.valueOf(punten);
+        puntenSpeler1.setText(puntjesSpeler1);
+
     }
 
 
@@ -160,8 +193,7 @@ public class MainActivity extends AppCompatActivity {
     private void berekenScore() {
       //Score berekenen
       //Dobbelsteen 1
-
-      puntenSpeler1.setText(String.valueOf(punten));
+      /*
 
       switch(number) {
         case 1:
@@ -228,6 +260,8 @@ public class MainActivity extends AppCompatActivity {
           punten += 60;
         break;
       }
+
+      */
 
       //Punten tonen op het scherm
       //puntenSpeler1.setText(String.valueOf(punten));
