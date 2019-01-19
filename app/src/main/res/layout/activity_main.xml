@@ -13,7 +13,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
 <<<<<<< HEAD
+<<<<<<< HEAD
         android:layout_marginTop="220dp"
+=======
+        android:layout_marginTop="141dp"
+>>>>>>> parent of 4feb927... update
 =======
         android:layout_marginTop="141dp"
 >>>>>>> parent of 4feb927... update
@@ -24,7 +28,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/t_aantal" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 4feb927... update
 =======
 >>>>>>> parent of 4feb927... update
 =======
@@ -59,7 +66,11 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="24dp" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 4feb927f8dee874d558c519e7d0d5e6eab677f69
+=======
+>>>>>>> 3fcfe98e930bebd4a8a9a191f9aed9de5f60443a
+>>>>>>> parent of 4feb927... update
 =======
 >>>>>>> 3fcfe98e930bebd4a8a9a191f9aed9de5f60443a
 >>>>>>> parent of 4feb927... update
@@ -115,12 +126,17 @@
         android:layout_alignParentEnd="true"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         android:layout_marginTop="220dp"
         android:layout_marginEnd="28dp"
 =======
         android:layout_marginEnd="30dp"
         android:layout_marginTop="24dp"
 >>>>>>> 4feb927f8dee874d558c519e7d0d5e6eab677f69
+=======
+        android:layout_marginTop="208dp"
+        android:layout_marginEnd="28dp"
+>>>>>>> parent of 4feb927... update
 =======
         android:layout_marginTop="208dp"
         android:layout_marginEnd="28dp"
