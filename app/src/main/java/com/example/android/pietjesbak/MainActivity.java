@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         //Iedere als de speler werpt moeten de punten terug van nul beginnen
         punten = 0;
 
-
+        // klik op
 
         if (dobbelsteen1Vast == true){
           //Gooien met dobbelsteen 2 en 3
