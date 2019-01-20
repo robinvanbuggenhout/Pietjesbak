@@ -30,6 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="MissingConstraints" />
 
+    <!--Dobbelsteen 1-->
     <TextView
         android:id="@+id/t_aantal"
         android:layout_width="wrap_content"
@@ -42,8 +43,10 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:onClick="vastzetten"/>
 
+    <!--Dobbelsteen 2-->
     <TextView
         android:id="@+id/t_aantal2"
         android:layout_width="wrap_content"
@@ -60,6 +63,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
+    <!--Dobbelsteen 3-->
     <TextView
         android:id="@+id/t_aantal3"
         android:layout_width="wrap_content"

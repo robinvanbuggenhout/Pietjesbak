@@ -1,6 +1,7 @@
 package com.example.android.pietjesbak;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -82,10 +83,24 @@ public class MainActivity extends AppCompatActivity {
         puntenSpeler2.setText("score " + st2);
 
         button = (Button) findViewById(R.id.pass);
-
-
-
     }
+
+
+
+    public void vastzetten(View v) {
+        if (dobbelsteen1Vast == false){
+
+            // String kleuren = (TextView) findViewById(R.id.t_aantal);
+            dobbelsteen1Vast = true;
+            //Achtergrondkleur aanpassen
+            //View view = this.getWindow().getDecorView();
+            // kleuren.setTextColor(Color.RED);
+        }
+        else {
+            dobbelsteen1Vast = false;
+        }
+    }
+
 
     public void openDialog() {
         ExampleDialog exampleDialog = new ExampleDialog();
@@ -100,43 +115,84 @@ public class MainActivity extends AppCompatActivity {
         //Iedere als de speler werpt moeten de punten terug van nul beginnen
         punten = 0;
 
+        // https://android--examples.blogspot.com/2015/01/textview-onclick-event-in-android.html
         // klik op dobbelsteen 1 -> dobbelsteen1Vast = true
         // klik op dobbelsteen 2 -> dobbelsteen2Vast = true
         // klik op dobbelsteen 3 -> dobbelsteen3Vast = true
 
+        Random rand = new Random();
+        int number = rand.nextInt(1) + 1;
+        int number2 = rand.nextInt(1) + 1;
+        int number3 = rand.nextInt(1) + 1;
+
+        TextView myText = (TextView) findViewById(R.id.t_aantal);
+        TextView myText2 = (TextView) findViewById(R.id.t_aantal2);
+        TextView myText3 = (TextView) findViewById(R.id.t_aantal3);
+
+        /*
         if (dobbelsteen1Vast == true){
           //Gooien met dobbelsteen 2 en 3
+
+          int number2 = rand.nextInt(6) + 1;
+          int number3 = rand.nextInt(6) + 1;
         }
 
         else if (dobbelsteen2Vast == true) {
           //Gooien met dobbelsteen 1 en 3
+          int number = rand.nextInt(6) + 1;
+
+          int number3 = rand.nextInt(6) + 1;
         }
 
         else if (dobbelsteen3Vast == true) {
           //Gooien met dobbelsteen 1 en 2
+          int number = rand.nextInt(6) + 1;
+          int number2 = rand.nextInt(6) + 1;
+
         }
 
         else if (dobbelsteen1Vast == true && dobbelsteen2Vast == true) {
           //Gooien met dobbelsteen 3
+
+          int number3 = rand.nextInt(6) + 1;
         }
 
         else if (dobbelsteen1Vast == true && dobbelsteen3Vast == true) {
           //Gooien met dobbelsteen 2
+
+          int number2 = rand.nextInt(6) + 1;
+
+
         }
 
         else if (dobbelsteen2Vast == true && dobbelsteen3Vast == true) {
           //Gooien met dobbelsteen 1
+          int number = rand.nextInt(6) + 1;
+
         }
 
         else {
           //Als er geen enkele dobbelsteen vast staat dan moet je moet alle dobbelstenen gooien
-        }
+          int number = rand.nextInt(6) + 1;
+          int number2 = rand.nextInt(6) + 1;
+          int number3 = rand.nextInt(6) + 1;
+      } */
+
+        //Waarde van de dobbelstenen
+        String myString = String.valueOf(number);
+        String myString2 = String.valueOf(number2);
+        String myString3 = String.valueOf(number3);
+
+        //De text in de layout zetten
+        myText.setText(myString);
+        myText2.setText(myString2);
+        myText3.setText(myString3);
 
 
         //GOOIEN: eerste keer met drie dobbelstenen, nadien kan je kiezen met welke dobbelstenen je verder gooit
         //  -> Je moet dobbelstenen kunnen 'vast' zetten
         //3 random getallen laten genereren
-        Random rand = new Random();
+        /*Random rand = new Random();
         int number = rand.nextInt(6) + 1;
         int number2 = rand.nextInt(6) + 1;
         int number3 = rand.nextInt(6) + 1;
@@ -150,9 +206,10 @@ public class MainActivity extends AppCompatActivity {
         String myString2 = String.valueOf(number2);
         String myString3 = String.valueOf(number3);
 
+        //De text in de layout zetten
         myText.setText(myString);
         myText2.setText(myString2);
-        myText3.setText(myString3);
+        myText3.setText(myString3);*/
 
         //PUNTEN: 1 oog = 100 punten, 6 ogen = 60 punten, 5, 4, 3, 2 ogen = 5, 4, 3, 2 punten
         //  -> Optellen met een case-statement. Indien 1 = 100 punten, indien 6 = 60 punten
@@ -161,29 +218,64 @@ public class MainActivity extends AppCompatActivity {
         //  -> Extra: indien 1,1,1 dan wint deze speler automatisch
         if (number == number2 && number == number3) {
           switch(number) {
-            case 1:
+              case 1:
               //Zand van 1 = 300
               //Ronde meteen gedaan, speler met zand van 1 wint
+              if (beurtSpeler1 == true) {
+                  String puntjesSpeler1 = String.valueOf(punten);
+                  puntenSpeler1.setText(puntjesSpeler1);
+
+                  strepenx1--;
+                  String strepenScherm1 = String.valueOf(strepenx1);
+                  strepen1.setText(strepenScherm1);
+
+                  beurtSpeler1 = true;
+                  beurtSpeler2 = false;
+
+                  numberOfRolls = 3;
+
+                }
+
+                else if (beurtSpeler2 == true) {
+                  String puntjesSpeler2 = String.valueOf(punten);
+                  puntenSpeler2.setText(puntjesSpeler2);
+
+                  strepenx2--;
+                  String strepenScherm2 = String.valueOf(strepenx1);
+                  strepen2.setText(strepenScherm2);
+
+                  beurtSpeler1 = true;
+                  beurtSpeler2 = false;
+
+                  numberOfRolls = 3;
+
+                }
+
               break;
 
             case 2:
               //Zand van 2 = 6
+
               break;
 
             case 3:
               //Zand van 3 = 9
+
               break;
 
             case 4:
               //Zand van 4 = 12
+
               break;
 
             case 5:
               //Zand van 5 = 15
+
               break;
 
             case 6:
               //Zand van 6 = 180
+
               break;
 
             }
@@ -358,6 +450,35 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 else {
+
+                    int punten1 = Integer.parseInt((String) puntenSpeler1.getText());
+                    int punten2 = Integer.parseInt((String) puntenSpeler2.getText());
+
+                    if (punten1 > punten2) {
+
+                        //Verminder de strepen van speler 1
+                        strepenx1--;
+                        String strepenScherm1 = String.valueOf(strepenx1);
+                        strepen1.setText(strepenScherm1);
+
+                    }
+
+                    else {
+
+                        //Verminder de strepen van speler 2
+                        strepenx2--;
+                        String strepenScherm2 = String.valueOf(strepenx2);
+                        strepen2.setText(strepenScherm2);
+
+                    }
+
+                    if (strepenx1 == 0) {
+                        openDialog();
+                    }
+
+                    if (strepenx2 == 0) {
+                        openDialog();
+                    }
 
                     tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
                     tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
