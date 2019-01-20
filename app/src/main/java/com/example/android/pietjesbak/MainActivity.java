@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -15,25 +16,19 @@ import android.widget.Toast;
 
 import java.util.Random;
 
-//SPELREGELS
-//
-//GOOIEN: eerste keer met drie dobbelstenen, nadien kan je kiezen met welke dobbelstenen je verder gooit
-//  -> Je moet dobbelstenen kunnen 'vast' zetten
-//STREEPJES: je begint met vijf streepjes, indien je een ronde wint mag je een streepje wegdoen
-//  -> Streepje aftrekken van de winnaar en nadien het totaal terug tonen
-
-//PASS: de beurt gaat over naar de andere speler
-
 public class MainActivity extends AppCompatActivity {
 
     private Button button;
+    private static final String TAG = "WINNAAR";
 
     //DECLARATIE
     //Speler 1
-    TextView puntenSpeler1, beurtAantal, worpSpeler1, worp2Speler1, worp3Speler1;
+    TextView puntenSpeler1, beurtAantal;
+    //worpSpeler1, worp2Speler1, worp3Speler1;
 
     //Speler 2
-    TextView puntenSpeler2, worpSpeler2, worp2Speler2, worp3Speler2;
+    TextView puntenSpeler2;
+    //worpSpeler2, worp2Speler2, worp3Speler2;
 
     //Namen ingeven en meenemen naar de MainActivity
     TextView tv, tv2;
@@ -44,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
     int punten = 0;
     boolean beurtSpeler1 = true;
     boolean beurtSpeler2 = false;
+    boolean dobbelsteen1Vast = false;
+    boolean dobbelsteen2Vast = false;
+    boolean dobbelsteen3Vast = false;
 
     TextView strepen1, strepen2;
 
@@ -92,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
         exampleDialog.show(getSupportFragmentManager(), "example dialog");
     }
 
-
     public void generate(View view) {
         //Aantal worpen verminderen
         numberOfRolls -= 1;
@@ -101,6 +98,37 @@ public class MainActivity extends AppCompatActivity {
         //Iedere als de speler werpt moeten de punten terug van nul beginnen
         punten = 0;
 
+        if (dobbelsteen1Vast == true){
+          //Gooien met dobbelsteen 2 en 3
+        }
+
+        else if (dobbelsteen2Vast == true) {
+          //Gooien met dobbelsteen 1 en 3
+        }
+
+        else if (dobbelsteen3Vast == true) {
+          //Gooien met dobbelsteen 1 en 2
+        }
+
+        else if (dobbelsteen1Vast == true && dobbelsteen2Vast == true) {
+          //Gooien met dobbelsteen 3
+        }
+
+        else if (dobbelsteen1Vast == true && dobbelsteen3Vast == true) {
+          //Gooien met dobbelsteen 2
+        }
+
+        else if (dobbelsteen2Vast == true && dobbelsteen3Vast == true) {
+          //Gooien met dobbelsteen 1
+        }
+
+        else {
+          //Als er geen enkele dobbelsteen vast staat dan moet je moet alle dobbelstenen gooien
+        }
+
+
+        //GOOIEN: eerste keer met drie dobbelstenen, nadien kan je kiezen met welke dobbelstenen je verder gooit
+        //  -> Je moet dobbelstenen kunnen 'vast' zetten
         //3 random getallen laten genereren
         Random rand = new Random();
         int number = rand.nextInt(6) + 1;
@@ -229,11 +257,12 @@ public class MainActivity extends AppCompatActivity {
 
         //Indien de beurt naar de andere speler gaat: 1. aantal rolls teruzetten naar 4, 2. de speler die aan de beurt is in het vet plaatsen, 3.
         //Indien het aantal rolls op 0 komt gaat het terug nr drie
+
          if (beurtSpeler1 == true) {
 
            //Punten tellen bij speler 1
-           String puntjesSpeler1 = String.valueOf(punten);
-           puntenSpeler1.setText(puntjesSpeler1);
+            String puntjesSpeler1 = String.valueOf(punten);
+            puntenSpeler1.setText(puntjesSpeler1);
 
                 // BEURT AAN SPELER 1
                 if (numberOfRolls == 0) {
@@ -254,24 +283,28 @@ public class MainActivity extends AppCompatActivity {
 
         else {
           //Punten tellen bij speler 2
-          String puntjesSpeler2 = String.valueOf(punten);
-          puntenSpeler2.setText(puntjesSpeler2);
+
+            String puntjesSpeler2 = String.valueOf(punten);
+            puntenSpeler2.setText(puntjesSpeler2);
 
                 // BEURT AAN SPELER 2
                 if (numberOfRolls == 0) {
 
-                    numberOfRolls = 3;
-                    beurtSpeler1 = true;
-                    beurtSpeler2 = false;
-
+                    //STREEPJES: je begint met vijf streepjes, indien je een ronde wint mag je een streepje wegdoen
+                    //  -> Streepje aftrekken van de winnaar en nadien het totaal terug tonen
                     //de speler met de hoogste score mag een streepje wegdoen
+
                     int strepenx1 = 5;
                     int strepenx2 = 5;
 
-                    if (puntenSpeler1 > puntenSpeler2) {
+                    int punten1 = Integer.parseInt((String) puntenSpeler1.getText());
+                    int punten2 = Integer.parseInt((String) puntenSpeler2.getText());
 
+                    if (punten1 > punten2) {
+
+                        Log.d(TAG, st + "wint!");
                         //Verminder de strepen van speler 1
-                        strepenx1--;
+                        strepenx1 = strepenx1--;
                         String strepenScherm1 = String.valueOf(strepenx1);
                         strepen1.setText(strepenScherm1);
 
@@ -279,21 +312,25 @@ public class MainActivity extends AppCompatActivity {
 
                     else {
 
+                        Log.d(TAG, st2 + "wint!");
                         //Verminder de strepen van speler 2
-                        strepenx2--;
+                        strepenx2 = strepenx2--;
                         String strepenScherm2 = String.valueOf(strepenx2);
                         strepen2.setText(strepenScherm2);
 
                     }
 
-                   //als een speler geen streepjes meer over heeft dan dan is deze de winnaar
-                   /*if (strepen1 == 0){
-                       //Speler 1 is winnaar
-                   }
-                   else if (strepen2 == 0){
-                       //Speler 2 is winnaar
-                   }*/
+                    if (strepenx1 == 0) {
+                        openDialog();
+                    }
 
+                    if (strepenx2 == 0) {
+                        openDialog();
+                    }
+
+                    numberOfRolls = 3;
+                    beurtSpeler1 = true;
+                    beurtSpeler2 = false;
 
                 } else {
 
@@ -304,7 +341,6 @@ public class MainActivity extends AppCompatActivity {
          }
 
         button.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
 
