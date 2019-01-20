@@ -39,14 +39,13 @@ public class MainActivity extends AppCompatActivity {
     TextView tv, tv2;
     String st, st2;
 
-    //Streepjes
-    TextView strepen1, strepen2;
-
     //Nodige gegevens
     int numberOfRolls = 3;
     int punten = 0;
     boolean beurtSpeler1 = true;
     boolean beurtSpeler2 = false;
+
+    TextView strepen1, strepen2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,15 +65,15 @@ public class MainActivity extends AppCompatActivity {
 
         //Speler 1
         puntenSpeler1 = (TextView) findViewById(R.id.score);
-        worpSpeler1 = (TextView) findViewById(R.id.t_aantal);
-        worp2Speler1 = (TextView) findViewById(R.id.t_aantal2);
-        worp3Speler1 = (TextView) findViewById(R.id.t_aantal3);
+        //worpSpeler1 = (TextView) findViewById(R.id.t_aantal);
+        //worp2Speler1 = (TextView) findViewById(R.id.t_aantal2);
+        //worp3Speler1 = (TextView) findViewById(R.id.t_aantal3);
 
         //Speler 2
         puntenSpeler2 = (TextView) findViewById(R.id.score2);
-        worpSpeler2 = (TextView) findViewById(R.id.t_aantal);
-        worp2Speler2 = (TextView) findViewById(R.id.t_aantal2);
-        worp3Speler2 = (TextView) findViewById(R.id.t_aantal3);
+        //worpSpeler2 = (TextView) findViewById(R.id.t_aantal);
+        //worp2Speler2 = (TextView) findViewById(R.id.t_aantal2);
+        //worp3Speler2 = (TextView) findViewById(R.id.t_aantal3);
 
         strepen1 = (TextView) findViewById(R.id.streepjes1);
         strepen2 = (TextView) findViewById(R.id.streepjes2);
@@ -265,6 +264,37 @@ public class MainActivity extends AppCompatActivity {
                     beurtSpeler1 = true;
                     beurtSpeler2 = false;
 
+                    //de speler met de hoogste score mag een streepje wegdoen
+                    int strepenx1 = 5;
+                    int strepenx2 = 5;
+
+                    if (puntenSpeler1 > puntenSpeler2) {
+
+                        //Verminder de strepen van speler 1
+                        strepenx1--;
+                        String strepenScherm1 = String.valueOf(strepenx1);
+                        strepen1.setText(strepenScherm1);
+
+                    }
+
+                    else {
+
+                        //Verminder de strepen van speler 2
+                        strepenx2--;
+                        String strepenScherm2 = String.valueOf(strepenx2);
+                        strepen2.setText(strepenScherm2);
+
+                    }
+
+                   //als een speler geen streepjes meer over heeft dan dan is deze de winnaar
+                   /*if (strepen1 == 0){
+                       //Speler 1 is winnaar
+                   }
+                   else if (strepen2 == 0){
+                       //Speler 2 is winnaar
+                   }*/
+
+
                 } else {
 
                     tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
@@ -272,25 +302,6 @@ public class MainActivity extends AppCompatActivity {
 
                 }
          }
-
-         //de speler met de hoogste score mag een streepje wegdoen
-        if (puntenSpeler1 > puntenSpeler2) {
-            //Verminder de strepen van speler 1
-            strepen1--;
-        }
-        else {
-            //Verminder de strepen van speler 2
-            strepen1--;
-        }
-
-        //als een speler geen streepjes meer over heeft dan dan is deze de winnaar
-        if (strepen1 == 0){
-            //Speler 1 is winnaar
-        }
-        else if (strepen2 == 0){
-            //Speler 2 is winnaar
-        }
-
 
         button.setOnClickListener(new View.OnClickListener() {
 
