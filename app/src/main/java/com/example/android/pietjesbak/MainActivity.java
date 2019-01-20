@@ -30,11 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     //DECLARATIE
     //Speler 1
-    TextView puntenSpeler1;
-    TextView beurtAantal;
-    TextView worpSpeler1;
-    TextView worp2Speler1;
-    TextView worp3Speler1;
+    TextView puntenSpeler1, beurtAantal, worpSpeler1, worp2Speler1, worp3Speler1;
 
     //Speler 2
     TextView puntenSpeler2, worpSpeler2, worp2Speler2, worp3Speler2;
@@ -88,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 if (beurtSpeler1 == true) {
                     tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
                     tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
-                    numberOfRolls = 4;
+                    numberOfRolls = 3;
                     beurtSpeler1 = false;
                     beurtSpeler2 = true;
 
@@ -97,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
                     tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
-                    numberOfRolls = 4;
+                    numberOfRolls = 3;
                     beurtSpeler1 = true;
                     beurtSpeler2 = false;
 
@@ -122,33 +118,45 @@ public class MainActivity extends AppCompatActivity {
         //Iedere als de speler werpt moeten de punten terug van nul beginnen
         punten = 0;
 
+
         //Indien de beurt naar de andere speler gaat: 1. aantal rolls teruzetten naar 4, 2. de speler die aan de beurt is in het vet plaatsen, 3.
         //Indien het aantal rolls op 0 komt gaat het terug nr drie
          if (beurtSpeler1 == true) {
-                // BEURT AAN SPELER 1
-                if (numberOfRolls > 0) {
-                  //Opmaak veranderen van de namen
-                    tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
-                    tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
-                } else {
-                  //aantal rolls terugzetten voor de volgende speler
-                     numberOfRolls = 4;
-                     beurtSpeler1 = false;
-                     beurtSpeler2 = true;
-                }
-         }
+           //Punten tellen bij speler 1
+           String puntjesSpeler1 = String.valueOf(punten);
+           puntenSpeler1.setText(puntjesSpeler1);
 
-         else {
-                // BEURT AAN SPELER 2
-                if (numberOfRolls > 0) {
-                    tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
-                    tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
+                // BEURT AAN SPELER 1
+                if (numberOfRolls == 0) {
+                        //aantal rolls terugzetten voor de volgende speler
+                        numberOfRolls = 4;
+                        beurtSpeler1 = false;
+                        beurtSpeler2 = true;
                 } else {
+                        //Opmaak veranderen van de namen
+                        tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
+                        tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
+                }
+        }
+
+        else {
+          //Punten tellen bij speler 2
+          String puntjesSpeler2 = String.valueOf(punten);
+          puntenSpeler2.setText(puntjesSpeler2);
+
+                // BEURT AAN SPELER 2
+                if (numberOfRolls == 0) {
                     numberOfRolls = 4;
                     beurtSpeler1 = true;
                     beurtSpeler2 = false;
+                } else {
+                    tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
+                    tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
                 }
          }
+
+         //String puntjesSpeler1 = String.valueOf(punten);
+         //puntenSpeler1.setText(puntjesSpeler1);
 
 
          //de speler met de hoogste score mag een streepje wegdoen
@@ -192,7 +200,6 @@ public class MainActivity extends AppCompatActivity {
         //  -> Drie apen: 1,1,1, Soixante-neuf: 6,5,4, Zand: driemaal dezelfde waarde
         //  -> Extra: indien het gelijk is moet er nogmaals gegooid worden
         //  -> Extra: indien 1,1,1 dan wint deze speler automatisch
-
         if (number == number2 && number == number3) {
           switch(number) {
             case 1:
@@ -295,10 +302,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        String puntjesSpeler1 = String.valueOf(punten);
-        puntenSpeler1.setText(puntjesSpeler1);
-
     }
+
+
 
 
     //Als je op pass klikt moet je eerst weten welke speler momenteel aan de beurt is en moet die veranderen naar de andere speler
