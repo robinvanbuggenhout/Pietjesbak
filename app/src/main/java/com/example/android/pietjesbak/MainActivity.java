@@ -5,7 +5,6 @@ import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -19,7 +18,6 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     private Button button;
-    private static final String TAG = "WINNAAR";
 
     //DECLARATIE
     //Speler 1
@@ -102,7 +100,9 @@ public class MainActivity extends AppCompatActivity {
         //Iedere als de speler werpt moeten de punten terug van nul beginnen
         punten = 0;
 
-        // klik op
+        // klik op dobbelsteen 1 -> dobbelsteen1Vast = true
+        // klik op dobbelsteen 2 -> dobbelsteen2Vast = true
+        // klik op dobbelsteen 3 -> dobbelsteen3Vast = true
 
         if (dobbelsteen1Vast == true){
           //Gooien met dobbelsteen 2 en 3
@@ -305,7 +305,6 @@ public class MainActivity extends AppCompatActivity {
 
                     if (punten1 > punten2) {
 
-                        Log.d(TAG, st + "wint!");
                         //Verminder de strepen van speler 1
                         strepenx1--;
                         String strepenScherm1 = String.valueOf(strepenx1);
@@ -315,7 +314,6 @@ public class MainActivity extends AppCompatActivity {
 
                     else {
 
-                        Log.d(TAG, st2 + "wint!");
                         //Verminder de strepen van speler 2
                         strepenx2--;
                         String strepenScherm2 = String.valueOf(strepenx2);
