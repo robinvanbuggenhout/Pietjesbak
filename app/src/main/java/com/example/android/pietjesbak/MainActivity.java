@@ -178,35 +178,35 @@ public class MainActivity extends AppCompatActivity {
         myText3 = (TextView) findViewById(R.id.t_aantal3);
 
 
-        if (dobbelsteen1Vast == true){
+        if (dobbelsteen1Vast == true && dobbelsteen2Vast == false && dobbelsteen3Vast == false){
           //Gooien met dobbelsteen 2 en 3
           number2 = rand.nextInt(6) + 1;
           number3 = rand.nextInt(6) + 1;
         }
 
-        else if (dobbelsteen2Vast == true) {
+        else if (dobbelsteen2Vast == true && dobbelsteen1Vast == false && dobbelsteen3Vast == false) {
           //Gooien met dobbelsteen 1 en 3
           number = rand.nextInt(6) + 1;
           number3 = rand.nextInt(6) + 1;
         }
 
-        else if (dobbelsteen3Vast == true) {
+        else if (dobbelsteen3Vast == true && dobbelsteen1Vast == false && dobbelsteen2Vast == false) {
           //Gooien met dobbelsteen 1 en 2
           number = rand.nextInt(6) + 1;
           number2 = rand.nextInt(6) + 1;
         }
 
-        else if (dobbelsteen1Vast == true && dobbelsteen2Vast == true) {
+        else if (dobbelsteen1Vast == true && dobbelsteen2Vast == true && dobbelsteen3Vast == false) {
           //Gooien met dobbelsteen 3
           number3 = rand.nextInt(6) + 1;
         }
 
-        else if (dobbelsteen1Vast == true && dobbelsteen3Vast == true) {
+        else if (dobbelsteen1Vast == true && dobbelsteen3Vast == true && dobbelsteen2Vast == false) {
           //Gooien met dobbelsteen 2
           number2 = rand.nextInt(6) + 1;
         }
 
-        else if (dobbelsteen2Vast == true && dobbelsteen3Vast == true) {
+        else if (dobbelsteen2Vast == true && dobbelsteen3Vast == true && dobbelsteen1Vast == false) {
           //Gooien met dobbelsteen 1
           number = rand.nextInt(6) + 1;
         }
