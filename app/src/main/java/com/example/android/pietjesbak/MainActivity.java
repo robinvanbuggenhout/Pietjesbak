@@ -77,12 +77,31 @@ public class MainActivity extends AppCompatActivity {
         worp2Speler2 = (TextView) findViewById(R.id.t_aantal2);
         worp3Speler2 = (TextView) findViewById(R.id.t_aantal3);
 
-        button = (Button) findViewById(R.id.pass);
+        puntenSpeler1.setText("score " + st);
+        puntenSpeler2.setText("score " + st2);
 
+        button = (Button) findViewById(R.id.pass);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openDialog();
+                if (beurtSpeler1 == true) {
+                    tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
+                    tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
+                    numberOfRolls = 4;
+                    beurtSpeler1 = false;
+                    beurtSpeler2 = true;
+
+                }
+
+                else {
+                    tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
+                    tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
+                    numberOfRolls = 4;
+                    beurtSpeler1 = true;
+                    beurtSpeler2 = false;
+
+                }
             }
         });
 
@@ -108,19 +127,15 @@ public class MainActivity extends AppCompatActivity {
          if (beurtSpeler1 == true) {
                 // BEURT AAN SPELER 1
                 if (numberOfRolls > 0) {
+                  //Opmaak veranderen van de namen
                     tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
                     tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
                 } else {
+                  //aantal rolls terugzetten voor de volgende speler
                      numberOfRolls = 4;
                      beurtSpeler1 = false;
                      beurtSpeler2 = true;
                 }
-
-                 //Opmaak veranderen van de namen
-                 //de beurt is aan de andere speler
-
-
-
          }
 
          else {
@@ -133,9 +148,6 @@ public class MainActivity extends AppCompatActivity {
                     beurtSpeler1 = true;
                     beurtSpeler2 = false;
                 }
-
-
-
          }
 
 
