@@ -47,8 +47,7 @@ public class MainActivity extends AppCompatActivity {
     int numberOfRolls = 3;
     int punten = 0;
     boolean beurtSpeler1 = true;
-
-    boolean volgende = true;
+    boolean beurtSpeler2 = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,18 +63,16 @@ public class MainActivity extends AppCompatActivity {
 
         tv.setTypeface(tv.getTypeface(), Typeface.BOLD);
 
-        //Speler 1
-        // naamSpeler1 = (TextView) findViewById(R.id.naamSpeler1);
-        puntenSpeler1 = (TextView) findViewById(R.id.score);
         beurtAantal = (TextView) findViewById(R.id.beurt);
+
+        //Speler 1
+        puntenSpeler1 = (TextView) findViewById(R.id.score);
         worpSpeler1 = (TextView) findViewById(R.id.t_aantal);
         worp2Speler1 = (TextView) findViewById(R.id.t_aantal2);
         worp3Speler1 = (TextView) findViewById(R.id.t_aantal3);
 
         //Speler 2
-        // naamSpeler2 = (TextView) findViewById(R.id.naamSpeler2);
         puntenSpeler2 = (TextView) findViewById(R.id.score2);
-        //beurtSpeler2 = (TextView) findViewById(R.id.beurt);
         worpSpeler2 = (TextView) findViewById(R.id.t_aantal);
         worp2Speler2 = (TextView) findViewById(R.id.t_aantal2);
         worp3Speler2 = (TextView) findViewById(R.id.t_aantal3);
@@ -108,25 +105,37 @@ public class MainActivity extends AppCompatActivity {
 
         //Indien de beurt naar de andere speler gaat: 1. aantal rolls teruzetten naar 4, 2. de speler die aan de beurt is in het vet plaatsen, 3.
         //Indien het aantal rolls op 0 komt gaat het terug nr drie
-         if (beurtSpeler1==true) {
-             if (numberOfRolls == 0) {
-                 //aantal rolls terugzetten voor de volgende speler
-                 numberOfRolls = 4;
+         if (beurtSpeler1 == true) {
+                // BEURT AAN SPELER 1
+                if (numberOfRolls > 0) {
+                    tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
+                    tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
+                } else {
+                     numberOfRolls = 4;
+                     beurtSpeler1 = false;
+                     beurtSpeler2 = true;
+                }
+
                  //Opmaak veranderen van de namen
-                 tv.setTypeface(tv.getTypeface(), Typeface.BOLD);
-                 tv2.setTypeface(tv2.getTypeface(), Typeface.NORMAL);
                  //de beurt is aan de andere speler
-                 beurtSpeler1 = false;
-             }
+
+
+
          }
 
          else {
-             if (numberOfRolls == 0) {
-                 numberOfRolls = 4;
-                 tv.setTypeface(tv.getTypeface(), Typeface.NORMAL);
-                 tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD);
-                 beurtSpeler1 = true;
-             }
+                // BEURT AAN SPELER 2
+                if (numberOfRolls > 0) {
+                    tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
+                    tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
+                } else {
+                    numberOfRolls = 4;
+                    beurtSpeler1 = true;
+                    beurtSpeler2 = false;
+                }
+
+
+
          }
 
 
