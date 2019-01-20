@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import java.util.Random;
 
+import static android.graphics.Color.argb;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button button;
@@ -93,22 +95,21 @@ public class MainActivity extends AppCompatActivity {
         button = (Button) findViewById(R.id.pass);
     }
 
-
-
     public void vastzetten(View v) {
-        if (dobbelsteen1Vast == false){
+        myText = (TextView) findViewById(R.id.t_aantal);
+        if (dobbelsteen1Vast == false) {
 
-            // String kleuren = (TextView) findViewById(R.id.t_aantal);
             dobbelsteen1Vast = true;
+
             //Achtergrondkleur aanpassen
-            //View view = this.getWindow().getDecorView();
-            // kleuren.setTextColor(Color.RED);
-            myText.setTextColor(Color.RED);
+            // View v = this.getWindow().getDecorView();
+            myText.setTextColor(argb(0,241,42,25));
 
 
         }
         else {
             dobbelsteen1Vast = false;
+            myText.setTextColor(argb(0,0,0,0));
         }
     }
 
@@ -136,62 +137,54 @@ public class MainActivity extends AppCompatActivity {
         int number2 = rand.nextInt(1) + 1;
         int number3 = rand.nextInt(1) + 1;*/
 
-        number = rand.nextInt(1) + 1;
+        /*number = rand.nextInt(1) + 1;
         number2 = rand.nextInt(1) + 1;
-        number3 = rand.nextInt(1) + 1;
+        number3 = rand.nextInt(1) + 1;*/
 
         myText = (TextView) findViewById(R.id.t_aantal);
         myText2 = (TextView) findViewById(R.id.t_aantal2);
         myText3 = (TextView) findViewById(R.id.t_aantal3);
 
-        /*
+
         if (dobbelsteen1Vast == true){
           //Gooien met dobbelsteen 2 en 3
-
-          int number2 = rand.nextInt(6) + 1;
-          int number3 = rand.nextInt(6) + 1;
+          number2 = rand.nextInt(6) + 1;
+          number3 = rand.nextInt(6) + 1;
         }
 
         else if (dobbelsteen2Vast == true) {
           //Gooien met dobbelsteen 1 en 3
-          int number = rand.nextInt(6) + 1;
-
-          int number3 = rand.nextInt(6) + 1;
+          number = rand.nextInt(6) + 1;
+          number3 = rand.nextInt(6) + 1;
         }
 
         else if (dobbelsteen3Vast == true) {
           //Gooien met dobbelsteen 1 en 2
-          int number = rand.nextInt(6) + 1;
-          int number2 = rand.nextInt(6) + 1;
-
+          number = rand.nextInt(6) + 1;
+          number2 = rand.nextInt(6) + 1;
         }
 
         else if (dobbelsteen1Vast == true && dobbelsteen2Vast == true) {
           //Gooien met dobbelsteen 3
-
-          int number3 = rand.nextInt(6) + 1;
+          number3 = rand.nextInt(6) + 1;
         }
 
         else if (dobbelsteen1Vast == true && dobbelsteen3Vast == true) {
           //Gooien met dobbelsteen 2
-
-          int number2 = rand.nextInt(6) + 1;
-
-
+          number2 = rand.nextInt(6) + 1;
         }
 
         else if (dobbelsteen2Vast == true && dobbelsteen3Vast == true) {
           //Gooien met dobbelsteen 1
-          int number = rand.nextInt(6) + 1;
-
+          number = rand.nextInt(6) + 1;
         }
 
         else {
           //Als er geen enkele dobbelsteen vast staat dan moet je moet alle dobbelstenen gooien
-          int number = rand.nextInt(6) + 1;
-          int number2 = rand.nextInt(6) + 1;
-          int number3 = rand.nextInt(6) + 1;
-      } */
+          number = rand.nextInt(6) + 1;
+          number2 = rand.nextInt(6) + 1;
+          number3 = rand.nextInt(6) + 1;
+        }
 
         //Waarde van de dobbelstenen
         String myString = String.valueOf(number);
