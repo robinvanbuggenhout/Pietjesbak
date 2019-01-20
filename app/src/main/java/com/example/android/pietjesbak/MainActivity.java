@@ -97,21 +97,22 @@ public class MainActivity extends AppCompatActivity {
         exampleDialog.show(getSupportFragmentManager(), "example dialog");
     }
 
-    //Indien je op 'werp' klikt gebeurt dit
+
     public void generate(View view) {
         //Aantal worpen verminderen
-        //  -> TODO: Indien het op nul komt dan moet de beurt naar de andere gaan
         numberOfRolls -= 1;
         beurtAantal.setText(String.valueOf(numberOfRolls));
 
+        //Indien de beurt naar de andere speler gaat: 1. aantal rolls teruzetten naar 4, 2. de speler die aan de beurt is in het vet plaatsen, 3.
         //Indien het aantal rolls op 0 komt gaat het terug nr drie
          if (beurtSpeler1==true) {
              if (numberOfRolls == 0) {
-                 //volgende = false;
+                 //aantal rolls terugzetten voor de volgende speler
                  numberOfRolls = 4;
                  //Opmaak veranderen van de namen
-                 tv2.setTypeface(tv.getTypeface(), Typeface.NORMAL);
                  tv.setTypeface(tv.getTypeface(), Typeface.BOLD);
+                 tv2.setTypeface(tv2.getTypeface(), Typeface.NORMAL);
+                 //de beurt is aan de andere speler
                  beurtSpeler1 = false;
              }
          }
@@ -120,33 +121,30 @@ public class MainActivity extends AppCompatActivity {
              if (numberOfRolls == 0) {
                  numberOfRolls = 4;
                  tv.setTypeface(tv.getTypeface(), Typeface.NORMAL);
-                 tv2.setTypeface(tv.getTypeface(), Typeface.BOLD);
+                 tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD);
                  beurtSpeler1 = true;
              }
          }
-            /*
-            if (volgende == true) {
-                tv2.setTypeface(tv.getTypeface(), Typeface.NORMAL);
-                numberOfRolls = 4;
 
-            } else if (volgende == false) {
-                tv.setTypeface(tv.getTypeface(), Typeface.NORMAL);
-                tv2.setTypeface(tv.getTypeface(), Typeface.BOLD);
+         //de speler met de hoogste score mag een streepje wegdoen
+        /*if (//Punten speler 1 > Punten speler 2) {
+            //Verminder de streepjes van speler 1
+        }
+        else{
+            //Verminder de streepjes van speler 2
+        }*/
 
-                numberOfRolls = 4;
-            }*/
-        // }
-
-        //Score berekenen: aparte klasse om de score te berekenen
-        //berekenScore();
-
-        //Dialoog voor bevesteging om te passen
-
-        /*
-            if (numberOfRolls == 0) {
-                openDialog();
-            }
+        //als een speler geen streepjes meer over heeft dan dan is deze de winnaar
+        /*if (//streepjes speler 1 == 0){
+            //Speler 1 is winnaar
+        }
+        else if (//streepjes speler 2 == 0){
+            //Speler 2 is winnaar
+        }
         */
+
+
+
 
         //3 random getallen laten genereren
         Random rand = new Random();
@@ -175,10 +173,10 @@ public class MainActivity extends AppCompatActivity {
                 punten += 2;
                 break;
             case 3:
-                punten +=  3;
+                punten += 3;
                 break;
             case 4:
-                punten +=  4;
+                punten += 4;
                 break;
             case 5:
                 punten += 5;
@@ -271,7 +269,7 @@ public class MainActivity extends AppCompatActivity {
         break;
       }*/
 
-      */
+
 
       //Punten tonen op het scherm
       //puntenSpeler1.setText(String.valueOf(punten));

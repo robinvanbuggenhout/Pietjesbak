@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Pietjesbak</string>
     <string name="werp">WERP</string>
-    <string name="aantal">Ogen</string>
+    <string name="aantal">0</string>
     <string name="pass">PASS</string>
     <string name="score_2">Score 2</string>
     <string name="score">Score</string>
