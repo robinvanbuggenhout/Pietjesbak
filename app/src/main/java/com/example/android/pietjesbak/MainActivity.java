@@ -118,47 +118,6 @@ public class MainActivity extends AppCompatActivity {
         //Iedere als de speler werpt moeten de punten terug van nul beginnen
         punten = 0;
 
-
-        //Indien de beurt naar de andere speler gaat: 1. aantal rolls teruzetten naar 4, 2. de speler die aan de beurt is in het vet plaatsen, 3.
-        //Indien het aantal rolls op 0 komt gaat het terug nr drie
-         if (beurtSpeler1 == true) {
-           //Punten tellen bij speler 1
-           String puntjesSpeler1 = String.valueOf(punten);
-           puntenSpeler1.setText(puntjesSpeler1);
-
-                // BEURT AAN SPELER 1
-                if (numberOfRolls == 0) {
-                        //aantal rolls terugzetten voor de volgende speler
-                        numberOfRolls = 4;
-                        beurtSpeler1 = false;
-                        beurtSpeler2 = true;
-                } else {
-                        //Opmaak veranderen van de namen
-                        tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
-                        tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
-                }
-        }
-
-        else {
-          //Punten tellen bij speler 2
-          String puntjesSpeler2 = String.valueOf(punten);
-          puntenSpeler2.setText(puntjesSpeler2);
-
-                // BEURT AAN SPELER 2
-                if (numberOfRolls == 0) {
-                    numberOfRolls = 4;
-                    beurtSpeler1 = true;
-                    beurtSpeler2 = false;
-                } else {
-                    tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
-                    tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
-                }
-         }
-
-         //String puntjesSpeler1 = String.valueOf(punten);
-         //puntenSpeler1.setText(puntjesSpeler1);
-
-
          //de speler met de hoogste score mag een streepje wegdoen
         /*if (//Punten speler 1 > Punten speler 2) {
             //Verminder de streepjes van speler 1
@@ -301,6 +260,42 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }
+
+        //Indien de beurt naar de andere speler gaat: 1. aantal rolls teruzetten naar 4, 2. de speler die aan de beurt is in het vet plaatsen, 3.
+        //Indien het aantal rolls op 0 komt gaat het terug nr drie
+         if (beurtSpeler1 == true) {
+           //Punten tellen bij speler 1
+           String puntjesSpeler1 = String.valueOf(punten);
+           puntenSpeler1.setText(puntjesSpeler1);
+
+                // BEURT AAN SPELER 1
+                if (numberOfRolls == 0) {
+                        //aantal rolls terugzetten voor de volgende speler
+                        numberOfRolls = 4;
+                        beurtSpeler1 = false;
+                        beurtSpeler2 = true;
+                } else {
+                        //Opmaak veranderen van de namen
+                        tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
+                        tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
+                }
+        }
+
+        else {
+          //Punten tellen bij speler 2
+          String puntjesSpeler2 = String.valueOf(punten);
+          puntenSpeler2.setText(puntjesSpeler2);
+
+                // BEURT AAN SPELER 2
+                if (numberOfRolls == 0) {
+                    numberOfRolls = 4;
+                    beurtSpeler1 = true;
+                    beurtSpeler2 = false;
+                } else {
+                    tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
+                    tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
+                }
+         }
 
     }
 
