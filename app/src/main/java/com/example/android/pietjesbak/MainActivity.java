@@ -45,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
 
     TextView strepen1, strepen2;
 
+
+    int strepenx1 = 5;
+    int strepenx2 = 5;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,6 +101,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Iedere als de speler werpt moeten de punten terug van nul beginnen
         punten = 0;
+
+
 
         if (dobbelsteen1Vast == true){
           //Gooien met dobbelsteen 2 en 3
@@ -258,9 +264,9 @@ public class MainActivity extends AppCompatActivity {
         //Indien de beurt naar de andere speler gaat: 1. aantal rolls teruzetten naar 4, 2. de speler die aan de beurt is in het vet plaatsen, 3.
         //Indien het aantal rolls op 0 komt gaat het terug nr drie
 
-         if (beurtSpeler1 == true) {
+        if (beurtSpeler1 == true) {
 
-           //Punten tellen bij speler 1
+            //Punten tellen bij speler 1
             String puntjesSpeler1 = String.valueOf(punten);
             puntenSpeler1.setText(puntjesSpeler1);
 
@@ -294,9 +300,6 @@ public class MainActivity extends AppCompatActivity {
                     //  -> Streepje aftrekken van de winnaar en nadien het totaal terug tonen
                     //de speler met de hoogste score mag een streepje wegdoen
 
-                    int strepenx1 = 5;
-                    int strepenx2 = 5;
-
                     int punten1 = Integer.parseInt((String) puntenSpeler1.getText());
                     int punten2 = Integer.parseInt((String) puntenSpeler2.getText());
 
@@ -304,7 +307,7 @@ public class MainActivity extends AppCompatActivity {
 
                         Log.d(TAG, st + "wint!");
                         //Verminder de strepen van speler 1
-                        strepenx1 = strepenx1--;
+                        strepenx1--;
                         String strepenScherm1 = String.valueOf(strepenx1);
                         strepen1.setText(strepenScherm1);
 
@@ -314,7 +317,7 @@ public class MainActivity extends AppCompatActivity {
 
                         Log.d(TAG, st2 + "wint!");
                         //Verminder de strepen van speler 2
-                        strepenx2 = strepenx2--;
+                        strepenx2--;
                         String strepenScherm2 = String.valueOf(strepenx2);
                         strepen2.setText(strepenScherm2);
 
