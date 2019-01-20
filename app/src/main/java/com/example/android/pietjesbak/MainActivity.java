@@ -30,7 +30,11 @@ public class MainActivity extends AppCompatActivity {
 
     //DECLARATIE
     //Speler 1
-    TextView puntenSpeler1, beurtAantal, worpSpeler1, worp2Speler1, worp3Speler1;
+    TextView puntenSpeler1;
+    TextView beurtAantal;
+    TextView worpSpeler1;
+    TextView worp2Speler1;
+    TextView worp3Speler1;
 
     //Speler 2
     TextView puntenSpeler2, worpSpeler2, worp2Speler2, worp3Speler2;
@@ -41,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Nodige gegevens
     int numberOfRolls = 3;
-    int punten;
+    int punten = 0;
     boolean beurtSpeler1 = true;
 
     boolean volgende = true;
@@ -163,6 +167,30 @@ public class MainActivity extends AppCompatActivity {
         myText2.setText(myString2);
         myText3.setText(myString3);
 
+        switch(number) {
+            case 1:
+                punten += 100;
+                break;
+            case 2:
+                punten += 2;
+                break;
+            case 3:
+                punten +=  3;
+                break;
+            case 4:
+                punten +=  4;
+                break;
+            case 5:
+                punten += 5;
+                break;
+            case 6:
+                punten += 60;
+                break;
+        }
+
+        String puntjesSpeler1 = String.valueOf(punten);
+        puntenSpeler1.setText(puntjesSpeler1);
+
     }
 
 
@@ -174,8 +202,7 @@ public class MainActivity extends AppCompatActivity {
     private void berekenScore() {
       //Score berekenen
       //Dobbelsteen 1
-
-      puntenSpeler1.setText(String.valueOf(punten));
+      /*
 
       /*
       switch(number) {
@@ -243,6 +270,8 @@ public class MainActivity extends AppCompatActivity {
           punten += 60;
         break;
       }*/
+
+      */
 
       //Punten tonen op het scherm
       //puntenSpeler1.setText(String.valueOf(punten));
