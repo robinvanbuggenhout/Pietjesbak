@@ -63,7 +63,8 @@
         app:layout_constraintEnd_toStartOf="@+id/t_aantal3"
         app:layout_constraintStart_toEndOf="@+id/t_aantal"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:onClick="vastzetten2" />
 
     <!--Dobbelsteen 3-->
     <TextView
@@ -79,7 +80,8 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:onClick="vastzetten3" />
 
     <TextView
         android:id="@+id/score"

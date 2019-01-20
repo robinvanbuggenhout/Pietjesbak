@@ -95,22 +95,54 @@ public class MainActivity extends AppCompatActivity {
         button = (Button) findViewById(R.id.pass);
     }
 
-    public void vastzetten(View v) {
+    public void vastzetten(View view) {
         myText = (TextView) findViewById(R.id.t_aantal);
         if (dobbelsteen1Vast == false) {
 
             dobbelsteen1Vast = true;
 
             //Achtergrondkleur aanpassen
-            // View v = this.getWindow().getDecorView();
-            myText.setTextColor(argb(0,241,42,25));
+            myText.setTextColor(argb(255,85,128,246));
 
 
         }
         else {
             dobbelsteen1Vast = false;
-            myText.setTextColor(argb(0,0,0,0));
+            myText.setTextColor(argb(255,0,0,0));
         }
+    }
+
+    public void vastzetten2 (View view) {
+        myText = (TextView) findViewById(R.id.t_aantal2);
+        if (dobbelsteen2Vast == false) {
+
+            dobbelsteen2Vast = true;
+
+            //Achtergrondkleur aanpassen
+            myText.setTextColor(argb(255,85,128,246));
+
+
+      }
+      else {
+          dobbelsteen2Vast = false;
+          myText.setTextColor(argb(255,0,0,0));
+      }
+    }
+
+    public void vastzetten3 (View view) {
+        myText = (TextView) findViewById(R.id.t_aantal3);
+        if (dobbelsteen3Vast == false) {
+
+            dobbelsteen3Vast = true;
+            myText.setTextColor(argb(255,85,128,246));
+          //Achtergrondkleur aanpassen
+
+
+    }
+    else {
+          dobbelsteen3Vast = false;
+          myText.setTextColor(argb(255,0,0,0));
+    }
     }
 
 
