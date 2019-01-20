@@ -25,11 +25,9 @@ public class MainActivity extends AppCompatActivity {
     //DECLARATIE
     //Speler 1
     TextView puntenSpeler1, beurtAantal;
-    //worpSpeler1, worp2Speler1, worp3Speler1;
 
     //Speler 2
     TextView puntenSpeler2;
-    //worpSpeler2, worp2Speler2, worp3Speler2;
 
     //Namen ingeven en meenemen naar de MainActivity
     TextView tv, tv2;
@@ -76,15 +74,9 @@ public class MainActivity extends AppCompatActivity {
 
         //Speler 1
         puntenSpeler1 = (TextView) findViewById(R.id.score);
-        //worpSpeler1 = (TextView) findViewById(R.id.t_aantal);
-        //worp2Speler1 = (TextView) findViewById(R.id.t_aantal2);
-        //worp3Speler1 = (TextView) findViewById(R.id.t_aantal3);
 
         //Speler 2
         puntenSpeler2 = (TextView) findViewById(R.id.score2);
-        //worpSpeler2 = (TextView) findViewById(R.id.t_aantal);
-        //worp2Speler2 = (TextView) findViewById(R.id.t_aantal2);
-        //worp3Speler2 = (TextView) findViewById(R.id.t_aantal3);
 
         strepen1 = (TextView) findViewById(R.id.streepjes1);
         strepen2 = (TextView) findViewById(R.id.streepjes2);
@@ -98,14 +90,9 @@ public class MainActivity extends AppCompatActivity {
     public void vastzetten(View view) {
         myText = (TextView) findViewById(R.id.t_aantal);
         if (dobbelsteen1Vast == false) {
-
             dobbelsteen1Vast = true;
-
             //Achtergrondkleur aanpassen
-
             myText.setTextColor(argb(100,0,0,0));
-
-
         }
         else {
             dobbelsteen1Vast = false;
@@ -116,13 +103,9 @@ public class MainActivity extends AppCompatActivity {
     public void vastzetten2 (View view) {
         myText2 = (TextView) findViewById(R.id.t_aantal2);
         if (dobbelsteen2Vast == false) {
-
             dobbelsteen2Vast = true;
-
             //Achtergrondkleur aanpassen
             myText2.setTextColor(argb(100,0,0,0));
-
-
       }
       else {
           dobbelsteen2Vast = false;
@@ -133,19 +116,14 @@ public class MainActivity extends AppCompatActivity {
     public void vastzetten3 (View view) {
         myText3 = (TextView) findViewById(R.id.t_aantal3);
         if (dobbelsteen3Vast == false) {
-
             dobbelsteen3Vast = true;
             myText3.setTextColor(argb(100,0,0,0));
-          //Achtergrondkleur aanpassen
-
-
+        }
+        else {
+            dobbelsteen3Vast = false;
+            myText3.setTextColor(argb(255,85,128,246));
+        }
     }
-    else {
-          dobbelsteen3Vast = false;
-          myText3.setTextColor(argb(255,85,128,246));
-    }
-    }
-
 
     public void openDialog() {
         ExampleDialog exampleDialog = new ExampleDialog();
@@ -153,32 +131,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void generate(View view) {
-        //Aantal worpen verminderen
+        //Aantal worpen verminderen iedere keer iemand heeft geworpen
         numberOfRolls -= 1;
         beurtAantal.setText(String.valueOf(numberOfRolls));
 
         //Iedere als de speler werpt moeten de punten terug van nul beginnen
         punten = 0;
 
-        // https://android--examples.blogspot.com/2015/01/textview-onclick-event-in-android.html
-        // klik op dobbelsteen 1 -> dobbelsteen1Vast = true
-        // klik op dobbelsteen 2 -> dobbelsteen2Vast = true
-        // klik op dobbelsteen 3 -> dobbelsteen3Vast = true
-
-        /*Random rand = new Random();
-        int number = rand.nextInt(1) + 1;
-        int number2 = rand.nextInt(1) + 1;
-        int number3 = rand.nextInt(1) + 1;*/
-
-        /*number = rand.nextInt(1) + 1;
-        number2 = rand.nextInt(1) + 1;
-        number3 = rand.nextInt(1) + 1;*/
-
+        //Dobbelstenen uit de layout halen
         myText = (TextView) findViewById(R.id.t_aantal);
         myText2 = (TextView) findViewById(R.id.t_aantal2);
         myText3 = (TextView) findViewById(R.id.t_aantal3);
 
 
+        //GOOIEN: eerste keer met drie dobbelstenen, nadien kan je kiezen met welke dobbelstenen je verder gooit
+        //  -> Je moet dobbelstenen kunnen 'vast' zetten
         if (dobbelsteen1Vast == true && dobbelsteen2Vast == false && dobbelsteen3Vast == false){
           //Gooien met dobbelsteen 2 en 3
           number2 = rand.nextInt(6) + 1;
@@ -226,29 +193,6 @@ public class MainActivity extends AppCompatActivity {
         myText.setText(myString);
         myText2.setText(myString2);
         myText3.setText(myString3);
-
-
-        //GOOIEN: eerste keer met drie dobbelstenen, nadien kan je kiezen met welke dobbelstenen je verder gooit
-        //  -> Je moet dobbelstenen kunnen 'vast' zetten
-        //3 random getallen laten genereren
-        /*Random rand = new Random();
-        int number = rand.nextInt(6) + 1;
-        int number2 = rand.nextInt(6) + 1;
-        int number3 = rand.nextInt(6) + 1;
-
-        TextView myText = (TextView) findViewById(R.id.t_aantal);
-        TextView myText2 = (TextView) findViewById(R.id.t_aantal2);
-        TextView myText3 = (TextView) findViewById(R.id.t_aantal3);
-
-        //Waarde van de dobbelstenen
-        String myString = String.valueOf(number);
-        String myString2 = String.valueOf(number2);
-        String myString3 = String.valueOf(number3);
-
-        //De text in de layout zetten
-        myText.setText(myString);
-        myText2.setText(myString2);
-        myText3.setText(myString3);*/
 
         //PUNTEN: 1 oog = 100 punten, 6 ogen = 60 punten, 5, 4, 3, 2 ogen = 5, 4, 3, 2 punten
         //  -> Optellen met een case-statement. Indien 1 = 100 punten, indien 6 = 60 punten
@@ -453,11 +397,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        //Indien de beurt naar de andere speler gaat: 1. aantal rolls teruzetten naar 4, 2. de speler die aan de beurt is in het vet plaatsen, 3.
+        //Indien de beurt naar de andere speler gaat: 1. aantal rolls teruzetten naar 3, 2. de speler die aan de beurt is in het vet plaatsen
         //Indien het aantal rolls op 0 komt gaat het terug nr drie
-
         if (beurtSpeler1 == true) {
-
             //Punten tellen bij speler 1
             String puntjesSpeler1 = String.valueOf(punten);
             puntenSpeler1.setText(puntjesSpeler1);
@@ -481,13 +423,11 @@ public class MainActivity extends AppCompatActivity {
 
         else {
             //Punten tellen bij speler 2
-
             String puntjesSpeler2 = String.valueOf(punten);
             puntenSpeler2.setText(puntjesSpeler2);
 
             // BEURT AAN SPELER 2
             if (numberOfRolls == 0) {
-
                 //STREEPJES: je begint met vijf streepjes, indien je een ronde wint mag je een streepje wegdoen
                 //  -> Streepje aftrekken van de winnaar en nadien het totaal terug tonen
                 //de speler met de hoogste score mag een streepje wegdoen
