@@ -102,13 +102,14 @@ public class MainActivity extends AppCompatActivity {
             dobbelsteen1Vast = true;
 
             //Achtergrondkleur aanpassen
-            myText.setTextColor(argb(255,85,128,246));
+
+            myText.setTextColor(argb(100,0,0,0));
 
 
         }
         else {
             dobbelsteen1Vast = false;
-            myText.setTextColor(argb(255,0,0,0));
+            myText.setTextColor(argb(255,85,128,246));
         }
     }
 
@@ -119,13 +120,13 @@ public class MainActivity extends AppCompatActivity {
             dobbelsteen2Vast = true;
 
             //Achtergrondkleur aanpassen
-            myText2.setTextColor(argb(255,85,128,246));
+            myText.setTextColor(argb(100,0,0,0));
 
 
       }
       else {
           dobbelsteen2Vast = false;
-          myText2.setTextColor(argb(255,0,0,0));
+          myText.setTextColor(argb(255,85,128,246));
       }
     }
 
@@ -134,14 +135,14 @@ public class MainActivity extends AppCompatActivity {
         if (dobbelsteen3Vast == false) {
 
             dobbelsteen3Vast = true;
-            myText3.setTextColor(argb(255,85,128,246));
+            myText.setTextColor(argb(100,0,0,0));
           //Achtergrondkleur aanpassen
 
 
     }
     else {
           dobbelsteen3Vast = false;
-          myText3.setTextColor(argb(255,0,0,0));
+          myText.setTextColor(argb(255,85,128,246));
     }
     }
 
@@ -213,7 +214,7 @@ public class MainActivity extends AppCompatActivity {
 
         else {
           //Als er geen enkele dobbelsteen vast staat dan moet je moet alle dobbelstenen gooien
-          
+
         }
 
         //Waarde van de dobbelstenen
