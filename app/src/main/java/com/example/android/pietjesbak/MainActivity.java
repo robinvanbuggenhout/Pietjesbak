@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
     TextView tv, tv2;
     String st, st2;
 
+    //Streepjes
+    TextView strepen1, strepen2;
+
     //Nodige gegevens
     int numberOfRolls = 3;
     int punten = 0;
@@ -73,33 +76,14 @@ public class MainActivity extends AppCompatActivity {
         worp2Speler2 = (TextView) findViewById(R.id.t_aantal2);
         worp3Speler2 = (TextView) findViewById(R.id.t_aantal3);
 
+        strepen1 = (TextView) findViewById(R.id.streepjes1);
+        strepen2 = (TextView) findViewById(R.id.streepjes2);
+
         puntenSpeler1.setText("score " + st);
         puntenSpeler2.setText("score " + st2);
 
         button = (Button) findViewById(R.id.pass);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openDialog();
-                if (beurtSpeler1 == true) {
-                    tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
-                    tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
-                    numberOfRolls = 3;
-                    beurtSpeler1 = false;
-                    beurtSpeler2 = true;
 
-                }
-
-                else {
-                    tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
-                    tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
-                    numberOfRolls = 3;
-                    beurtSpeler1 = true;
-                    beurtSpeler2 = false;
-
-                }
-            }
-        });
 
 
     }
@@ -264,20 +248,25 @@ public class MainActivity extends AppCompatActivity {
         //Indien de beurt naar de andere speler gaat: 1. aantal rolls teruzetten naar 4, 2. de speler die aan de beurt is in het vet plaatsen, 3.
         //Indien het aantal rolls op 0 komt gaat het terug nr drie
          if (beurtSpeler1 == true) {
+
            //Punten tellen bij speler 1
            String puntjesSpeler1 = String.valueOf(punten);
            puntenSpeler1.setText(puntjesSpeler1);
 
                 // BEURT AAN SPELER 1
                 if (numberOfRolls == 0) {
+
                         //aantal rolls terugzetten voor de volgende speler
-                        numberOfRolls = 4;
+                        numberOfRolls = 3;
                         beurtSpeler1 = false;
                         beurtSpeler2 = true;
+
                 } else {
+
                         //Opmaak veranderen van de namen
                         tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
                         tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
+
                 }
         }
 
@@ -288,29 +277,45 @@ public class MainActivity extends AppCompatActivity {
 
                 // BEURT AAN SPELER 2
                 if (numberOfRolls == 0) {
-                    numberOfRolls = 4;
+
+                    numberOfRolls = 3;
                     beurtSpeler1 = true;
                     beurtSpeler2 = false;
+
                 } else {
+
                     tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
                     tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
+
                 }
          }
+         button.setOnClickListener(new View.OnClickListener() {
 
-    }
+             @Override
+             public void onClick(View view) {
 
+                openDialog();
 
+                if (beurtSpeler1 == true) {
 
+                    tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
+                    tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
+                    numberOfRolls = 3;
+                    beurtSpeler1 = false;
+                    beurtSpeler2 = true;
 
-    //Als je op pass klikt moet je eerst weten welke speler momenteel aan de beurt is en moet die veranderen naar de andere speler
-    public void pass(View view) {
+                }
 
-        if (beurtSpeler1==true){
-            beurtSpeler1 = false;
-        }
-        else {
-            beurtSpeler1 = true;
-        }
+                else {
 
+                    tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
+                    tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
+                    numberOfRolls = 3;
+                    beurtSpeler1 = true;
+                    beurtSpeler2 = false;
+
+                }
+            }
+        });
     }
 }
