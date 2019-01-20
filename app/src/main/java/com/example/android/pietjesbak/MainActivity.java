@@ -102,23 +102,6 @@ public class MainActivity extends AppCompatActivity {
         //Iedere als de speler werpt moeten de punten terug van nul beginnen
         punten = 0;
 
-         //de speler met de hoogste score mag een streepje wegdoen
-        /*if (//Punten speler 1 > Punten speler 2) {
-            //Verminder de streepjes van speler 1
-        }
-        else{
-            //Verminder de streepjes van speler 2
-        }*/
-
-        //als een speler geen streepjes meer over heeft dan dan is deze de winnaar
-        /*if (//streepjes speler 1 == 0){
-            //Speler 1 is winnaar
-        }
-        else if (//streepjes speler 2 == 0){
-            //Speler 2 is winnaar
-        }
-        */
-
         //3 random getallen laten genereren
         Random rand = new Random();
         int number = rand.nextInt(6) + 1;
@@ -289,10 +272,30 @@ public class MainActivity extends AppCompatActivity {
 
                 }
          }
-         button.setOnClickListener(new View.OnClickListener() {
 
-             @Override
-             public void onClick(View view) {
+         //de speler met de hoogste score mag een streepje wegdoen
+        if (puntenSpeler1 > puntenSpeler2) {
+            //Verminder de strepen van speler 1
+            strepen1--;
+        }
+        else {
+            //Verminder de strepen van speler 2
+            strepen1--;
+        }
+
+        //als een speler geen streepjes meer over heeft dan dan is deze de winnaar
+        if (strepen1 == 0){
+            //Speler 1 is winnaar
+        }
+        else if (strepen2 == 0){
+            //Speler 2 is winnaar
+        }
+
+
+        button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
 
                 openDialog();
 

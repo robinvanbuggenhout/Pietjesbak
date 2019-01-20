@@ -17,7 +17,7 @@ public class ExampleDialog extends AppCompatDialogFragment {
                 .setNegativeButton("Doorspelen", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
+                        dialog.dismiss();
                     }
                 })
                 .setPositiveButton("Passen", new DialogInterface.OnClickListener() {
