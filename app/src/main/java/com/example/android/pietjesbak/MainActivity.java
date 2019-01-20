@@ -119,13 +119,13 @@ public class MainActivity extends AppCompatActivity {
             dobbelsteen2Vast = true;
 
             //Achtergrondkleur aanpassen
-            myText.setTextColor(argb(255,85,128,246));
+            myText2.setTextColor(argb(255,85,128,246));
 
 
       }
       else {
           dobbelsteen2Vast = false;
-          myText.setTextColor(argb(255,0,0,0));
+          myText2.setTextColor(argb(255,0,0,0));
       }
     }
 
@@ -134,14 +134,14 @@ public class MainActivity extends AppCompatActivity {
         if (dobbelsteen3Vast == false) {
 
             dobbelsteen3Vast = true;
-            myText.setTextColor(argb(255,85,128,246));
+            myText3.setTextColor(argb(255,85,128,246));
           //Achtergrondkleur aanpassen
 
 
     }
     else {
           dobbelsteen3Vast = false;
-          myText.setTextColor(argb(255,0,0,0));
+          myText3.setTextColor(argb(255,0,0,0));
     }
     }
 
