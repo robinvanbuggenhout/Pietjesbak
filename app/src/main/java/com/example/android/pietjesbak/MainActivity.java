@@ -48,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
     int strepenx1 = 5;
     int strepenx2 = 5;
 
+    //Random nummer
+    Random rand = new Random();
+    int number, number2, number3;
+
+    TextView myText, myText2, myText3;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,6 +103,9 @@ public class MainActivity extends AppCompatActivity {
             //Achtergrondkleur aanpassen
             //View view = this.getWindow().getDecorView();
             // kleuren.setTextColor(Color.RED);
+            myText.setTextColor(Color.RED);
+
+
         }
         else {
             dobbelsteen1Vast = false;
@@ -120,14 +131,18 @@ public class MainActivity extends AppCompatActivity {
         // klik op dobbelsteen 2 -> dobbelsteen2Vast = true
         // klik op dobbelsteen 3 -> dobbelsteen3Vast = true
 
-        Random rand = new Random();
+        /*Random rand = new Random();
         int number = rand.nextInt(1) + 1;
         int number2 = rand.nextInt(1) + 1;
-        int number3 = rand.nextInt(1) + 1;
+        int number3 = rand.nextInt(1) + 1;*/
 
-        TextView myText = (TextView) findViewById(R.id.t_aantal);
-        TextView myText2 = (TextView) findViewById(R.id.t_aantal2);
-        TextView myText3 = (TextView) findViewById(R.id.t_aantal3);
+        number = rand.nextInt(1) + 1;
+        number2 = rand.nextInt(1) + 1;
+        number3 = rand.nextInt(1) + 1;
+
+        myText = (TextView) findViewById(R.id.t_aantal);
+        myText2 = (TextView) findViewById(R.id.t_aantal2);
+        myText3 = (TextView) findViewById(R.id.t_aantal3);
 
         /*
         if (dobbelsteen1Vast == true){
@@ -217,138 +232,199 @@ public class MainActivity extends AppCompatActivity {
         //  -> Extra: indien het gelijk is moet er nogmaals gegooid worden
         //  -> Extra: indien 1,1,1 dan wint deze speler automatisch
         if (number == number2 && number == number3) {
-          switch(number) {
-              case 1:
-              //Zand van 1 = 300
-              //Ronde meteen gedaan, speler met zand van 1 wint
-              if (beurtSpeler1 == true) {
-                  String puntjesSpeler1 = String.valueOf(punten);
-                  puntenSpeler1.setText(puntjesSpeler1);
+            switch(number) {
+                case 1:
+                    //Zand van 1 = 300
+                    //Ronde meteen gedaan, speler met zand van 1 wint
+                    if (beurtSpeler1 == true) {
+                        String puntjesSpeler1 = String.valueOf(punten);
+                        puntenSpeler1.setText(puntjesSpeler1);
 
-                  strepenx1--;
-                  String strepenScherm1 = String.valueOf(strepenx1);
-                  strepen1.setText(strepenScherm1);
+                        strepenx1--;
+                        String strepenScherm1 = String.valueOf(strepenx1);
+                        strepen1.setText(strepenScherm1);
 
-                  beurtSpeler1 = true;
-                  beurtSpeler2 = false;
+                        beurtSpeler1 = true;
+                        beurtSpeler2 = false;
 
-                  numberOfRolls = 3;
+                        numberOfRolls = 3;
 
-                }
+                    }
 
-                else if (beurtSpeler2 == true) {
-                  String puntjesSpeler2 = String.valueOf(punten);
-                  puntenSpeler2.setText(puntjesSpeler2);
+                    else if (beurtSpeler2 == true) {
+                        String puntjesSpeler2 = String.valueOf(punten);
+                        puntenSpeler2.setText(puntjesSpeler2);
 
-                  strepenx2--;
-                  String strepenScherm2 = String.valueOf(strepenx1);
-                  strepen2.setText(strepenScherm2);
+                        strepenx2--;
+                        String strepenScherm2 = String.valueOf(strepenx1);
+                        strepen2.setText(strepenScherm2);
 
-                  beurtSpeler1 = true;
-                  beurtSpeler2 = false;
+                        beurtSpeler1 = true;
+                        beurtSpeler2 = false;
 
-                  numberOfRolls = 3;
+                        numberOfRolls = 3;
 
-                }
+                    }
 
-              break;
+                    break;
 
-            case 2:
-              //Zand van 2 = 6
+                case 2:
+                    //Zand van 2 = 6
+                    if (beurtSpeler1 == true) {
+                        String puntjesSpeler1 = String.valueOf(punten);
+                        puntenSpeler1.setText(puntjesSpeler1);
 
-              break;
+                        strepenx1--;
+                        String strepenScherm1 = String.valueOf(strepenx1);
+                        strepen1.setText(strepenScherm1);
 
-            case 3:
-              //Zand van 3 = 9
+                        beurtSpeler1 = true;
+                        beurtSpeler2 = false;
 
-              break;
+                        numberOfRolls = 3;
 
-            case 4:
-              //Zand van 4 = 12
+                    }
 
-              break;
+                    else if (beurtSpeler2 == true) {
+                        String puntjesSpeler2 = String.valueOf(punten);
+                        puntenSpeler2.setText(puntjesSpeler2);
 
-            case 5:
-              //Zand van 5 = 15
+                        strepenx2--;
+                        String strepenScherm2 = String.valueOf(strepenx1);
+                        strepen2.setText(strepenScherm2);
 
-              break;
+                        beurtSpeler1 = true;
+                        beurtSpeler2 = false;
 
-            case 6:
-              //Zand van 6 = 180
+                        numberOfRolls = 3;
 
-              break;
+                    }
+
+                    break;
+
+                case 3:
+                    //Zand van 3 = 9
+                    if (beurtSpeler1 == true) {
+                        puntenSpeler1.setText("Zand van 3");
+                    }
+
+                    else if (beurtSpeler2 == true) {
+                        puntenSpeler2.setText("Zand van 3");
+                    }
+
+                    break;
+
+                case 4:
+                    //Zand van 4 = 12
+                    if (beurtSpeler1 == true) {
+                        puntenSpeler1.setText("Zand van 4");
+                    }
+
+                    else if (beurtSpeler2 == true) {
+                        puntenSpeler2.setText("Zand van 4");
+                    }
+                    break;
+
+                case 5:
+                    //Zand van 5 = 15
+                    if (beurtSpeler1 == true) {
+                        puntenSpeler1.setText("Zand van 5");
+                    }
+
+                    else if (beurtSpeler2 == true) {
+                        puntenSpeler2.setText("Zand van 5");
+                    }
+                    break;
+
+                case 6:
+                    //Zand van 6 = 180
+                    if (beurtSpeler1 == true) {
+                        puntenSpeler1.setText("Zand van 6");
+                    }
+
+                    else if (beurtSpeler2 == true) {
+                        puntenSpeler2.setText("Zand van 6");
+                    }
+                    break;
 
             }
         }
         else if (number == 6 && number2 == 5 && number3 == 4 || number == 5 && number2 == 4 && number3 == 6 || number == 4 && number2 == 6 && number3 == 5) {
             //soixante-neuf
+            if (beurtSpeler1 == true) {
+                puntenSpeler1.setText("soixante-neuf");
+            }
+
+            else if (beurtSpeler2 == true) {
+                puntenSpeler2.setText("soixante-neuf");
+            }
         }
 
         else {
-          //Dobbelsteen 1
-          switch(number) {
-              case 1:
-                  punten += 100;
-                  break;
-              case 2:
-                  punten += 2;
-                  break;
-              case 3:
-                  punten += 3;
-                  break;
-              case 4:
-                  punten += 4;
-                  break;
-              case 5:
-                  punten += 5;
-                  break;
-              case 6:
-                  punten += 60;
-                  break;
-          }
+            //Dobbelsteen 1
+            switch(number) {
+                case 1:
+                    punten += 100;
+                    break;
+                case 2:
+                    punten += 2;
+                    break;
+                case 3:
+                    punten += 3;
+                    break;
+                case 4:
+                    punten += 4;
+                    break;
+                case 5:
+                    punten += 5;
+                    break;
+                case 6:
+                    punten += 60;
+                    break;
+            }
 
-          //Dobbelsteen 2
-          switch(number2) {
-              case 1:
-                punten += 100;
-                break;
-              case 2:
-                punten += 2;
-                break;
-              case 3:
-                punten += 3;
-                break;
-              case 4:
-                punten += 4;
-                break;
-              case 5:
-                punten += 5;
-                break;
-              case 6:
-                punten += 60;
-                break;
-          }
+            //Dobbelsteen 2
+            switch(number2) {
+                case 1:
+                    punten += 100;
+                    break;
+                case 2:
+                    punten += 2;
+                    break;
+                case 3:
+                    punten += 3;
+                    break;
+                case 4:
+                    punten += 4;
+                    break;
+                case 5:
+                    punten += 5;
+                    break;
+                case 6:
+                    punten += 60;
+                    break;
+            }
 
-          //Dobbelsteen 3
-          switch(number3) {
-              case 1:
-                punten += 100;
-                break;
-              case 2:
-                punten += 2;
-                break;
-              case 3:
-                punten += 3;
-                break;
-              case 4:
-                punten += 4;
-                break;
-              case 5:
-                punten += 5;
-                break;
-              case 6:
-                punten += 60;
-                break;
+            //Dobbelsteen 3
+            switch(number3) {
+                case 1:
+                    punten += 100;
+                    break;
+                case 2:
+                    punten += 2;
+                    break;
+                case 3:
+                    punten += 3;
+                    break;
+                case 4:
+                    punten += 4;
+                    break;
+                case 5:
+                    punten += 5;
+                    break;
+                case 6:
+                    punten += 60;
+                    break;
 
             }
         }
@@ -362,76 +438,76 @@ public class MainActivity extends AppCompatActivity {
             String puntjesSpeler1 = String.valueOf(punten);
             puntenSpeler1.setText(puntjesSpeler1);
 
-                // BEURT AAN SPELER 1
-                if (numberOfRolls == 0) {
+            // BEURT AAN SPELER 1
+            if (numberOfRolls == 0) {
 
-                        //aantal rolls terugzetten voor de volgende speler
-                        numberOfRolls = 3;
-                        beurtSpeler1 = false;
-                        beurtSpeler2 = true;
+                //aantal rolls terugzetten voor de volgende speler
+                numberOfRolls = 3;
+                beurtSpeler1 = false;
+                beurtSpeler2 = true;
 
-                } else {
+            } else {
 
-                        //Opmaak veranderen van de namen
-                        tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
-                        tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
+                //Opmaak veranderen van de namen
+                tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
+                tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
 
-                }
+            }
         }
 
         else {
-          //Punten tellen bij speler 2
+            //Punten tellen bij speler 2
 
             String puntjesSpeler2 = String.valueOf(punten);
             puntenSpeler2.setText(puntjesSpeler2);
 
-                // BEURT AAN SPELER 2
-                if (numberOfRolls == 0) {
+            // BEURT AAN SPELER 2
+            if (numberOfRolls == 0) {
 
-                    //STREEPJES: je begint met vijf streepjes, indien je een ronde wint mag je een streepje wegdoen
-                    //  -> Streepje aftrekken van de winnaar en nadien het totaal terug tonen
-                    //de speler met de hoogste score mag een streepje wegdoen
+                //STREEPJES: je begint met vijf streepjes, indien je een ronde wint mag je een streepje wegdoen
+                //  -> Streepje aftrekken van de winnaar en nadien het totaal terug tonen
+                //de speler met de hoogste score mag een streepje wegdoen
 
-                    int punten1 = Integer.parseInt((String) puntenSpeler1.getText());
-                    int punten2 = Integer.parseInt((String) puntenSpeler2.getText());
+                int punten1 = Integer.parseInt((String) puntenSpeler1.getText());
+                int punten2 = Integer.parseInt((String) puntenSpeler2.getText());
 
-                    if (punten1 > punten2) {
+                if (punten1 > punten2) {
 
-                        //Verminder de strepen van speler 1
-                        strepenx1--;
-                        String strepenScherm1 = String.valueOf(strepenx1);
-                        strepen1.setText(strepenScherm1);
-
-                    }
-
-                    else {
-
-                        //Verminder de strepen van speler 2
-                        strepenx2--;
-                        String strepenScherm2 = String.valueOf(strepenx2);
-                        strepen2.setText(strepenScherm2);
-
-                    }
-
-                    if (strepenx1 == 0) {
-                        openDialog();
-                    }
-
-                    if (strepenx2 == 0) {
-                        openDialog();
-                    }
-
-                    numberOfRolls = 3;
-                    beurtSpeler1 = true;
-                    beurtSpeler2 = false;
-
-                } else {
-
-                    tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
-                    tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
+                    //Verminder de strepen van speler 1
+                    strepenx1--;
+                    String strepenScherm1 = String.valueOf(strepenx1);
+                    strepen1.setText(strepenScherm1);
 
                 }
-         }
+
+                else {
+
+                    //Verminder de strepen van speler 2
+                    strepenx2--;
+                    String strepenScherm2 = String.valueOf(strepenx2);
+                    strepen2.setText(strepenScherm2);
+
+                }
+
+                if (strepenx1 == 0) {
+                    openDialog();
+                }
+
+                if (strepenx2 == 0) {
+                    openDialog();
+                }
+
+                numberOfRolls = 3;
+                beurtSpeler1 = true;
+                beurtSpeler2 = false;
+
+            } else {
+
+                tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
+                tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
+
+            }
+        }
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
