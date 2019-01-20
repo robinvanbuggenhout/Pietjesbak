@@ -103,6 +103,9 @@ public class MainActivity extends AppCompatActivity {
         numberOfRolls -= 1;
         beurtAantal.setText(String.valueOf(numberOfRolls));
 
+        //Iedere als de speler werpt moeten de punten terug van nul beginnen
+        punten = 0;
+
         //Indien de beurt naar de andere speler gaat: 1. aantal rolls teruzetten naar 4, 2. de speler die aan de beurt is in het vet plaatsen, 3.
         //Indien het aantal rolls op 0 komt gaat het terug nr drie
          if (beurtSpeler1==true) {
@@ -126,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
              }
          }
 
+
          //de speler met de hoogste score mag een streepje wegdoen
         /*if (//Punten speler 1 > Punten speler 2) {
             //Verminder de streepjes van speler 1
@@ -142,9 +146,6 @@ public class MainActivity extends AppCompatActivity {
             //Speler 2 is winnaar
         }
         */
-
-
-
 
         //3 random getallen laten genereren
         Random rand = new Random();
@@ -165,25 +166,112 @@ public class MainActivity extends AppCompatActivity {
         myText2.setText(myString2);
         myText3.setText(myString3);
 
-        switch(number) {
+        //PUNTEN: 1 oog = 100 punten, 6 ogen = 60 punten, 5, 4, 3, 2 ogen = 5, 4, 3, 2 punten
+        //  -> Optellen met een case-statement. Indien 1 = 100 punten, indien 6 = 60 punten
+        //  -> Drie apen: 1,1,1, Soixante-neuf: 6,5,4, Zand: driemaal dezelfde waarde
+        //  -> Extra: indien het gelijk is moet er nogmaals gegooid worden
+        //  -> Extra: indien 1,1,1 dan wint deze speler automatisch
+
+        if (number == number2 && number == number3) {
+          switch(number) {
             case 1:
+              //Zand van 1 = 300
+              //Ronde meteen gedaan, speler met zand van 1 wint
+              break;
+
+            case 2:
+              //Zand van 2 = 6
+              break;
+
+            case 3:
+              //Zand van 3 = 9
+              break;
+
+            case 4:
+              //Zand van 4 = 12
+              break;
+
+            case 5:
+              //Zand van 5 = 15
+              break;
+
+            case 6:
+              //Zand van 6 = 180
+              break;
+
+            }
+        }
+        else if (number == 6 && number2 == 5 && number3 == 4 || number == 5 && number2 == 4 && number3 == 6 || number == 4 && number2 == 6 && number3 == 5) {
+            //soixante-neuf
+        }
+
+        else {
+          //Dobbelsteen 1
+          switch(number) {
+              case 1:
+                  punten += 100;
+                  break;
+              case 2:
+                  punten += 2;
+                  break;
+              case 3:
+                  punten += 3;
+                  break;
+              case 4:
+                  punten += 4;
+                  break;
+              case 5:
+                  punten += 5;
+                  break;
+              case 6:
+                  punten += 60;
+                  break;
+          }
+
+          //Dobbelsteen 2
+          switch(number2) {
+              case 1:
                 punten += 100;
                 break;
-            case 2:
+              case 2:
                 punten += 2;
                 break;
-            case 3:
+              case 3:
                 punten += 3;
                 break;
-            case 4:
+              case 4:
                 punten += 4;
                 break;
-            case 5:
+              case 5:
                 punten += 5;
                 break;
-            case 6:
+              case 6:
                 punten += 60;
                 break;
+          }
+
+          //Dobbelsteen 3
+          switch(number3) {
+              case 1:
+                punten += 100;
+                break;
+              case 2:
+                punten += 2;
+                break;
+              case 3:
+                punten += 3;
+                break;
+              case 4:
+                punten += 4;
+                break;
+              case 5:
+                punten += 5;
+                break;
+              case 6:
+                punten += 60;
+                break;
+
+            }
         }
 
         String puntjesSpeler1 = String.valueOf(punten);
@@ -191,90 +279,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    //PUNTEN: 1 oog = 100 punten, 6 ogen = 60 punten, 5, 4, 3, 2 ogen = 5, 4, 3, 2 punten
-    //  -> Optellen met een case-statement. Indien 1 = 100 punten, indien 6 = 60 punten
-    //  -> Drie apen: 1,1,1, Soixante-neuf: 6,5,4, Zand: driemaal dezelfde waarde
-    //  -> Extra: indien het gelijk is moet er nogmaals gegooid worden
-    //  -> Extra: indien 1,1,1 dan wint deze speler automatisch
-    private void berekenScore() {
-      //Score berekenen
-      //Dobbelsteen 1
-      /*
-
-      /*
-      switch(number) {
-        case 1:
-          punten += 100;
-        break;
-        case 2:
-          punten += 2;
-        break;
-        case 3:
-          punten +=  3;
-        break;
-        case 4:
-          punten +=  4;
-        break;
-        case 5:
-          punten += 5;
-        break;
-        case 6:
-          punten += 60;
-        break;
-
-      }
-
-      //Dobbelsteen 2
-      switch(number2) {
-        case 1:
-          punten += 100;
-        break;
-        case 2:
-          punten += 2;
-        break;
-        case 3:
-          punten += 3;
-        break;
-        case 4:
-          punten += 4;
-        break;
-        case 5:
-          punten += 5;
-        break;
-        case 6:
-          punten += 60;
-        break;
-      }
-
-      //Dobbelsteen 3
-      switch(number3) {
-        case 1:
-          punten += 100;
-        break;
-        case 2:
-          punten += 2;
-        break;
-        case 3:
-          punten += 3;
-        break;
-        case 4:
-          punten += 4;
-        break;
-        case 5:
-          punten += 5;
-        break;
-        case 6:
-          punten += 60;
-        break;
-      }*/
-
-
-
-      //Punten tonen op het scherm
-      //puntenSpeler1.setText(String.valueOf(punten));
-
-    }
 
     //Als je op pass klikt moet je eerst weten welke speler momenteel aan de beurt is en moet die veranderen naar de andere speler
     public void pass(View view) {
