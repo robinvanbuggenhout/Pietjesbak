@@ -213,9 +213,7 @@ public class MainActivity extends AppCompatActivity {
 
         else {
           //Als er geen enkele dobbelsteen vast staat dan moet je moet alle dobbelstenen gooien
-          number = rand.nextInt(6) + 1;
-          number2 = rand.nextInt(6) + 1;
-          number3 = rand.nextInt(6) + 1;
+          
         }
 
         //Waarde van de dobbelstenen
