@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void vastzetten2 (View view) {
-        myText = (TextView) findViewById(R.id.t_aantal2);
+        myText2 = (TextView) findViewById(R.id.t_aantal2);
         if (dobbelsteen2Vast == false) {
 
             dobbelsteen2Vast = true;
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void vastzetten3 (View view) {
-        myText = (TextView) findViewById(R.id.t_aantal3);
+        myText3 = (TextView) findViewById(R.id.t_aantal3);
         if (dobbelsteen3Vast == false) {
 
             dobbelsteen3Vast = true;
