@@ -1,5 +1,6 @@
 package com.example.android.pietjesbak;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -7,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -327,39 +330,13 @@ public class MainActivity extends AppCompatActivity {
 
                     }
 
+                    Toast.makeText(MainActivity.this, "Zand van 1", Toast.LENGTH_LONG).show();
+
                     break;
 
                 case 2:
                     //Zand van 2 = 6
-                    if (beurtSpeler1 == true) {
-                        String puntjesSpeler1 = String.valueOf(punten);
-                        puntenSpeler1.setText(puntjesSpeler1);
-
-                        strepenx1--;
-                        String strepenScherm1 = String.valueOf(strepenx1);
-                        strepen1.setText(strepenScherm1);
-
-                        beurtSpeler1 = true;
-                        beurtSpeler2 = false;
-
-                        numberOfRolls = 3;
-
-                    }
-
-                    else if (beurtSpeler2 == true) {
-                        String puntjesSpeler2 = String.valueOf(punten);
-                        puntenSpeler2.setText(puntjesSpeler2);
-
-                        strepenx2--;
-                        String strepenScherm2 = String.valueOf(strepenx1);
-                        strepen2.setText(strepenScherm2);
-
-                        beurtSpeler1 = true;
-                        beurtSpeler2 = false;
-
-                        numberOfRolls = 3;
-
-                    }
+                    Toast.makeText(MainActivity.this, "Zand van 2", Toast.LENGTH_LONG).show();
 
                     break;
 
@@ -621,14 +598,6 @@ public class MainActivity extends AppCompatActivity {
 
                     }
 
-                    if (strepenx1 == 0) {
-                        openDialog();
-                    }
-
-                    if (strepenx2 == 0) {
-                        openDialog();
-                    }
-
                     tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
                     tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
                     numberOfRolls = 3;
@@ -638,5 +607,54 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        if (strepenx1 == 0) {
+
+            Toast.makeText(MainActivity.this, st + " wint!", Toast.LENGTH_LONG).show();
+
+            strepenx1 = 5;
+            strepenx2 = 5;
+
+            puntenSpeler1.setText("0");
+            puntenSpeler2.setText("0");
+
+            if (beurtSpeler1 == true) {
+                tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
+                tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
+                numberOfRolls = 3;
+                beurtSpeler1 = false;
+                beurtSpeler2 = true;
+            } else {
+                tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
+                tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
+                numberOfRolls = 3;
+                beurtSpeler1 = true;
+                beurtSpeler2 = false;
+            }
+
+        } else if (strepenx2 == 0) {
+
+            Toast.makeText(MainActivity.this, st2 + " wint!", Toast.LENGTH_LONG).show();
+
+            strepenx1 = 5;
+            strepenx2 = 5;
+
+            puntenSpeler1.setText("0");
+            puntenSpeler2.setText("0");
+
+            if (beurtSpeler1 == true) {
+                tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
+                tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
+                numberOfRolls = 3;
+                beurtSpeler1 = false;
+                beurtSpeler2 = true;
+            } else {
+                tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
+                tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
+                numberOfRolls = 3;
+                beurtSpeler1 = true;
+                beurtSpeler2 = false;
+            }
+
+        }
     }
 }
