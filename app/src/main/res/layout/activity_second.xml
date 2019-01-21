@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SecondActivity"
-    android:background="#fff">
+    android:background="#209469">
 
     <EditText
         android:id="@+id/edittext"
@@ -16,6 +16,7 @@
         android:layout_marginEnd="83dp"
         android:background="@drawable/reg_edittext_style"
         android:hint="@string/player_1"
+        android:textColor="#ffffff"
         android:inputType=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,6 +32,7 @@
         android:layout_marginEnd="83dp"
         android:background="@drawable/reg_edittext_style"
         android:hint="@string/player_2"
+        android:textColor="#ffffff"
         android:inputType=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

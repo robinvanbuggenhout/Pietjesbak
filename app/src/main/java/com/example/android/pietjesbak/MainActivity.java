@@ -179,8 +179,43 @@ public class MainActivity extends AppCompatActivity {
           number = rand.nextInt(6) + 1;
         }
 
+        else if (dobbelsteen1Vast == true && dobbelsteen2Vast == true && dobbelsteen3Vast == true) {
+            /*if (beurtSpeler1 == true) {
+                String puntjesSpeler1 = String.valueOf(punten);
+                puntenSpeler1.setText(puntjesSpeler1);
+
+                strepenx1--;
+                String strepenScherm1 = String.valueOf(strepenx1);
+                strepen1.setText(strepenScherm1);
+
+                beurtSpeler1 = true;
+                beurtSpeler2 = false;
+
+                numberOfRolls = 3;
+
+            }
+
+            else if (beurtSpeler2 == true) {
+                String puntjesSpeler2 = String.valueOf(punten);
+                puntenSpeler2.setText(puntjesSpeler2);
+
+                strepenx2--;
+                String strepenScherm2 = String.valueOf(strepenx1);
+                strepen2.setText(strepenScherm2);
+
+                beurtSpeler1 = true;
+                beurtSpeler2 = false;
+
+                numberOfRolls = 3;
+
+            }*/
+        }
+
         else {
           //Als er geen enkele dobbelsteen vast staat dan moet je moet alle dobbelstenen gooien
+            /*number = rand.nextInt(6) + 1;
+            number2 = rand.nextInt(6) + 1;
+            number3 = rand.nextInt(6) + 1;*/
 
         }
 
@@ -412,6 +447,11 @@ public class MainActivity extends AppCompatActivity {
                 beurtSpeler1 = false;
                 beurtSpeler2 = true;
 
+                //Dobbelstenen staan niet vast
+                dobbelsteen1Vast = false;
+                dobbelsteen2Vast = false;
+                dobbelsteen3Vast = false;
+
             } else {
 
                 //Opmaak veranderen van de namen
@@ -464,6 +504,11 @@ public class MainActivity extends AppCompatActivity {
                 numberOfRolls = 3;
                 beurtSpeler1 = true;
                 beurtSpeler2 = false;
+
+                //Dobbelstenen staan niet vast
+                dobbelsteen1Vast = false;
+                dobbelsteen2Vast = false;
+                dobbelsteen3Vast = false;
 
             } else {
 
