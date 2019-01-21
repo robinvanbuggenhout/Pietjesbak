@@ -450,9 +450,9 @@ public class MainActivity extends AppCompatActivity {
                 dobbelsteen1Vast = false;
                 dobbelsteen2Vast = false;
                 dobbelsteen3Vast = false;
-                dobbelsteen1.setTextColor(argb(255,0,0,0));
-                dobbelsteen2.setTextColor(argb(255,0,0,0));
-                dobbelsteen3.setTextColor(argb(255,0,0,0));
+                dobbelsteen1.setTextColor(argb(255,255,255,255));
+                dobbelsteen2.setTextColor(argb(255,255,255,255));
+                dobbelsteen3.setTextColor(argb(255,255,255,255));
 
             } else {
 
@@ -509,9 +509,9 @@ public class MainActivity extends AppCompatActivity {
                 dobbelsteen1Vast = false;
                 dobbelsteen2Vast = false;
                 dobbelsteen3Vast = false;
-                dobbelsteen1.setTextColor(argb(255,0,0,0));
-                dobbelsteen2.setTextColor(argb(255,0,0,0));
-                dobbelsteen3.setTextColor(argb(255,0,0,0));
+                dobbelsteen1.setTextColor(argb(255,255,255,255));
+                dobbelsteen2.setTextColor(argb(255,255,255,255));
+                dobbelsteen3.setTextColor(argb(255,255,255,255));
 
             } else {
 
