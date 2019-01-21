@@ -17,12 +17,17 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
+
+import com.example.parsaniahardik.shakedetection.ShakeDetector;
 
 import java.util.Random;
 
 import static android.graphics.Color.argb;
 
 public class MainActivity extends AppCompatActivity {
+
 
     private Button button;
 
@@ -64,10 +69,65 @@ public class MainActivity extends AppCompatActivity {
     String strepenScherm2 = String.valueOf(strepenx2);
 
 
+    private SensorManager mSensorManager;
+    private Sensor mAccelerometer;
+    private com.example.parsaniahardik.shakedetection.ShakeDetector mShakeDetector;
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        // Add the following line to register the Session Manager Listener onResume
+        mSensorManager.registerListener(mShakeDetector, mAccelerometer, SensorManager.SENSOR_DELAY_UI);
+    }
+
+    @Override
+    public void onPause() {
+        // Add the following line to unregister the Sensor Manager onPause
+        mSensorManager.unregisterListener(mShakeDetector);
+        super.onPause();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // ShakeDetector initialization
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        mAccelerometer = mSensorManager
+                .getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        mShakeDetector = new ShakeDetector();
+        mShakeDetector.setOnShakeListener(new ShakeDetector.OnShakeListener() {
+
+            @Override
+            public void onShake(int count) {
+                /*
+                 * The following method, "handleShakeEvent(count):" is a stub //
+                 * method you would use to setup whatever you want done once the
+                 * device has been shook.
+                 */
+
+                Toast.makeText(MainActivity.this, "Shakedvytfyftyf!!!", Toast.LENGTH_SHORT).show();
+                //Hier code zetten wat er gebeurt als je schut
+
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         //Namen in MainActivity zetten
         tv = findViewById(R.id.textView);
