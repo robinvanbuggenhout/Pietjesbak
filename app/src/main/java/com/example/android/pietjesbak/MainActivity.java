@@ -38,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
     int punten = 0;
     boolean beurtSpeler1 = true;
     boolean beurtSpeler2 = false;
-    boolean dobbelsteen1Vast = false;
-    boolean dobbelsteen2Vast = false;
-    boolean dobbelsteen3Vast = false;
+    boolean dobbelsteen1Vast = true;
+    boolean dobbelsteen2Vast = true;
+    boolean dobbelsteen3Vast = true;
 
     TextView strepen1, strepen2;
 
@@ -85,18 +85,31 @@ public class MainActivity extends AppCompatActivity {
         puntenSpeler2.setText("score " + st2);
 
         button = (Button) findViewById(R.id.pass);
+
+        hideNavigationBar();
+    }
+
+    private void hideNavigationBar() {
+        this.getWindow().getDecorView()
+                .setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_FULLSCREEN |
+                            View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                            View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
+                            View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+                            View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
+                            View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                );
     }
 
     public void vastzetten(View view) {
         myText = (TextView) findViewById(R.id.t_aantal);
         if (dobbelsteen1Vast == false) {
             dobbelsteen1Vast = true;
-            //Achtergrondkleur aanpassen
             myText.setTextColor(argb(100,0,0,0));
         }
         else {
             dobbelsteen1Vast = false;
-            myText.setTextColor(argb(255,85,128,246));
+            myText.setTextColor(argb(255,255,255,255));
         }
     }
 
@@ -109,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
       }
       else {
           dobbelsteen2Vast = false;
-          myText2.setTextColor(argb(255,85,128,246));
+          myText2.setTextColor(argb(255,255,255,255));
       }
     }
 
@@ -121,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             dobbelsteen3Vast = false;
-            myText3.setTextColor(argb(255,85,128,246));
+            myText3.setTextColor(argb(255,255,255,255));
         }
     }
 
@@ -180,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         else if (dobbelsteen1Vast == true && dobbelsteen2Vast == true && dobbelsteen3Vast == true) {
-            /*if (beurtSpeler1 == true) {
+            if (beurtSpeler1 == true) {
                 String puntjesSpeler1 = String.valueOf(punten);
                 puntenSpeler1.setText(puntjesSpeler1);
 
@@ -208,15 +221,60 @@ public class MainActivity extends AppCompatActivity {
 
                 numberOfRolls = 3;
 
-            }*/
+            }
         }
 
         else {
           //Als er geen enkele dobbelsteen vast staat dan moet je moet alle dobbelstenen gooien
-            /*number = rand.nextInt(6) + 1;
+            number = rand.nextInt(6) + 1;
             number2 = rand.nextInt(6) + 1;
-            number3 = rand.nextInt(6) + 1;*/
+            number3 = rand.nextInt(6) + 1;
 
+        }
+
+        if (dobbelsteen1Vast == true && dobbelsteen2Vast == true && dobbelsteen3Vast == true) {
+            openDialog();
+
+            if (beurtSpeler1 == true) {
+
+                tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
+                tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
+                numberOfRolls = 3;
+                beurtSpeler1 = false;
+                beurtSpeler2 = true;
+
+            }
+
+            else {
+
+                int punten1 = Integer.parseInt((String) puntenSpeler1.getText());
+                int punten2 = Integer.parseInt((String) puntenSpeler2.getText());
+
+                if (punten1 > punten2) {
+
+                    //Verminder de strepen van speler 1
+                    strepenx1--;
+                    String strepenScherm1 = String.valueOf(strepenx1);
+                    strepen1.setText(strepenScherm1);
+
+                }
+
+                else {
+
+                    //Verminder de strepen van speler 2
+                    strepenx2--;
+                    String strepenScherm2 = String.valueOf(strepenx2);
+                    strepen2.setText(strepenScherm2);
+
+                }
+
+                tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
+                tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
+                numberOfRolls = 3;
+                beurtSpeler1 = true;
+                beurtSpeler2 = false;
+
+            }
         }
 
         //Waarde van de dobbelstenen
@@ -448,9 +506,12 @@ public class MainActivity extends AppCompatActivity {
                 beurtSpeler2 = true;
 
                 //Dobbelstenen staan niet vast
-                dobbelsteen1Vast = false;
-                dobbelsteen2Vast = false;
-                dobbelsteen3Vast = false;
+                dobbelsteen1Vast = true;
+                dobbelsteen2Vast = true;
+                dobbelsteen3Vast = true;
+                myText.setTextColor(argb(100,0,0,0));
+                myText2.setTextColor(argb(100,0,0,0));
+                myText3.setTextColor(argb(100,0,0,0));
 
             } else {
 
@@ -509,6 +570,9 @@ public class MainActivity extends AppCompatActivity {
                 dobbelsteen1Vast = false;
                 dobbelsteen2Vast = false;
                 dobbelsteen3Vast = false;
+                myText.setTextColor(argb(100,0,0,0));
+                myText2.setTextColor(argb(100,0,0,0));
+                myText3.setTextColor(argb(100,0,0,0));
 
             } else {
 
