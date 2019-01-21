@@ -93,6 +93,40 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Namen in MainActivity zetten
+        tv = findViewById(R.id.textView);
+        tv2 = findViewById(R.id.textView2);
+        st = getIntent().getExtras().getString("Value");
+        st2 = getIntent().getExtras().getString("Value2");
+        tv.setText(st);
+        tv2.setText(st2);
+
+        //Speler 1 begint dus deze staat in het vet
+        tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
+        tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
+
+        //Aantal worpen deze beurt
+        beurtAantal = (TextView) findViewById(R.id.beurt);
+
+        //Punten speler 1
+        puntenSpeler1 = (TextView) findViewById(R.id.score);
+
+        //Punten speler 2
+        puntenSpeler2 = (TextView) findViewById(R.id.score2);
+
+
+        strepen1 = (TextView) findViewById(R.id.streepjes1);
+        strepen2 = (TextView) findViewById(R.id.streepjes2);
+
+        puntenSpeler1.setText("score " + st);
+        puntenSpeler2.setText("score " + st2);
+
+        button = (Button) findViewById(R.id.pass);
+
+        //Navigatiebalk verbergen
+        hideNavigationBar();
+
+
         // ShakeDetector initialization
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mAccelerometer = mSensorManager
@@ -472,44 +506,18 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
-
-
+                if (strepenx1 == 0) {
+                    Toast.makeText(MainActivity.this, st + " heeft gewonnen!", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                    startActivity(intent);
+                } else if (strepenx2 == 0) {
+                    Toast.makeText(MainActivity.this, st2 + " heeft gewonnen!", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                    startActivity(intent);
+                }
 
             }
         });
-
-        //Namen in MainActivity zetten
-        tv = findViewById(R.id.textView);
-        tv2 = findViewById(R.id.textView2);
-        st = getIntent().getExtras().getString("Value");
-        st2 = getIntent().getExtras().getString("Value2");
-        tv.setText(st);
-        tv2.setText(st2);
-
-        //Speler 1 begint dus deze staat in het vet
-        tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
-        tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
-
-        //Aantal worpen deze beurt
-        beurtAantal = (TextView) findViewById(R.id.beurt);
-
-        //Punten speler 1
-        puntenSpeler1 = (TextView) findViewById(R.id.score);
-
-        //Punten speler 2
-        puntenSpeler2 = (TextView) findViewById(R.id.score2);
-
-
-        strepen1 = (TextView) findViewById(R.id.streepjes1);
-        strepen2 = (TextView) findViewById(R.id.streepjes2);
-
-        puntenSpeler1.setText("score " + st);
-        puntenSpeler2.setText("score " + st2);
-
-        button = (Button) findViewById(R.id.pass);
-
-        //Navigatiebalk verbergen
-        hideNavigationBar();
 
     }
 
@@ -567,6 +575,7 @@ public class MainActivity extends AppCompatActivity {
     }
     //Einde vastzetten dobbelstenen
 
+
     public void openDialog() {
         ExampleDialog exampleDialog = new ExampleDialog();
         exampleDialog.show(getSupportFragmentManager(), "example dialog");
@@ -574,7 +583,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Dobbelstenen gooien
     public void generate(View view) {
-      /*  //Aantal worpen verminderen iedere keer iemand heeft geworpen
+      //Aantal worpen verminderen iedere keer iemand heeft geworpen
         numberOfRolls -= 1;
         beurtAantal.setText("Worpen: " + String.valueOf(numberOfRolls));
 
@@ -681,21 +690,21 @@ public class MainActivity extends AppCompatActivity {
             }*/
 
         //Waarde van de dobbelstenen
-    /*    String myString = String.valueOf(number);
+       String myString = String.valueOf(number);
         String myString2 = String.valueOf(number2);
         String myString3 = String.valueOf(number3);
 
         //De text in de layout zetten
         dobbelsteen1.setText(myString);
         dobbelsteen2.setText(myString2);
-        dobbelsteen3.setText(myString3);*/
+        dobbelsteen3.setText(myString3);
 
         //PUNTEN: 1 oog = 100 punten, 6 ogen = 60 punten, 5, 4, 3, 2 ogen = 5, 4, 3, 2 punten
         //  -> Optellen met een case-statement. Indien 1 = 100 punten, indien 6 = 60 punten
         //  -> Drie apen: 1,1,1, Soixante-neuf: 6,5,4, Zand: driemaal dezelfde waarde
         //  -> Extra: indien het gelijk is moet er nogmaals gegooid worden
         //  -> Extra: indien 1,1,1 dan wint deze speler automatisch
-      /*  if (number == number2 && number == number3) {
+        if (number == number2 && number == number3) {
             switch(number) {
                 case 1:
                     //Zand van 1 = 300
@@ -779,8 +788,8 @@ public class MainActivity extends AppCompatActivity {
             punten += 69;
         }
 
-      */
-/*
+
+
         // Gewone punten
         else {
             //Dobbelsteen 1
@@ -853,7 +862,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-*/
+
 
 
 
@@ -952,6 +961,7 @@ public class MainActivity extends AppCompatActivity {
                 tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
 
             }
+
         }
 
         //Beurt passen
