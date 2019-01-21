@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     Random rand = new Random();
     int number, number2, number3;
 
-    TextView myText, myText2, myText3;
+    TextView dobbelsteen1, dobbelsteen2, dobbelsteen3;
 
 
 
@@ -105,39 +105,39 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void vastzetten(View view) {
-        myText = (TextView) findViewById(R.id.t_aantal);
+        dobbelsteen1 = (TextView) findViewById(R.id.t_aantal);
         if (dobbelsteen1Vast == false) {
             dobbelsteen1Vast = true;
-            myText.setTextColor(argb(100,0,0,0));
+            dobbelsteen1.setTextColor(argb(100,0,0,0));
         }
         else {
             dobbelsteen1Vast = false;
-            myText.setTextColor(argb(255,255,255,255));
+            dobbelsteen1.setTextColor(argb(255,255,255,255));
         }
     }
 
     public void vastzetten2 (View view) {
-        myText2 = (TextView) findViewById(R.id.t_aantal2);
+        dobbelsteen2 = (TextView) findViewById(R.id.t_aantal2);
         if (dobbelsteen2Vast == false) {
             dobbelsteen2Vast = true;
             //Achtergrondkleur aanpassen
-            myText2.setTextColor(argb(100,0,0,0));
+            dobbelsteen2.setTextColor(argb(100,0,0,0));
       }
       else {
           dobbelsteen2Vast = false;
-          myText2.setTextColor(argb(255,255,255,255));
+          dobbelsteen2.setTextColor(argb(255,255,255,255));
       }
     }
 
     public void vastzetten3 (View view) {
-        myText3 = (TextView) findViewById(R.id.t_aantal3);
+        dobbelsteen3 = (TextView) findViewById(R.id.t_aantal3);
         if (dobbelsteen3Vast == false) {
             dobbelsteen3Vast = true;
-            myText3.setTextColor(argb(100,0,0,0));
+            dobbelsteen3.setTextColor(argb(100,0,0,0));
         }
         else {
             dobbelsteen3Vast = false;
-            myText3.setTextColor(argb(255,255,255,255));
+            dobbelsteen3.setTextColor(argb(255,255,255,255));
         }
     }
 
@@ -155,9 +155,9 @@ public class MainActivity extends AppCompatActivity {
         punten = 0;
 
         //Dobbelstenen uit de layout halen
-        myText = (TextView) findViewById(R.id.t_aantal);
-        myText2 = (TextView) findViewById(R.id.t_aantal2);
-        myText3 = (TextView) findViewById(R.id.t_aantal3);
+        dobbelsteen1 = (TextView) findViewById(R.id.t_aantal);
+        dobbelsteen2 = (TextView) findViewById(R.id.t_aantal2);
+        dobbelsteen3 = (TextView) findViewById(R.id.t_aantal3);
 
 
         //GOOIEN: eerste keer met drie dobbelstenen, nadien kan je kiezen met welke dobbelstenen je verder gooit
@@ -286,9 +286,9 @@ public class MainActivity extends AppCompatActivity {
         String myString3 = String.valueOf(number3);
 
         //De text in de layout zetten
-        myText.setText(myString);
-        myText2.setText(myString2);
-        myText3.setText(myString3);
+        dobbelsteen1.setText(myString);
+        dobbelsteen2.setText(myString2);
+        dobbelsteen3.setText(myString3);
 
         //PUNTEN: 1 oog = 100 punten, 6 ogen = 60 punten, 5, 4, 3, 2 ogen = 5, 4, 3, 2 punten
         //  -> Optellen met een case-statement. Indien 1 = 100 punten, indien 6 = 60 punten
@@ -342,62 +342,40 @@ public class MainActivity extends AppCompatActivity {
 
                 case 3:
                     //Zand van 3 = 9
-                    if (beurtSpeler1 == true) {
-                        puntenSpeler1.setText("Zand van 3");
-                    }
-
-                    else if (beurtSpeler2 == true) {
-                        puntenSpeler2.setText("Zand van 3");
-                    }
+                    Toast.makeText(MainActivity.this, "Zand van 3", Toast.LENGTH_LONG).show();
 
                     break;
 
                 case 4:
                     //Zand van 4 = 12
-                    if (beurtSpeler1 == true) {
-                        puntenSpeler1.setText("Zand van 4");
-                    }
-
-                    else if (beurtSpeler2 == true) {
-                        puntenSpeler2.setText("Zand van 4");
-                    }
+                    Toast.makeText(MainActivity.this, "Zand van 4", Toast.LENGTH_LONG).show();
                     break;
 
                 case 5:
                     //Zand van 5 = 15
-                    if (beurtSpeler1 == true) {
-                        puntenSpeler1.setText("Zand van 5");
-                    }
-
-                    else if (beurtSpeler2 == true) {
-                        puntenSpeler2.setText("Zand van 5");
-                    }
+                    Toast.makeText(MainActivity.this, "Zand van 5", Toast.LENGTH_LONG).show();
                     break;
 
                 case 6:
                     //Zand van 6 = 180
-                    if (beurtSpeler1 == true) {
-                        puntenSpeler1.setText("Zand van 6");
-                    }
-
-                    else if (beurtSpeler2 == true) {
-                        puntenSpeler2.setText("Zand van 6");
-                    }
+                    Toast.makeText(MainActivity.this, "Zand van 6", Toast.LENGTH_LONG).show();
                     break;
 
             }
         }
-        else if (number == 6 && number2 == 5 && number3 == 4 || number == 5 && number2 == 4 && number3 == 6 || number == 4 && number2 == 6 && number3 == 5) {
+        else if (
+        number == 6 && number2 == 5 && number3 == 4 ||
+        number == 5 && number2 == 4 && number3 == 6 ||
+        number == 4 && number2 == 6 && number3 == 5 ||
+        number == 6 && number2 == 4 && number3 == 5 ||
+        number == 4 && number2 == 5 && number3 == 6 ||
+        number == 5 && number2 == 6 && number3 == 4
+        ) {
             //soixante-neuf
-            if (beurtSpeler1 == true) {
-                puntenSpeler1.setText("soixante-neuf");
-            }
-
-            else if (beurtSpeler2 == true) {
-                puntenSpeler2.setText("soixante-neuf");
-            }
+            Toast.makeText(MainActivity.this, "Soixante-neuf", Toast.LENGTH_LONG).show();
         }
 
+        // Gewone punten
         else {
             //Dobbelsteen 1
             switch(number) {
@@ -486,9 +464,9 @@ public class MainActivity extends AppCompatActivity {
                 dobbelsteen1Vast = true;
                 dobbelsteen2Vast = true;
                 dobbelsteen3Vast = true;
-                myText.setTextColor(argb(100,0,0,0));
-                myText2.setTextColor(argb(100,0,0,0));
-                myText3.setTextColor(argb(100,0,0,0));
+                dobbelsteen1.setTextColor(argb(100,0,0,0));
+                dobbelsteen2.setTextColor(argb(100,0,0,0));
+                dobbelsteen3.setTextColor(argb(100,0,0,0));
 
             } else {
 
@@ -547,9 +525,9 @@ public class MainActivity extends AppCompatActivity {
                 dobbelsteen1Vast = false;
                 dobbelsteen2Vast = false;
                 dobbelsteen3Vast = false;
-                myText.setTextColor(argb(100,0,0,0));
-                myText2.setTextColor(argb(100,0,0,0));
-                myText3.setTextColor(argb(100,0,0,0));
+                dobbelsteen1.setTextColor(argb(100,0,0,0));
+                dobbelsteen2.setTextColor(argb(100,0,0,0));
+                dobbelsteen3.setTextColor(argb(100,0,0,0));
 
             } else {
 
@@ -617,6 +595,10 @@ public class MainActivity extends AppCompatActivity {
             puntenSpeler1.setText("0");
             puntenSpeler2.setText("0");
 
+            dobbelsteen1.setText("0");
+            dobbelsteen2.setText("0");
+            dobbelsteen3.setText("0");
+
             if (beurtSpeler1 == true) {
                 tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
                 tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
@@ -640,6 +622,10 @@ public class MainActivity extends AppCompatActivity {
 
             puntenSpeler1.setText("0");
             puntenSpeler2.setText("0");
+
+            dobbelsteen1.setText("0");
+            dobbelsteen2.setText("0");
+            dobbelsteen3.setText("0");
 
             if (beurtSpeler1 == true) {
                 tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
