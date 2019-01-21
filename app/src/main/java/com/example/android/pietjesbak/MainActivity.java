@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -63,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
     String strepenScherm2 = String.valueOf(strepenx2);
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,22 +99,21 @@ public class MainActivity extends AppCompatActivity {
 
         button = (Button) findViewById(R.id.pass);
 
-
-
         //Navigatiebalk verbergen
         hideNavigationBar();
+
     }
 
     private void hideNavigationBar() {
         this.getWindow().getDecorView()
-                .setSystemUiVisibility(
-                        View.SYSTEM_UI_FLAG_FULLSCREEN |
-                                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
-                                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
-                                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
-                                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
-                                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                );
+            .setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_FULLSCREEN |
+                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                    View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
+                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+                    View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+        );
     }
 
     //Dobbelsteen 1 vastzetten
@@ -168,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
     public void generate(View view) {
         //Aantal worpen verminderen iedere keer iemand heeft geworpen
         numberOfRolls -= 1;
-        beurtAantal.setText(String.valueOf(numberOfRolls));
+        beurtAantal.setText("Worpen: " + String.valueOf(numberOfRolls));
 
         //Iedere als de speler werpt moeten de punten terug van nul beginnen
         punten = 0;
@@ -329,28 +328,31 @@ public class MainActivity extends AppCompatActivity {
                 case 2:
                     //Zand van 2 = 6
                     Toast.makeText(MainActivity.this, "Zand van 2", Toast.LENGTH_LONG).show();
-
+                    punten += 6;
                     break;
 
                 case 3:
                     //Zand van 3 = 9
                     Toast.makeText(MainActivity.this, "Zand van 3", Toast.LENGTH_LONG).show();
-
+                    punten += 9;
                     break;
 
                 case 4:
                     //Zand van 4 = 12
                     Toast.makeText(MainActivity.this, "Zand van 4", Toast.LENGTH_LONG).show();
+                    punten += 12;
                     break;
 
                 case 5:
                     //Zand van 5 = 15
                     Toast.makeText(MainActivity.this, "Zand van 5", Toast.LENGTH_LONG).show();
+                    punten += 15;
                     break;
 
                 case 6:
                     //Zand van 6 = 180
                     Toast.makeText(MainActivity.this, "Zand van 6", Toast.LENGTH_LONG).show();
+                    punten += 180;
                     break;
 
             }
@@ -365,6 +367,7 @@ public class MainActivity extends AppCompatActivity {
         ) {
             //soixante-neuf
             Toast.makeText(MainActivity.this, "Soixante-neuf", Toast.LENGTH_LONG).show();
+            punten += 69;
         }
 
         // Gewone punten
@@ -610,59 +613,5 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
             startActivity(intent);
         }
-
-
-        /*if (strepenx1 == 0) {
-
-            Toast.makeText(MainActivity.this, st + " wint!", Toast.LENGTH_LONG).show();
-
-            strepenx1 = 5;
-            strepenx2 = 5;
-
-            //String strepenScherm1 = String.valueOf(strepenx1);
-            //String strepenScherm2 = String.valueOf(strepenx2);
-
-            if (beurtSpeler1 == true) {
-                tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
-                tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
-                numberOfRolls = 3;
-                beurtSpeler1 = false;
-                beurtSpeler2 = true;
-            } else {
-                tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
-                tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
-                numberOfRolls = 3;
-                beurtSpeler1 = true;
-                beurtSpeler2 = false;
-            }
-
-        } else if (strepenx2 == 0) {
-
-            Toast.makeText(MainActivity.this, st2 + " wint!", Toast.LENGTH_LONG).show();
-
-            strepenx1 = 5;
-            strepenx2 = 5;
-
-            //String strepenScherm1 = String.valueOf(strepenx1);
-            //String strepenScherm2 = String.valueOf(strepenx2);
-
-            if (beurtSpeler1 == true) {
-                tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
-                tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
-                numberOfRolls = 3;
-                beurtSpeler1 = false;
-                beurtSpeler2 = true;
-            } else {
-                tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
-                tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
-                numberOfRolls = 3;
-                beurtSpeler1 = true;
-                beurtSpeler2 = false;
-            }
-
-        }*/
-
-
-
     }
 }
