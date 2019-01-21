@@ -41,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
     int punten = 0;
     boolean beurtSpeler1 = true;
     boolean beurtSpeler2 = false;
-    boolean dobbelsteen1Vast = true;
-    boolean dobbelsteen2Vast = true;
-    boolean dobbelsteen3Vast = true;
+    boolean dobbelsteen1Vast = false;
+    boolean dobbelsteen2Vast = false;
+    boolean dobbelsteen3Vast = false;
 
     TextView strepen1, strepen2;
 
@@ -350,7 +350,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         else if (
-                number == 6 && number2 == 5 && number3 == 4 ||
+                        number == 6 && number2 == 5 && number3 == 4 ||
                         number == 5 && number2 == 4 && number3 == 6 ||
                         number == 4 && number2 == 6 && number3 == 5 ||
                         number == 6 && number2 == 4 && number3 == 5 ||
@@ -447,12 +447,12 @@ public class MainActivity extends AppCompatActivity {
                 beurtSpeler2 = true;
 
                 //Dobbelstenen staan niet vast
-                dobbelsteen1Vast = true;
-                dobbelsteen2Vast = true;
-                dobbelsteen3Vast = true;
-                dobbelsteen1.setTextColor(argb(100,0,0,0));
-                dobbelsteen2.setTextColor(argb(100,0,0,0));
-                dobbelsteen3.setTextColor(argb(100,0,0,0));
+                dobbelsteen1Vast = false;
+                dobbelsteen2Vast = false;
+                dobbelsteen3Vast = false;
+                dobbelsteen1.setTextColor(argb(255,0,0,0));
+                dobbelsteen2.setTextColor(argb(255,0,0,0));
+                dobbelsteen3.setTextColor(argb(255,0,0,0));
 
             } else {
 
@@ -509,9 +509,9 @@ public class MainActivity extends AppCompatActivity {
                 dobbelsteen1Vast = false;
                 dobbelsteen2Vast = false;
                 dobbelsteen3Vast = false;
-                dobbelsteen1.setTextColor(argb(100,0,0,0));
-                dobbelsteen2.setTextColor(argb(100,0,0,0));
-                dobbelsteen3.setTextColor(argb(100,0,0,0));
+                dobbelsteen1.setTextColor(argb(255,0,0,0));
+                dobbelsteen2.setTextColor(argb(255,0,0,0));
+                dobbelsteen3.setTextColor(argb(255,0,0,0));
 
             } else {
 
@@ -521,6 +521,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+        //Beurt passen
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -578,8 +579,8 @@ public class MainActivity extends AppCompatActivity {
             strepenx1 = 5;
             strepenx2 = 5;
 
-            String strepenScherm1 = String.valueOf(strepenx1);
-            String strepenScherm2 = String.valueOf(strepenx2);
+            //String strepenScherm1 = String.valueOf(strepenx1);
+            //String strepenScherm2 = String.valueOf(strepenx2);
 
             /*if (beurtSpeler1 == true) {
                 tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
@@ -602,8 +603,8 @@ public class MainActivity extends AppCompatActivity {
             strepenx1 = 5;
             strepenx2 = 5;
 
-            String strepenScherm1 = String.valueOf(strepenx1);
-            String strepenScherm2 = String.valueOf(strepenx2);
+            //String strepenScherm1 = String.valueOf(strepenx1);
+            //String strepenScherm2 = String.valueOf(strepenx2);
 
             /*if (beurtSpeler1 == true) {
                 tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
