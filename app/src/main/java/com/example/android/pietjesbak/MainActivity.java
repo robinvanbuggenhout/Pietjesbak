@@ -102,32 +102,381 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onShake(int count) {
-                /*
-                 * The following method, "handleShakeEvent(count):" is a stub //
-                 * method you would use to setup whatever you want done once the
-                 * device has been shook.
-                 */
+                //Toast.makeText(MainActivity.this, "Shakedvytfyftyf!!!", Toast.LENGTH_SHORT).show();
+                //Hier code zetten wat er gebeurt als je schud
 
-                Toast.makeText(MainActivity.this, "Shakedvytfyftyf!!!", Toast.LENGTH_SHORT).show();
-                //Hier code zetten wat er gebeurt als je schut
+
+
+                numberOfRolls -= 1;
+                beurtAantal.setText("Worpen: " + String.valueOf(numberOfRolls));
+
+                //Iedere als de speler werpt moeten de punten terug van nul beginnen
+                punten = 0;
+
+                //Dobbelstenen uit de layout halen
+                dobbelsteen1 = (TextView) findViewById(R.id.t_aantal);
+                dobbelsteen2 = (TextView) findViewById(R.id.t_aantal2);
+                dobbelsteen3 = (TextView) findViewById(R.id.t_aantal3);
+
+
+                //GOOIEN: eerste keer met drie dobbelstenen, nadien kan je kiezen met welke dobbelstenen je verder gooit
+                if (dobbelsteen1Vast == true && dobbelsteen2Vast == false && dobbelsteen3Vast == false){
+                    //Gooien met dobbelsteen 2 en 3
+                    number2 = rand.nextInt(6) + 1;
+                    number3 = rand.nextInt(6) + 1;
+                }
+
+                else if (dobbelsteen2Vast == true && dobbelsteen1Vast == false && dobbelsteen3Vast == false) {
+                    //Gooien met dobbelsteen 1 en 3
+                    number = rand.nextInt(6) + 1;
+                    number3 = rand.nextInt(6) + 1;
+                }
+
+                else if (dobbelsteen3Vast == true && dobbelsteen1Vast == false && dobbelsteen2Vast == false) {
+                    //Gooien met dobbelsteen 1 en 2
+                    number = rand.nextInt(6) + 1;
+                    number2 = rand.nextInt(6) + 1;
+                }
+
+                else if (dobbelsteen1Vast == true && dobbelsteen2Vast == true && dobbelsteen3Vast == false) {
+                    //Gooien met dobbelsteen 3
+                    number3 = rand.nextInt(6) + 1;
+                }
+
+                else if (dobbelsteen1Vast == true && dobbelsteen3Vast == true && dobbelsteen2Vast == false) {
+                    //Gooien met dobbelsteen 2
+                    number2 = rand.nextInt(6) + 1;
+                }
+
+                else if (dobbelsteen2Vast == true && dobbelsteen3Vast == true && dobbelsteen1Vast == false) {
+                    //Gooien met dobbelsteen 1
+                    number = rand.nextInt(6) + 1;
+                }
+
+                //Indien alle dobbelstenen vast staan wil je niet meer gooien en moet de beurt naar de andere gaan
+                else if (dobbelsteen1Vast == true && dobbelsteen2Vast == true && dobbelsteen3Vast == true) {
+                    if (beurtSpeler1 == true) {
+                        //De kleur veranderen van de speler die aan de beurt is
+                        //De speler die aan de beurt is moet in het vet komen
+                        tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
+                        tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
+                        //Van beurt veranderen
+                        beurtSpeler1 = false;
+                        beurtSpeler2 = true;
+                        //De andere speler mag terug drie keer werpen
+                        numberOfRolls = 3;
+                    } //Einde if beurt is aan speler 1
+
+                    else if (beurtSpeler2 == true){
+                        //Punten tellen aangezien de ronde gedaan is
+                        int punten1 = Integer.parseInt((String) puntenSpeler1.getText());
+                        int punten2 = Integer.parseInt((String) puntenSpeler2.getText());
+
+                        tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
+                        tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
+
+                        //Van beurt veranderen
+                        beurtSpeler1 = true;
+                        beurtSpeler2 = false;
+                        //De andere speler mag terug drie keer werpen
+                        numberOfRolls = 3;
+
+                        //De punten zijn geteld dus moeten ze vergeleken worden om te zien wie er wint
+                        if (punten1 > punten2) {
+                            //Strepen verminderen speler 1 en dit tonen op het scherm
+                            strepenx1--;
+                            strepenScherm1 = String.valueOf(strepenx1);
+                            strepen1.setText(strepenScherm1);
+
+                        }
+
+                        else {
+                            //Strepen verminderen speler 2 en dit tonene op het scherm
+                            strepenx2--;
+                            strepenScherm2 = String.valueOf(strepenx2);
+                            strepen2.setText(strepenScherm2);
+                        }
+
+                    }
+                }
+
+                else {
+                    //Als er geen enkele dobbelsteen vast staat dan moet je moet alle dobbelstenen gooien
+                    number = rand.nextInt(6) + 1;
+                    number2 = rand.nextInt(6) + 1;
+                    number3 = rand.nextInt(6) + 1;
+
+                }
+
+                    /*if (dobbelsteen1Vast == true && dobbelsteen2Vast == true && dobbelsteen3Vast == true) {
+
+                    }*/
+
+                //Waarde van de dobbelstenen
+                String myString = String.valueOf(number);
+                String myString2 = String.valueOf(number2);
+                String myString3 = String.valueOf(number3);
+
+                //De text in de layout zetten
+                dobbelsteen1.setText(myString);
+                dobbelsteen2.setText(myString2);
+                dobbelsteen3.setText(myString3);
+
+                //PUNTEN: 1 oog = 100 punten, 6 ogen = 60 punten, 5, 4, 3, 2 ogen = 5, 4, 3, 2 punten
+                //  -> Optellen met een case-statement. Indien 1 = 100 punten, indien 6 = 60 punten
+                //  -> Drie apen: 1,1,1, Soixante-neuf: 6,5,4, Zand: driemaal dezelfde waarde
+                //  -> Extra: indien het gelijk is moet er nogmaals gegooid worden
+                //  -> Extra: indien 1,1,1 dan wint deze speler automatisch
+                if (number == number2 && number == number3) {
+                    switch(number) {
+                        case 1:
+                            //Zand van 1 = 300
+                            //Ronde meteen gedaan, speler met zand van 1 wint
+                            if (beurtSpeler1 == true) {
+                                String puntjesSpeler1 = String.valueOf(punten);
+                                puntenSpeler1.setText(puntjesSpeler1);
+
+                                strepenx1--;
+                                strepenScherm1 = String.valueOf(strepenx1);
+                                strepen1.setText(strepenScherm1);
+
+                                beurtSpeler1 = true;
+                                beurtSpeler2 = false;
+
+                                numberOfRolls = 3;
+
+                            }
+
+                            else if (beurtSpeler2 == true) {
+                                String puntjesSpeler2 = String.valueOf(punten);
+                                puntenSpeler2.setText(puntjesSpeler2);
+
+                                strepenx2--;
+                                strepenScherm2 = String.valueOf(strepenx2);
+                                strepen2.setText(strepenScherm2);
+
+                                beurtSpeler1 = true;
+                                beurtSpeler2 = false;
+
+                                numberOfRolls = 3;
+
+                            }
+
+                            Toast.makeText(MainActivity.this, "Zand van 1", Toast.LENGTH_LONG).show();
+
+                            break;
+
+                        case 2:
+                            //Zand van 2 = 6
+                            Toast.makeText(MainActivity.this, "Zand van 2", Toast.LENGTH_LONG).show();
+                            punten += 6;
+                            break;
+
+                        case 3:
+                            //Zand van 3 = 9
+                            Toast.makeText(MainActivity.this, "Zand van 3", Toast.LENGTH_LONG).show();
+                            punten += 9;
+                            break;
+
+                        case 4:
+                            //Zand van 4 = 12
+                            Toast.makeText(MainActivity.this, "Zand van 4", Toast.LENGTH_LONG).show();
+                            punten += 12;
+                            break;
+
+                        case 5:
+                            //Zand van 5 = 15
+                            Toast.makeText(MainActivity.this, "Zand van 5", Toast.LENGTH_LONG).show();
+                            punten += 15;
+                            break;
+
+                        case 6:
+                            //Zand van 6 = 180
+                            Toast.makeText(MainActivity.this, "Zand van 6", Toast.LENGTH_LONG).show();
+                            punten += 180;
+                            break;
+
+                    }
+                }
+                else if (
+                                number == 6 && number2 == 5 && number3 == 4 ||
+                                number == 5 && number2 == 4 && number3 == 6 ||
+                                number == 4 && number2 == 6 && number3 == 5 ||
+                                number == 6 && number2 == 4 && number3 == 5 ||
+                                number == 4 && number2 == 5 && number3 == 6 ||
+                                number == 5 && number2 == 6 && number3 == 4
+                ) {
+                    //soixante-neuf
+                    Toast.makeText(MainActivity.this, "Soixante-neuf", Toast.LENGTH_LONG).show();
+                    punten += 69;
+                }
+
+                // Gewone punten
+                else {
+                    //Dobbelsteen 1
+                    switch(number) {
+                        case 1:
+                            punten += 100;
+
+                            break;
+                        case 2:
+                            punten += 2;
+                            break;
+                        case 3:
+                            punten += 3;
+                            break;
+                        case 4:
+                            punten += 4;
+                            break;
+                        case 5:
+                            punten += 5;
+                            break;
+                        case 6:
+                            punten += 60;
+                            break;
+                    }
+
+                    //Dobbelsteen 2
+                    switch(number2) {
+                        case 1:
+                            punten += 100;
+                            break;
+                        case 2:
+                            punten += 2;
+                            break;
+                        case 3:
+                            punten += 3;
+                            break;
+                        case 4:
+                            punten += 4;
+                            break;
+                        case 5:
+                            punten += 5;
+                            break;
+                        case 6:
+                            punten += 60;
+                            break;
+                    }
+
+                    //Dobbelsteen 3
+                    switch(number3) {
+                        case 1:
+                            punten += 100;
+                            break;
+                        case 2:
+                            punten += 2;
+                            break;
+                        case 3:
+                            punten += 3;
+                            break;
+                        case 4:
+                            punten += 4;
+                            break;
+                        case 5:
+                            punten += 5;
+                            break;
+                        case 6:
+                            punten += 60;
+                            break;
+
+                    }
+                }
+
+                //Indien de beurt naar de andere speler gaat: 1. aantal rolls teruzetten naar 3, 2. de speler die aan de beurt is in het vet plaatsen
+                //Indien het aantal rolls op 0 komt gaat het terug nr drie
+                if (beurtSpeler1 == true) {
+                    //Punten tellen bij speler 1
+                    String puntjesSpeler1 = String.valueOf(punten);
+                    puntenSpeler1.setText(puntjesSpeler1);
+
+                    // BEURT AAN SPELER 1
+                    if (numberOfRolls == 0) {
+
+                        //aantal rolls terugzetten voor de volgende speler
+                        numberOfRolls = 3;
+                        beurtSpeler1 = false;
+                        beurtSpeler2 = true;
+
+                        //Dobbelstenen staan niet vast
+                        dobbelsteen1Vast = false;
+                        dobbelsteen2Vast = false;
+                        dobbelsteen3Vast = false;
+                        dobbelsteen1.setTextColor(argb(255,255,255,255));
+                        dobbelsteen2.setTextColor(argb(255,255,255,255));
+                        dobbelsteen3.setTextColor(argb(255,255,255,255));
+
+                        //Opmaak veranderen van de namen
+                        tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
+                        tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
+
+                    } else {
+
+                        tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
+                        tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
+
+                    }
+                }
+
+                else {
+                    //Punten tellen bij speler 2
+                    String puntjesSpeler2 = String.valueOf(punten);
+                    puntenSpeler2.setText(puntjesSpeler2);
+
+                    // BEURT AAN SPELER 2
+                    if (numberOfRolls == 0) {
+                        //STREEPJES: je begint met vijf streepjes, indien je een ronde wint mag je een streepje wegdoen
+                        //  -> Streepje aftrekken van de winnaar en nadien het totaal terug tonen
+                        //de speler met de hoogste score mag een streepje wegdoen
+
+                        int punten1 = Integer.parseInt((String) puntenSpeler1.getText());
+                        int punten2 = Integer.parseInt((String) puntenSpeler2.getText());
+
+                        if (punten1 > punten2) {
+
+                            //Verminder de strepen van speler 1
+                            strepenx1--;
+                            strepenScherm1 = String.valueOf(strepenx1);
+                            strepen1.setText(strepenScherm1);
+
+                        }
+
+                        else {
+
+                            //Verminder de strepen van speler 2
+                            strepenx2--;
+                            strepenScherm2 = String.valueOf(strepenx2);
+                            strepen2.setText(strepenScherm2);
+
+                        }
+
+                        numberOfRolls = 3;
+                        beurtSpeler1 = true;
+                        beurtSpeler2 = false;
+
+                        //Dobbelstenen staan niet vast
+                        dobbelsteen1Vast = false;
+                        dobbelsteen2Vast = false;
+                        dobbelsteen3Vast = false;
+                        dobbelsteen1.setTextColor(argb(255,255,255,255));
+                        dobbelsteen2.setTextColor(argb(255,255,255,255));
+                        dobbelsteen3.setTextColor(argb(255,255,255,255));
+
+                        tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
+                        tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
+
+                    } else {
+
+                        tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
+                        tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
+
+                    }
+                }
+
+
+
 
             }
         });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         //Namen in MainActivity zetten
         tv = findViewById(R.id.textView);
@@ -225,7 +574,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Dobbelstenen gooien
     public void generate(View view) {
-        //Aantal worpen verminderen iedere keer iemand heeft geworpen
+      /*  //Aantal worpen verminderen iedere keer iemand heeft geworpen
         numberOfRolls -= 1;
         beurtAantal.setText("Worpen: " + String.valueOf(numberOfRolls));
 
@@ -332,21 +681,21 @@ public class MainActivity extends AppCompatActivity {
             }*/
 
         //Waarde van de dobbelstenen
-        String myString = String.valueOf(number);
+    /*    String myString = String.valueOf(number);
         String myString2 = String.valueOf(number2);
         String myString3 = String.valueOf(number3);
 
         //De text in de layout zetten
         dobbelsteen1.setText(myString);
         dobbelsteen2.setText(myString2);
-        dobbelsteen3.setText(myString3);
+        dobbelsteen3.setText(myString3);*/
 
         //PUNTEN: 1 oog = 100 punten, 6 ogen = 60 punten, 5, 4, 3, 2 ogen = 5, 4, 3, 2 punten
         //  -> Optellen met een case-statement. Indien 1 = 100 punten, indien 6 = 60 punten
         //  -> Drie apen: 1,1,1, Soixante-neuf: 6,5,4, Zand: driemaal dezelfde waarde
         //  -> Extra: indien het gelijk is moet er nogmaals gegooid worden
         //  -> Extra: indien 1,1,1 dan wint deze speler automatisch
-        if (number == number2 && number == number3) {
+      /*  if (number == number2 && number == number3) {
             switch(number) {
                 case 1:
                     //Zand van 1 = 300
@@ -430,6 +779,8 @@ public class MainActivity extends AppCompatActivity {
             punten += 69;
         }
 
+      */
+/*
         // Gewone punten
         else {
             //Dobbelsteen 1
@@ -500,6 +851,18 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }
+
+
+*/
+
+
+
+
+
+
+
+
+
 
         //Indien de beurt naar de andere speler gaat: 1. aantal rolls teruzetten naar 3, 2. de speler die aan de beurt is in het vet plaatsen
         //Indien het aantal rolls op 0 komt gaat het terug nr drie
