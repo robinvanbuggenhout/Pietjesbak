@@ -23,7 +23,7 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        btn = findViewById(R.id.button);
+        btn = findViewById(R.id.button2);
 
         et = findViewById(R.id.edittext);
         et2 = findViewById(R.id.edittext2);
@@ -43,4 +43,10 @@ public class SecondActivity extends AppCompatActivity {
 
 
     }
+
+    public void logout(View view) {
+      Intent intent = new Intent(SecondActivity.this, LoginActivity.class);
+      startActivity(intent);
+    }
+
 }

@@ -103,6 +103,8 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    //Automatische herkenning van de gebruiker
+    /*
     @Override
     protected void onStart() {
         super.onStart();
@@ -115,5 +117,6 @@ public class LoginActivity extends AppCompatActivity {
             updateUI();
         }
 
-    }
+
+    }*/
 }

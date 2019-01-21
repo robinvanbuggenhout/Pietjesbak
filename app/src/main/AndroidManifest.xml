@@ -19,8 +19,6 @@
         <activity android:name=".RegisterActivity"></activity>
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".SecondActivity"></activity>
-        <activity android:name=".ServiceActivity"></activity>
-        <service android:name="com.example.android.ShakeService"></service>
     </application>
 
 </manifest>
