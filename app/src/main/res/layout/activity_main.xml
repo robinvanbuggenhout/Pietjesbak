@@ -7,30 +7,43 @@
     tools:context=".MainActivity"
     android:background="#209469">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="306dp"
+        android:layout_height="343dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/beurt"
+        app:srcCompat="@drawable/bak" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="64dp"
         android:text="@string/value"
         android:textColor="#ffffff"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t_aantal"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
         android:text="@string/value2"
         android:textColor="#ffffff"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <!--Dobbelsteen 1-->
@@ -38,8 +51,8 @@
         android:id="@+id/t_aantal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="388dp"
         android:onClick="vastzetten"
         android:text="@string/aantal"
         android:textAlignment="textStart"
@@ -58,9 +71,9 @@
         android:id="@+id/t_aantal2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="110dp"
         android:layout_marginStart="110dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="388dp"
+        android:layout_marginEnd="110dp"
         android:onClick="vastzetten2"
         android:text="@string/aantal"
         android:textAlignment="textStart"
@@ -68,7 +81,7 @@
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/t_aantal3"
-        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toEndOf="@+id/t_aantal"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
@@ -77,8 +90,8 @@
         android:id="@+id/t_aantal3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="50dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="388dp"
+        android:layout_marginEnd="80dp"
         android:onClick="vastzetten3"
         android:text="@string/aantal"
         android:textAlignment="textStart"
@@ -94,15 +107,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
         android:text="@string/score"
         android:textAlignment="textEnd"
         android:textColor="#ffffff"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t_aantal3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -110,59 +123,57 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:text="@string/score_2"
-        android:textColor="#ffffff"
         android:textAlignment="textEnd"
+        android:textColor="#ffffff"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/score"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/beurt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="194dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/_3"
-        android:textColor="#ffffff"
         android:textAlignment="textEnd"
+        android:textColor="#ffffff"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/score2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/streepjes1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="71dp"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
         android:text="@string/streepjes1"
         android:textColor="#ffffff"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/score"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/t_aantal" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score" />
 
     <TextView
         android:id="@+id/streepjes2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginEnd="54dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
         android:text="@string/streepjes2"
         android:textColor="#ffffff"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/score2"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/streepjes1" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score2" />
 
     <Button
         android:id="@+id/pass"
@@ -195,5 +206,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />
+
+
 
 </android.support.constraint.ConstraintLayout>
