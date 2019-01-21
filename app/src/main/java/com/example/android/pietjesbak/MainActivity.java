@@ -601,10 +601,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
         if (strepenx1 == 0) {
+            Toast.makeText(MainActivity.this, st + " heeft gewonnen!", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            startActivity(intent);
+        } else if (strepenx2 == 0) {
+            Toast.makeText(MainActivity.this, st2 + " heeft gewonnen!", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            startActivity(intent);
+        }
+
+
+        /*if (strepenx1 == 0) {
 
             Toast.makeText(MainActivity.this, st + " wint!", Toast.LENGTH_LONG).show();
 
@@ -652,7 +660,7 @@ public class MainActivity extends AppCompatActivity {
                 beurtSpeler2 = false;
             }
 
-        }
+        }*/
 
 
 
