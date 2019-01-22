@@ -336,7 +336,7 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 } else if (
-                        number == 6 && number2 == 5 && number3 == 4 ||
+                            number == 6 && number2 == 5 && number3 == 4 ||
                                 number == 5 && number2 == 4 && number3 == 6 ||
                                 number == 4 && number2 == 6 && number3 == 5 ||
                                 number == 6 && number2 == 4 && number3 == 5 ||
@@ -448,7 +448,7 @@ public class MainActivity extends AppCompatActivity {
                     puntenSpeler1.setText(puntjesSpeler1);
 
                     // BEURT AAN SPELER 1
-                    if (numberOfRolls == 0) {
+                    if (numberOfRolls < 1) {
 
                         //aantal rolls terugzetten voor de volgende speler
                         numberOfRolls = 3;
@@ -484,7 +484,7 @@ public class MainActivity extends AppCompatActivity {
                     puntenSpeler2.setText(puntjesSpeler2);
 
                     // BEURT AAN SPELER 2
-                    if (numberOfRolls == 0) {
+                    if (numberOfRolls < 1) {
                         //STREEPJES: je begint met vijf streepjes, indien je een ronde wint mag je een streepje wegdoen
                         //  -> Streepje aftrekken van de winnaar en nadien het totaal terug tonen
                         //de speler met de hoogste score mag een streepje wegdoen
@@ -935,7 +935,7 @@ public class MainActivity extends AppCompatActivity {
             puntenSpeler1.setText(puntjesSpeler1);
 
             // BEURT AAN SPELER 1
-            if (numberOfRolls == 0) {
+            if (numberOfRolls < 1) {
 
                 //aantal rolls terugzetten voor de volgende speler
                 numberOfRolls = 3;
@@ -973,11 +973,11 @@ public class MainActivity extends AppCompatActivity {
             puntenSpeler2.setText(puntjesSpeler2);
 
             // BEURT AAN SPELER 2
-            if (numberOfRolls == 0) {
+            if (numberOfRolls < 1) {
                 //STREEPJES: je begint met vijf streepjes, indien je een ronde wint mag je een streepje wegdoen
                 //  -> Streepje aftrekken van de winnaar en nadien het totaal terug tonen
-                //de speler met de hoogste score mag een streepje wegdoen
 
+                /*
                 int punten1 = Integer.parseInt((String) puntenSpeler1.getText());
                 int punten2 = Integer.parseInt((String) puntenSpeler2.getText());
 
@@ -997,7 +997,41 @@ public class MainActivity extends AppCompatActivity {
                     strepenScherm2 = String.valueOf(strepenx2);
                     strepen2.setText("Streepjes " + strepenScherm2);
 
+                }*/
+
+                //De speler met de hoogste score mag een streepje wegdoen
+                int punten1 = Integer.parseInt((String) puntenSpeler1.getText());
+                int punten2 = Integer.parseInt((String) puntenSpeler2.getText());
+
+                //Als de speler een speciale worp heeft moeten er andere cijgers afgaan
+                if (punten1 > punten2 && aantalStrepenWeg != 2 || punten1 > punten2 && aantalStrepenWeg != 3) {
+                  //Verminder de strepen van speler 1
+                  strepenx1--;
+                  strepenScherm1 = String.valueOf(strepenx1);
+                  strepen1.setText("Streepjes " + strepenScherm1);
                 }
+
+                else if (punten1 > punten2 && aantalStrepenWeg == 2 || punten1 > punten2 && aantalStrepenWeg == 3) {
+                  strepenx1 -= aantalStrepenWeg;
+                  strepenScherm1 = String.valueOf(strepenx1);
+                  strepen1.setText("Streepjes " + strepenScherm1);
+                }
+
+                //Geen speciale worp, dan moet er één streepje weg gaan
+                else if (punten1 < punten2 && aantalStrepenWeg != 2 || punten1 < punten2 && aantalStrepenWeg != 3) {
+                  //Verminder de strepen van speler 2
+                  strepenx2--;
+                  strepenScherm2 = String.valueOf(strepenx2);
+                  strepen2.setText("Streepjes " + strepenScherm2);
+                }
+
+                else if (punten1 < punten2 && aantalStrepenWeg == 2 || punten1 < punten2 && aantalStrepenWeg == 3) {
+                  strepenx2 -= aantalStrepenWeg;
+                  strepenScherm2 = String.valueOf(strepenx2);
+                  strepen2.setText("Streepjes " + strepenScherm2);
+                }
+
+
 
                 numberOfRolls = 3;
                 beurtSpeler1 = true;
