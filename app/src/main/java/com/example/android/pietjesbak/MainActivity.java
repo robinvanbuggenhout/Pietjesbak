@@ -124,6 +124,10 @@ public class MainActivity extends AppCompatActivity {
 
         button = (Button) findViewById(R.id.pass);
 
+
+        button.setVisibility(View.INVISIBLE);
+
+
         //Navigatiebalk verbergen
         hideNavigationBar();
 
@@ -191,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
                         beurtSpeler1 = false;
                         beurtSpeler2 = true;
                         //De andere speler mag terug drie keer werpen
-                        numberOfRolls = 3;
+                        numberOfRolls = 3; /*3*/
                     } //Einde if beurt is aan speler 1
 
                     else if (beurtSpeler2 == true) {
@@ -206,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
                         beurtSpeler1 = true;
                         beurtSpeler2 = false;
                         //De andere speler mag terug drie keer werpen
-                        numberOfRolls = 3;
+                        numberOfRolls = 3 /*3*/;
 
                         //De punten zijn geteld dus moeten ze vergeleken worden om te zien wie er wint
                         if (punten1 > punten2 && aantalStrepenWeg == 0) {
@@ -448,10 +452,10 @@ public class MainActivity extends AppCompatActivity {
                     puntenSpeler1.setText(puntjesSpeler1);
 
                     // BEURT AAN SPELER 1
-                    if (numberOfRolls == 1) {
+                    if (numberOfRolls == 0) {
 
                         //aantal rolls terugzetten voor de volgende speler
-                        numberOfRolls = 3;
+                        numberOfRolls = 3 /*3*/ ;
                         beurtSpeler1 = false;
                         beurtSpeler2 = true;
 
@@ -484,7 +488,7 @@ public class MainActivity extends AppCompatActivity {
                     puntenSpeler2.setText(puntjesSpeler2);
 
                     // BEURT AAN SPELER 2
-                    if (numberOfRolls == 1) {
+                    if (numberOfRolls == 0) {
                         //STREEPJES: je begint met vijf streepjes, indien je een ronde wint mag je een streepje wegdoen
                         //  -> Streepje aftrekken van de winnaar en nadien het totaal terug tonen
                         //de speler met de hoogste score mag een streepje wegdoen
@@ -508,7 +512,7 @@ public class MainActivity extends AppCompatActivity {
 
                         }
 
-                        numberOfRolls = 3;
+                        numberOfRolls = 3 /*3*/;
                         beurtSpeler1 = true;
                         beurtSpeler2 = false;
 
@@ -533,11 +537,11 @@ public class MainActivity extends AppCompatActivity {
                       strepenScherm2 = String.valueOf(strepenx2);
                       strepen2.setText(strepenScherm2);*/
 
-                    if (strepenx1 == 0) {
+                    if (strepenx1 <= 0) {
                         Toast.makeText(MainActivity.this, st + " heeft gewonnen!", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                         startActivity(intent);
-                    } else if (strepenx2 == 0) {
+                    } else if (strepenx2 <= 0) {
                         Toast.makeText(MainActivity.this, st2 + " heeft gewonnen!", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                         startActivity(intent);
@@ -565,11 +569,34 @@ public class MainActivity extends AppCompatActivity {
     //Begin vastzetten dobbelstenen
     public void vastzetten(View view) {
         dobbelsteen1 = (TextView) findViewById(R.id.t_aantal);
-        if (dobbelsteen1Vast == false) {
-            dobbelsteen1Vast = true;
-            dobbelsteen1.setTextColor(argb(100,0,0,0));
-        }
-        else {
+        if (dobbelsteen2Vast == true && dobbelsteen3Vast == true) {
+            dobbelsteen1Vast = false;
+            dobbelsteen1.setTextColor(argb(255,255,255,255));
+        } else if (dobbelsteen2Vast == false && dobbelsteen3Vast == true) {
+            if (dobbelsteen1Vast == true) {
+                dobbelsteen1Vast = false;
+                dobbelsteen1.setTextColor(argb(255,255,255,255));
+            } else {
+                dobbelsteen1Vast = true;
+                dobbelsteen1.setTextColor(argb(100,0,0,0));
+            }
+        } else if (dobbelsteen2Vast == true && dobbelsteen3Vast == false) {
+            if (dobbelsteen1Vast == true) {
+                dobbelsteen1Vast = false;
+                dobbelsteen1.setTextColor(argb(255,255,255,255));
+            } else {
+                dobbelsteen1Vast = true;
+                dobbelsteen1.setTextColor(argb(100,0,0,0));
+            }
+        } else if (dobbelsteen2Vast == false && dobbelsteen3Vast == false) {
+            if (dobbelsteen1Vast == true) {
+                dobbelsteen1Vast = false;
+                dobbelsteen1.setTextColor(argb(255,255,255,255));
+            } else {
+                dobbelsteen1Vast = true;
+                dobbelsteen1.setTextColor(argb(100,0,0,0));
+            }
+        } else if (dobbelsteen1Vast == true) {
             dobbelsteen1Vast = false;
             dobbelsteen1.setTextColor(argb(255,255,255,255));
         }
@@ -578,12 +605,34 @@ public class MainActivity extends AppCompatActivity {
     //Dobbelsteen 2 vastzetten
     public void vastzetten2 (View view) {
         dobbelsteen2 = (TextView) findViewById(R.id.t_aantal2);
-        if (dobbelsteen2Vast == false) {
-            dobbelsteen2Vast = true;
-            //Achtergrondkleur aanpassen
-            dobbelsteen2.setTextColor(argb(100,0,0,0));
-        }
-        else {
+        if (dobbelsteen1Vast == true && dobbelsteen3Vast == true) {
+            dobbelsteen2Vast = false;
+            dobbelsteen2.setTextColor(argb(255,255,255,255));
+        } else if (dobbelsteen1Vast == false && dobbelsteen3Vast == true) {
+            if (dobbelsteen2Vast == true) {
+                dobbelsteen2Vast = false;
+                dobbelsteen2.setTextColor(argb(255,255,255,255));
+            } else {
+                dobbelsteen2Vast = true;
+                dobbelsteen2.setTextColor(argb(100,0,0,0));
+            }
+        } else if (dobbelsteen1Vast == true && dobbelsteen3Vast == false) {
+            if (dobbelsteen2Vast == true) {
+                dobbelsteen2Vast = false;
+                dobbelsteen2.setTextColor(argb(255,255,255,255));
+            } else {
+                dobbelsteen2Vast = true;
+                dobbelsteen2.setTextColor(argb(100,0,0,0));
+            }
+        } else if (dobbelsteen1Vast == false && dobbelsteen3Vast == false) {
+            if (dobbelsteen2Vast == true) {
+                dobbelsteen2Vast = false;
+                dobbelsteen2.setTextColor(argb(255,255,255,255));
+            } else {
+                dobbelsteen2Vast = true;
+                dobbelsteen2.setTextColor(argb(100,0,0,0));
+            }
+        } else if (dobbelsteen2Vast == true) {
             dobbelsteen2Vast = false;
             dobbelsteen2.setTextColor(argb(255,255,255,255));
         }
@@ -592,11 +641,34 @@ public class MainActivity extends AppCompatActivity {
     //Dobbelsteen 3 vastzetten
     public void vastzetten3 (View view) {
         dobbelsteen3 = (TextView) findViewById(R.id.t_aantal3);
-        if (dobbelsteen3Vast == false) {
-            dobbelsteen3Vast = true;
-            dobbelsteen3.setTextColor(argb(100,0,0,0));
-        }
-        else {
+        if (dobbelsteen2Vast == true && dobbelsteen1Vast == true) {
+            dobbelsteen3Vast = false;
+            dobbelsteen3.setTextColor(argb(255,255,255,255));
+        } else if (dobbelsteen2Vast == false && dobbelsteen1Vast == true) {
+            if (dobbelsteen3Vast == true) {
+                dobbelsteen3Vast = false;
+                dobbelsteen3.setTextColor(argb(255,255,255,255));
+            } else {
+                dobbelsteen3Vast = true;
+                dobbelsteen3.setTextColor(argb(100,0,0,0));
+            }
+        } else if (dobbelsteen2Vast == true && dobbelsteen1Vast == false) {
+            if (dobbelsteen3Vast == true) {
+                dobbelsteen3Vast = false;
+                dobbelsteen3.setTextColor(argb(255,255,255,255));
+            } else {
+                dobbelsteen3Vast = true;
+                dobbelsteen3.setTextColor(argb(100,0,0,0));
+            }
+        } else if (dobbelsteen2Vast == false && dobbelsteen1Vast == false) {
+            if (dobbelsteen3Vast == true) {
+                dobbelsteen3Vast = false;
+                dobbelsteen3.setTextColor(argb(255,255,255,255));
+            } else {
+                dobbelsteen3Vast = true;
+                dobbelsteen3.setTextColor(argb(100,0,0,0));
+            }
+        } else if (dobbelsteen3Vast == true) {
             dobbelsteen3Vast = false;
             dobbelsteen3.setTextColor(argb(255,255,255,255));
         }
@@ -613,6 +685,10 @@ public class MainActivity extends AppCompatActivity {
         punten = 0;
 
         //Aantal strepen die weg gedaan mogen worden
+        if (numberOfRolls == 2) {
+          button.setVisibility(View.VISIBLE);
+        }
+
 
 
         //Dobbelstenen uit de layout halen
@@ -666,7 +742,7 @@ public class MainActivity extends AppCompatActivity {
                 beurtSpeler1 = false;
                 beurtSpeler2 = true;
                 //De andere speler mag terug drie keer werpen
-                numberOfRolls = 3;
+                numberOfRolls = 3 /*3*/;
             } //Einde if beurt is aan speler 1
 
             else if (beurtSpeler2 == true){
@@ -681,7 +757,7 @@ public class MainActivity extends AppCompatActivity {
                 beurtSpeler1 = true;
                 beurtSpeler2 = false;
                 //De andere speler mag terug drie keer werpen
-                numberOfRolls = 3;
+                numberOfRolls = 3 /*3*/;
 
                 //De punten zijn geteld dus moeten ze vergeleken worden om te zien wie er wint
                 if (punten1 > punten2 && aantalStrepenWeg == 0) {
@@ -935,10 +1011,10 @@ public class MainActivity extends AppCompatActivity {
             puntenSpeler1.setText(puntjesSpeler1);
 
             // BEURT AAN SPELER 1
-            if (numberOfRolls == 1) {
+            if (numberOfRolls == 0) {
 
                 //aantal rolls terugzetten voor de volgende speler
-                numberOfRolls = 3;
+                numberOfRolls = 3 /*3*/;
                 beurtSpeler1 = false;
                 beurtSpeler2 = true;
 
@@ -953,6 +1029,9 @@ public class MainActivity extends AppCompatActivity {
                 //Opmaak veranderen van de namen
                 tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
                 tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
+
+                //De andere speler mag niet direct kunnen passen
+                button.setVisibility(View.INVISIBLE);
 
             } else {
 
@@ -973,32 +1052,9 @@ public class MainActivity extends AppCompatActivity {
             puntenSpeler2.setText(puntjesSpeler2);
 
             // BEURT AAN SPELER 2
-            if (numberOfRolls == 1) {
+            if (numberOfRolls == 0) {
                 //STREEPJES: je begint met vijf streepjes, indien je een ronde wint mag je een streepje wegdoen
                 //  -> Streepje aftrekken van de winnaar en nadien het totaal terug tonen
-
-                /*
-                int punten1 = Integer.parseInt((String) puntenSpeler1.getText());
-                int punten2 = Integer.parseInt((String) puntenSpeler2.getText());
-
-                if (punten1 > punten2 && aantalStrepenWeg == 0) {
-
-                    //Verminder de strepen van speler 1
-                    strepenx1--;
-                    strepenScherm1 = String.valueOf(strepenx1);
-                    strepen1.setText("Streepjes " + strepenScherm1);
-
-                }
-
-                else if (punten2 > punten1 && aantalStrepenWeg == 0) {
-
-                    //Verminder de strepen van speler 2
-                    strepenx2--;
-                    strepenScherm2 = String.valueOf(strepenx2);
-                    strepen2.setText("Streepjes " + strepenScherm2);
-
-                }*/
-
                 //De speler met de hoogste score mag een streepje wegdoen
                 int punten1 = Integer.parseInt((String) puntenSpeler1.getText());
                 int punten2 = Integer.parseInt((String) puntenSpeler2.getText());
@@ -1031,9 +1087,7 @@ public class MainActivity extends AppCompatActivity {
                   strepen2.setText("Streepjes " + strepenScherm2);
                 }
 
-
-
-                numberOfRolls = 3;
+                numberOfRolls = 3 /*3*/;
                 beurtSpeler1 = true;
                 beurtSpeler2 = false;
 
@@ -1048,16 +1102,25 @@ public class MainActivity extends AppCompatActivity {
                 tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
                 tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
 
+                //De andere speler mag niet direct kunnen passen
+                button.setVisibility(View.INVISIBLE);
+
+
+
             } else {
 
                 tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
                 tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
 
             }
+
             /*strepenx2 = strepenx2 - aantalStrepenWeg;
             strepenScherm2 = String.valueOf(strepenx2);
             strepen2.setText(strepenScherm2);*/
+
         }
+
+
 
         //Beurt passen
         button.setOnClickListener(new View.OnClickListener() {
@@ -1073,6 +1136,9 @@ public class MainActivity extends AppCompatActivity {
               dobbelsteen1.setTextColor(argb(255,255,255,255));
               dobbelsteen2.setTextColor(argb(255,255,255,255));
               dobbelsteen3.setTextColor(argb(255,255,255,255));
+
+              button.setVisibility(View.INVISIBLE);
+
 
               if (beurtSpeler1 == true && beurtSpeler2 == false) {
                 if (numberOfRolls == 2) {
@@ -1120,7 +1186,7 @@ public class MainActivity extends AppCompatActivity {
                 beurtSpeler1 = true;
                 beurtSpeler2 = false;
                 //De eerste speler mag terug met drie dobbelstenen gooien
-                numberOfRolls = 3;
+                numberOfRolls = 3 /*3*/;
 
                 //De kleuren van de spelers veradnderen
                 tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
