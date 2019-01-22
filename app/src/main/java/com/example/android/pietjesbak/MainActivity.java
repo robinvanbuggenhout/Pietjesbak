@@ -448,7 +448,7 @@ public class MainActivity extends AppCompatActivity {
                     puntenSpeler1.setText(puntjesSpeler1);
 
                     // BEURT AAN SPELER 1
-                    if (numberOfRolls < 1) {
+                    if (numberOfRolls == 1) {
 
                         //aantal rolls terugzetten voor de volgende speler
                         numberOfRolls = 3;
@@ -484,7 +484,7 @@ public class MainActivity extends AppCompatActivity {
                     puntenSpeler2.setText(puntjesSpeler2);
 
                     // BEURT AAN SPELER 2
-                    if (numberOfRolls < 1) {
+                    if (numberOfRolls == 1) {
                         //STREEPJES: je begint met vijf streepjes, indien je een ronde wint mag je een streepje wegdoen
                         //  -> Streepje aftrekken van de winnaar en nadien het totaal terug tonen
                         //de speler met de hoogste score mag een streepje wegdoen
@@ -935,7 +935,7 @@ public class MainActivity extends AppCompatActivity {
             puntenSpeler1.setText(puntjesSpeler1);
 
             // BEURT AAN SPELER 1
-            if (numberOfRolls < 1) {
+            if (numberOfRolls == 1) {
 
                 //aantal rolls terugzetten voor de volgende speler
                 numberOfRolls = 3;
@@ -973,7 +973,7 @@ public class MainActivity extends AppCompatActivity {
             puntenSpeler2.setText(puntjesSpeler2);
 
             // BEURT AAN SPELER 2
-            if (numberOfRolls < 1) {
+            if (numberOfRolls == 1) {
                 //STREEPJES: je begint met vijf streepjes, indien je een ronde wint mag je een streepje wegdoen
                 //  -> Streepje aftrekken van de winnaar en nadien het totaal terug tonen
 
