@@ -17,4 +17,10 @@
     <string name="streepjes2">Streepjes: 5</string>
     <string name="log_out">Log out</string>
     <string name="todo">TODO</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="mail">Mail</string>
+    <string name="name">Name</string>
+    <string name="register">Register</string>
+    <string name="confirm_password">Confirm Password</string>
 </resources>
