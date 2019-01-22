@@ -36,7 +36,7 @@ public class SecondActivity extends AppCompatActivity {
                 st = et.getText().toString();
                 st2 = et2.getText().toString();
 
-                if (st.isEmpty() || st2.isEmpty()){
+                if (st.trim().isEmpty() || st2.trim().isEmpty()){
                     showMessage("Please Verify All Fields");
                 }
 

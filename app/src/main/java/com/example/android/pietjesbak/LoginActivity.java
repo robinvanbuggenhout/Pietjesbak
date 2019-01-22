@@ -49,14 +49,14 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btnLogin.setVisibility(View.INVISIBLE);
+                //btnLogin.setVisibility(View.INVISIBLE);
 
                 final String mail = userMail.getText().toString();
                 final String password = userPassword.getText().toString();
 
-                if (mail.isEmpty() || password.isEmpty()){
+                if (mail.trim().isEmpty() || password.trim().isEmpty()){
                     showMessage("Please Verify All Fields");
-                    btnLogin.setVisibility(View.VISIBLE);
+                    //btnLogin.setVisibility(View.VISIBLE);
                 }
 
                 else {
@@ -76,13 +76,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if(task.isSuccessful()) {
-                    btnLogin.setVisibility(View.VISIBLE);
+                    //btnLogin.setVisibility(View.VISIBLE);
                     updateUI();
 
                 }
                 else {
                     showMessage(task.getException().getMessage());
-                    btnLogin.setVisibility(View.VISIBLE);
+                    //btnLogin.setVisibility(View.VISIBLE);
                 }
 
             }

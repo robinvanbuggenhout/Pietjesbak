@@ -47,11 +47,11 @@ public class RegisterActivity extends AppCompatActivity {
                 final String password2 = userPassword2.getText().toString();
                 final String name = userName.getText().toString();
 
-                if (email.isEmpty() || name.isEmpty() || password.isEmpty() || password2.isEmpty() || !password.equals(password2)){
+                if (email.trim().isEmpty() || name.trim().isEmpty() || password.trim().isEmpty() || password2.trim().isEmpty() || !password.equals(password2)){
 
                     //Display error message: all fields must be filled
                     showMessage("Please verifiy all fields");
-                    regBtn.setVisibility(View.VISIBLE);
+                    //regBtn.setVisibility(View.VISIBLE);
                 }
 
                 else {
@@ -88,7 +88,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                             //account creation failed
                             showMessage("Account creation failed" + task.getException().getMessage());
-                            regBtn.setVisibility(View.VISIBLE);
+                            //regBtn.setVisibility(View.VISIBLE);
                         }
                     }
                 });
