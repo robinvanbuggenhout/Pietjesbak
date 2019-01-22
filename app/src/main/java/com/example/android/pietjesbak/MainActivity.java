@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
 
                 //Aantal worpen verminderen iedere keer iemand heeft geworpen
                 numberOfRolls -= 1;
-                beurtAantal.setText("Worpen: " + String.valueOf(numberOfRolls));
+                beurtAantal.setText("Trows: " + String.valueOf(numberOfRolls));
 
                 //Iedere als de speler werpt moeten de punten terug van nul beginnen
                 punten = 0;
@@ -802,7 +802,7 @@ public class MainActivity extends AppCompatActivity {
     public void generate(View view) {
         //Aantal worpen verminderen iedere keer iemand heeft geworpen
         numberOfRolls -= 1;
-        beurtAantal.setText("Worpen: " + String.valueOf(numberOfRolls));
+        beurtAantal.setText("Trows: " + String.valueOf(numberOfRolls));
 
         //Iedere als de speler werpt moeten de punten terug van nul beginnen
         punten = 0;
