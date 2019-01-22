@@ -231,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
                             //Strepen verminderen speler 1 en dit tonen op het scherm
                             strepenx1 --;
                             strepenScherm1 = String.valueOf(strepenx1);
-                            strepen1.setText("Stripes " + strepenScherm1);
+                            strepen1.setText("Stripes: " + strepenScherm1);
 
                         }
 
@@ -239,7 +239,7 @@ public class MainActivity extends AppCompatActivity {
                             //Strepen verminderen speler 2 en dit tonene op het scherm
                             strepenx2 --;
                             strepenScherm2 = String.valueOf(strepenx2);
-                            strepen2.setText("Stripes " + strepenScherm2);
+                            strepen2.setText("Stripes: " + strepenScherm2);
                         }
 
                     }
@@ -283,7 +283,7 @@ public class MainActivity extends AppCompatActivity {
                                     //Speler 2 wint
                                     strepenx2 = 0;
                                     strepenScherm2 = String.valueOf(strepenx2);
-                                    strepen2.setText("Stripes " + strepenScherm2);
+                                    strepen2.setText("Stripes: " + strepenScherm2);
 
                                 }
 
@@ -292,7 +292,7 @@ public class MainActivity extends AppCompatActivity {
                                     //Sepeler 1 wint
                                     strepenx1 = 0;
                                     strepenScherm1 = String.valueOf(strepenx1);
-                                    strepen1.setText("Stripes " + strepenScherm1);
+                                    strepen1.setText("Stripes: " + strepenScherm1);
 
                                 }
 
@@ -302,7 +302,7 @@ public class MainActivity extends AppCompatActivity {
 
                                     strepenx1 = 0;
                                     strepenScherm1 = String.valueOf(strepenx1);
-                                    strepen1.setText("Stripes " + strepenScherm1);
+                                    strepen1.setText("Stripes: " + strepenScherm1);
 
                                 }
 
@@ -310,7 +310,7 @@ public class MainActivity extends AppCompatActivity {
 
                                     strepenx2 = 0;
                                     strepenScherm2 = String.valueOf(strepenx2);
-                                    strepen2.setText("Stripes " + strepenScherm2);
+                                    strepen2.setText("Stripes: " + strepenScherm2);
 
                                 }
 
@@ -485,9 +485,9 @@ public class MainActivity extends AppCompatActivity {
                         strepenx1++;
                         strepenx2++;
                         strepenScherm1 = String.valueOf(strepenx1);
-                        strepen1.setText("Stripes " + strepenScherm1);
+                        strepen1.setText("Stripes: " + strepenScherm1);
                         strepenScherm2 = String.valueOf(strepenx2);
-                        strepen2.setText("Stripes " + strepenScherm2);
+                        strepen2.setText("Stripes: " + strepenScherm2);
 
                         beurtSpeler1 = true;
                         beurtSpeler1 = false;
@@ -545,9 +545,9 @@ public class MainActivity extends AppCompatActivity {
                         strepenx1++;
                         strepenx2++;
                         strepenScherm1 = String.valueOf(strepenx1);
-                        strepen1.setText("Stripes " + strepenScherm1);
+                        strepen1.setText("Stripes: " + strepenScherm1);
                         strepenScherm2 = String.valueOf(strepenx2);
-                        strepen2.setText("Stripes " + strepenScherm2);
+                        strepen2.setText("Stripes: " + strepenScherm2);
 
                         beurtSpeler1 = true;
                         beurtSpeler1 = false;
@@ -570,13 +570,13 @@ public class MainActivity extends AppCompatActivity {
                                 // zand 6
                                 strepenx1 = strepenx1 - 2;
                                 strepenScherm1 = String.valueOf(strepenx1);
-                                strepen1.setText("Stripes " + strepenScherm1);
+                                strepen1.setText("Stripes: " + strepenScherm1);
 
                             } else if (aantalStrepenWeg == 3 && punten1 == 69) {
                                 //69
                                 strepenx1 = strepenx1 - 3;
                                 strepenScherm1 = String.valueOf(strepenx1);
-                                strepen1.setText("Stripes " + strepenScherm1);
+                                strepen1.setText("Stripes: " + strepenScherm1);
 
                             } else if (
                                     aantalStrepenWeg == 2 && punten1 == 6 ||
@@ -587,13 +587,13 @@ public class MainActivity extends AppCompatActivity {
                                 //zand 2,3,4,5
                                 strepenx1 = strepenx1 - 2;
                                 strepenScherm1 = String.valueOf(strepenx1);
-                                strepen1.setText("Stripes " + strepenScherm1);
+                                strepen1.setText("Stripes: " + strepenScherm1);
 
                             } else if (aantalStrepenWeg != 3 && punten1 != 180 && punten1 != 7 || aantalStrepenWeg != 2 && punten1 != 180 && punten1 != 7) {
                                 //gewone punten
                                 strepenx1--;
                                 strepenScherm1 = String.valueOf(strepenx1);
-                                strepen1.setText("Stripes " + strepenScherm1);
+                                strepen1.setText("Stripes: " + strepenScherm1);
 
                             }
 
@@ -604,13 +604,13 @@ public class MainActivity extends AppCompatActivity {
                                 // zand 6
                                 strepenx2 = strepenx2 - 2;
                                 strepenScherm2 = String.valueOf(strepenx2);
-                                strepen2.setText("Stripes " + strepenScherm2);
+                                strepen2.setText("Stripes: " + strepenScherm2);
 
                             } else if (aantalStrepenWeg == 3 && punten2 == 69) {
                                 //69
                                 strepenx2 = strepenx2 - 3;
                                 strepenScherm2 = String.valueOf(strepenx2);
-                                strepen2.setText("Stripes " + strepenScherm2);
+                                strepen2.setText("Stripes: " + strepenScherm2);
 
                             } else if (
                                     aantalStrepenWeg == 2 && punten2 == 6 ||
@@ -621,13 +621,13 @@ public class MainActivity extends AppCompatActivity {
                                 //zand 2,3,4,5
                                 strepenx2 = strepenx2 - 2;
                                 strepenScherm2 = String.valueOf(strepenx2);
-                                strepen2.setText("Stripes " + strepenScherm2);
+                                strepen2.setText("Stripes: " + strepenScherm2);
 
                             } else if (aantalStrepenWeg != 3 && punten2 != 180 && punten2 != 7 || aantalStrepenWeg != 2 && punten2 != 180 && punten2 != 7) {
                                 //gewone punten
                                 strepenx2--;
                                 strepenScherm2 = String.valueOf(strepenx2);
-                                strepen2.setText("Stripes " + strepenScherm2);
+                                strepen2.setText("Stripes: " + strepenScherm2);
 
                             }
 
@@ -887,7 +887,7 @@ public class MainActivity extends AppCompatActivity {
                     //Strepen verminderen speler 1 en dit tonen op het scherm
                     strepenx1 --;
                     strepenScherm1 = String.valueOf(strepenx1);
-                    strepen1.setText("Stripes " + strepenScherm1);
+                    strepen1.setText("Stripes: " + strepenScherm1);
 
                 }
 
@@ -895,7 +895,7 @@ public class MainActivity extends AppCompatActivity {
                     //Strepen verminderen speler 2 en dit tonene op het scherm
                     strepenx2 --;
                     strepenScherm2 = String.valueOf(strepenx2);
-                    strepen2.setText("Stripes " + strepenScherm2);
+                    strepen2.setText("Stripes: " + strepenScherm2);
                 }
 
             }
@@ -939,7 +939,7 @@ public class MainActivity extends AppCompatActivity {
                             //Speler 2 wint
                             strepenx2 = 0;
                             strepenScherm2 = String.valueOf(strepenx2);
-                            strepen2.setText("Stripes " + strepenScherm2);
+                            strepen2.setText("Stripes: " + strepenScherm2);
 
                         }
 
@@ -948,7 +948,7 @@ public class MainActivity extends AppCompatActivity {
                             //Sepeler 1 wint
                             strepenx1 = 0;
                             strepenScherm1 = String.valueOf(strepenx1);
-                            strepen1.setText("Stripes " + strepenScherm1);
+                            strepen1.setText("Stripes: " + strepenScherm1);
 
                         }
 
@@ -958,7 +958,7 @@ public class MainActivity extends AppCompatActivity {
 
                             strepenx1 = 0;
                             strepenScherm1 = String.valueOf(strepenx1);
-                            strepen1.setText("Stripes " + strepenScherm1);
+                            strepen1.setText("Stripes: " + strepenScherm1);
 
                         }
 
@@ -966,7 +966,7 @@ public class MainActivity extends AppCompatActivity {
 
                             strepenx2 = 0;
                             strepenScherm2 = String.valueOf(strepenx2);
-                            strepen2.setText("Stripes " + strepenScherm2);
+                            strepen2.setText("Stripes: " + strepenScherm2);
 
                         }
 
@@ -1141,9 +1141,9 @@ public class MainActivity extends AppCompatActivity {
                 strepenx1++;
                 strepenx2++;
                 strepenScherm1 = String.valueOf(strepenx1);
-                strepen1.setText("Stripes " + strepenScherm1);
+                strepen1.setText("Stripes: " + strepenScherm1);
                 strepenScherm2 = String.valueOf(strepenx2);
-                strepen2.setText("Stripes " + strepenScherm2);
+                strepen2.setText("Stripes: " + strepenScherm2);
 
                 beurtSpeler1 = true;
                 beurtSpeler1 = false;
@@ -1201,9 +1201,9 @@ public class MainActivity extends AppCompatActivity {
                 strepenx1++;
                 strepenx2++;
                 strepenScherm1 = String.valueOf(strepenx1);
-                strepen1.setText("Stripes " + strepenScherm1);
+                strepen1.setText("Stripes: " + strepenScherm1);
                 strepenScherm2 = String.valueOf(strepenx2);
-                strepen2.setText("Stripes " + strepenScherm2);
+                strepen2.setText("Stripes: " + strepenScherm2);
 
                 beurtSpeler1 = true;
                 beurtSpeler1 = false;
@@ -1226,13 +1226,13 @@ public class MainActivity extends AppCompatActivity {
                         // zand 6
                         strepenx1 = strepenx1 - 2;
                         strepenScherm1 = String.valueOf(strepenx1);
-                        strepen1.setText("Stripes " + strepenScherm1);
+                        strepen1.setText("Stripes: " + strepenScherm1);
 
                     } else if (aantalStrepenWeg == 3 && punten1 == 69) {
                         //69
                         strepenx1 = strepenx1 - 3;
                         strepenScherm1 = String.valueOf(strepenx1);
-                        strepen1.setText("Stripes " + strepenScherm1);
+                        strepen1.setText("Stripes: " + strepenScherm1);
 
                     } else if (
                             aantalStrepenWeg == 2 && punten1 == 6 ||
@@ -1243,13 +1243,13 @@ public class MainActivity extends AppCompatActivity {
                         //zand 2,3,4,5
                         strepenx1 = strepenx1 - 2;
                         strepenScherm1 = String.valueOf(strepenx1);
-                        strepen1.setText("Stripes " + strepenScherm1);
+                        strepen1.setText("Stripes: " + strepenScherm1);
 
                     } else if (aantalStrepenWeg != 3 && punten1 != 180 && punten1 != 7 || aantalStrepenWeg != 2 && punten1 != 180 && punten1 != 7) {
                         //gewone punten
                         strepenx1--;
                         strepenScherm1 = String.valueOf(strepenx1);
-                        strepen1.setText("Stripes " + strepenScherm1);
+                        strepen1.setText("Stripes: " + strepenScherm1);
 
                     }
 
@@ -1260,13 +1260,13 @@ public class MainActivity extends AppCompatActivity {
                         // zand 6
                         strepenx2 = strepenx2 - 2;
                         strepenScherm2 = String.valueOf(strepenx2);
-                        strepen2.setText("Stripes " + strepenScherm2);
+                        strepen2.setText("Stripes: " + strepenScherm2);
 
                     } else if (aantalStrepenWeg == 3 && punten2 == 69) {
                         //69
                         strepenx2 = strepenx2 - 3;
                         strepenScherm2 = String.valueOf(strepenx2);
-                        strepen2.setText("Stripes " + strepenScherm2);
+                        strepen2.setText("Stripes: " + strepenScherm2);
 
                     } else if (
                             aantalStrepenWeg == 2 && punten2 == 6 ||
@@ -1277,13 +1277,13 @@ public class MainActivity extends AppCompatActivity {
                         //zand 2,3,4,5
                         strepenx2 = strepenx2 - 2;
                         strepenScherm2 = String.valueOf(strepenx2);
-                        strepen2.setText("Stripes " + strepenScherm2);
+                        strepen2.setText("Stripes: " + strepenScherm2);
 
                     } else if (aantalStrepenWeg != 3 && punten2 != 180 && punten2 != 7 || aantalStrepenWeg != 2 && punten2 != 180 && punten2 != 7) {
                         //gewone punten
                         strepenx2--;
                         strepenScherm2 = String.valueOf(strepenx2);
-                        strepen2.setText("Stripes " + strepenScherm2);
+                        strepen2.setText("Stripes: " + strepenScherm2);
 
                     }
 
@@ -1429,13 +1429,13 @@ public class MainActivity extends AppCompatActivity {
                             // zand 6
                             strepenx1 = strepenx1 - 2;
                             strepenScherm1 = String.valueOf(strepenx1);
-                            strepen1.setText("Stripes " + strepenScherm1);
+                            strepen1.setText("Stripes: " + strepenScherm1);
 
                         } else if (aantalStrepenWeg == 3 && punten1 == 69) {
                             //69
                             strepenx1 = strepenx1 - 3;
                             strepenScherm1 = String.valueOf(strepenx1);
-                            strepen1.setText("Stripes " + strepenScherm1);
+                            strepen1.setText("Stripes: " + strepenScherm1);
 
                         } else if (
                                 aantalStrepenWeg == 2 && punten1 == 6 ||
@@ -1446,13 +1446,13 @@ public class MainActivity extends AppCompatActivity {
                             //zand 2,3,4,5
                             strepenx1 = strepenx1 - 2;
                             strepenScherm1 = String.valueOf(strepenx1);
-                            strepen1.setText("Stripes " + strepenScherm1);
+                            strepen1.setText("Stripes: " + strepenScherm1);
 
                         } else if (aantalStrepenWeg != 3 && punten1 != 180 && punten1 != 7 || aantalStrepenWeg != 2 && punten1 != 180 && punten1 != 7) {
                             //gewone punten
                             strepenx1--;
                             strepenScherm1 = String.valueOf(strepenx1);
-                            strepen1.setText("Stripes " + strepenScherm1);
+                            strepen1.setText("Stripes: " + strepenScherm1);
 
                         }
 
@@ -1463,13 +1463,13 @@ public class MainActivity extends AppCompatActivity {
                             // zand 6
                             strepenx2 = strepenx2 - 2;
                             strepenScherm2 = String.valueOf(strepenx2);
-                            strepen2.setText("Stripes " + strepenScherm2);
+                            strepen2.setText("Stripes: " + strepenScherm2);
 
                         } else if (aantalStrepenWeg == 3 && punten2 == 69) {
                             //69
                             strepenx2 = strepenx2 - 3;
                             strepenScherm2 = String.valueOf(strepenx2);
-                            strepen2.setText("Stripes " + strepenScherm2);
+                            strepen2.setText("Stripes: " + strepenScherm2);
 
                         } else if (
                                 aantalStrepenWeg == 2 && punten2 == 6 ||
@@ -1480,13 +1480,13 @@ public class MainActivity extends AppCompatActivity {
                             //zand 2,3,4,5
                             strepenx2 = strepenx2 - 2;
                             strepenScherm2 = String.valueOf(strepenx2);
-                            strepen2.setText("Stripes " + strepenScherm2);
+                            strepen2.setText("Stripes: " + strepenScherm2);
 
                         } else if (aantalStrepenWeg != 3 && punten2 != 180 && punten2 != 7 || aantalStrepenWeg != 2 && punten2 != 180 && punten2 != 7) {
                             //gewone punten
                             strepenx2--;
                             strepenScherm2 = String.valueOf(strepenx2);
-                            strepen2.setText("Stripes " + strepenScherm2);
+                            strepen2.setText("Stripes: " + strepenScherm2);
 
                         }
                     }
