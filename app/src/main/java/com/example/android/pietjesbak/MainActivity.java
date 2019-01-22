@@ -227,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
                             //Strepen verminderen speler 1 en dit tonen op het scherm
                             strepenx1 -= aantalStrepenWeg;
                             strepenScherm1 = String.valueOf(strepenx1);
-                            strepen1.setText(strepenScherm1);
+                            strepen1.setText("Streepjes " + st + strepenScherm1);
 
                         }
 
@@ -235,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
                             //Strepen verminderen speler 2 en dit tonene op het scherm
                             strepenx2 -= aantalStrepenWeg;
                             strepenScherm2 = String.valueOf(strepenx2);
-                            strepen2.setText(strepenScherm2);
+                            strepen2.setText("Streepjes " + st2 + strepenScherm2);
                         }
 
                     }
@@ -279,7 +279,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 strepenx1--;
                                 strepenScherm1 = String.valueOf(strepenx1);
-                                strepen1.setText(strepenScherm1);
+                                strepen1.setText("Streepjes " + st + strepenScherm1);
 
                                 beurtSpeler1 = true;
                                 beurtSpeler2 = false;
@@ -294,7 +294,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 strepenx2--;
                                 strepenScherm2 = String.valueOf(strepenx2);
-                                strepen2.setText(strepenScherm2);
+                                strepen2.setText("Streepjes " + st2 + strepenScherm2);
 
                                 beurtSpeler1 = true;
                                 beurtSpeler2 = false;
@@ -477,7 +477,7 @@ public class MainActivity extends AppCompatActivity {
                             //Verminder de strepen van speler 1
                             strepenx1--;
                             strepenScherm1 = String.valueOf(strepenx1);
-                            strepen1.setText(strepenScherm1);
+                            strepen1.setText("Streepjes " + st + strepenScherm1);
 
                         }
 
@@ -486,7 +486,7 @@ public class MainActivity extends AppCompatActivity {
                             //Verminder de strepen van speler 2
                             strepenx2--;
                             strepenScherm2 = String.valueOf(strepenx2);
-                            strepen2.setText(strepenScherm2);
+                            strepen2.setText("Streepjes " + st2 + strepenScherm2);
 
                         }
 
@@ -667,7 +667,7 @@ public class MainActivity extends AppCompatActivity {
                     //Strepen verminderen speler 1 en dit tonen op het scherm
                     strepenx1 --;
                     strepenScherm1 = String.valueOf(strepenx1);
-                    strepen1.setText(strepenScherm1);
+                    strepen1.setText("Streepjes " + st + strepenScherm1);
 
                 }
 
@@ -675,7 +675,7 @@ public class MainActivity extends AppCompatActivity {
                     //Strepen verminderen speler 2 en dit tonene op het scherm
                     strepenx2 --;
                     strepenScherm2 = String.valueOf(strepenx2);
-                    strepen2.setText(strepenScherm2);
+                    strepen2.setText("Streepjes " + st2 + strepenScherm2);
                 }
 
             }
@@ -717,18 +717,18 @@ public class MainActivity extends AppCompatActivity {
                         if (beurtSpeler1 == true) {
                           //Speler verliest
                           //Speler 2 wint
-                          strepenx2 = 0;
-                          strepenScherm2 = String.valueOf(strepenx2);
-                          strepen2.setText(strepenScherm2);
+                          strepenx1 = 0;
+                          strepenScherm1 = String.valueOf(strepenx1);
+                          strepen1.setText("Streepjes " + st + strepenScherm1);
 
                         }
 
                         else if (beurtSpeler2 == true) {
                           //Speler verliest
                           //Sepeler 1 wint
-                          strepenx1 = 0;
+                          strepenx2 = 0;
                           strepenScherm2 = String.valueOf(strepenx2);
-                          strepen2.setText(strepenScherm2);
+                          strepen2.setText("Streepjes " + st2 + strepenScherm2);
 
                         }
 
@@ -737,8 +737,8 @@ public class MainActivity extends AppCompatActivity {
                         if (beurtSpeler1 == true) {
 
                             strepenx1 = 0;
-                            strepenScherm2 = String.valueOf(strepenx2);
-                            strepen2.setText(strepenScherm2);
+                            strepenScherm1 = String.valueOf(strepenx1);
+                            strepen1.setText("Streepjes " + st + strepenScherm1);
 
                         }
 
@@ -746,7 +746,7 @@ public class MainActivity extends AppCompatActivity {
 
                             strepenx2 = 0;
                             strepenScherm2 = String.valueOf(strepenx2);
-                            strepen2.setText(strepenScherm2);
+                            strepen2.setText("Streepjes " + st2 + strepenScherm2);
 
                         }
 
@@ -894,13 +894,13 @@ public class MainActivity extends AppCompatActivity {
 
             strepenx1 = strepenx1 - aantalStrepenWeg;
             strepenScherm1 = String.valueOf(strepenx1);
-            strepen1.setText(strepenScherm1);
+            strepen1.setText("Streepjes " + st + strepenScherm1);
 
         } else if (beurtSpeler2 == true) {
 
             strepenx2 = strepenx2 - aantalStrepenWeg;
             strepenScherm2 = String.valueOf(strepenx2);
-            strepen2.setText(strepenScherm2);
+            strepen2.setText("Streepjes " + st2 + strepenScherm2);
 
         }
 
@@ -963,7 +963,7 @@ public class MainActivity extends AppCompatActivity {
                     //Verminder de strepen van speler 1
                     strepenx1--;
                     strepenScherm1 = String.valueOf(strepenx1);
-                    strepen1.setText(strepenScherm1);
+                    strepen1.setText("Streepjes " + st + strepenScherm1);
 
                 }
 
@@ -972,7 +972,7 @@ public class MainActivity extends AppCompatActivity {
                     //Verminder de strepen van speler 2
                     strepenx2--;
                     strepenScherm2 = String.valueOf(strepenx2);
-                    strepen2.setText(strepenScherm2);
+                    strepen2.setText("Streepjes " + st2 + strepenScherm2);
 
                 }
 
@@ -1006,137 +1006,69 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*
+              //Elke keer je op pas klikt moeten je weer met alle dobbelstenen kunnen gooien en moeten ze aan staan (wit)
+              //Dobbelstenen mogen niet vast beginnen
+              dobbelsteen1Vast = false;
+              dobbelsteen2Vast = false;
+              dobbelsteen3Vast = false;
 
-                String puntjesSpeler2 = String.valueOf(punten);
-                puntenSpeler2.setText(puntjesSpeler2);
+              //Kleur van de dobbelstenen veranderen
+              dobbelsteen1.setTextColor(argb(255,255,255,255));
+              dobbelsteen2.setTextColor(argb(255,255,255,255));
+              dobbelsteen3.setTextColor(argb(255,255,255,255));
 
-                if (beurtSpeler1 == true && beurtSpeler2 == false) {
-
-                    tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
-                    tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
-
-                    numberOfRolls = 3;
-
-                    beurtSpeler1 = false;
-                    beurtSpeler2 = true;
-
-                    dobbelsteen1Vast = false;
-                    dobbelsteen2Vast = false;
-                    dobbelsteen3Vast = false;
-                    dobbelsteen1.setTextColor(argb(255,255,255,255));
-                    dobbelsteen2.setTextColor(argb(255,255,255,255));
-                    dobbelsteen3.setTextColor(argb(255,255,255,255));
-
-
+              if (beurtSpeler1 == true && beurtSpeler2 == false) {
+                if (numberOfRolls == 2) {
+                  //De tweede speler mag maar evenveel gooien als de eerste speler
+                  numberOfRolls = 1;
                 }
 
-                else if (beurtSpeler2 == true && beurtSpeler1 == false) {
-
-                    int punten1 = Integer.parseInt((String) puntenSpeler1.getText());
-                    int punten2 = Integer.parseInt((String) puntenSpeler2.getText());
-
-                    if (punten1 > punten2) {
-
-                        //Verminder de strepen van speler 1
-                        strepenx1--;
-                        strepenScherm1 = String.valueOf(strepenx1);
-                        strepen1.setText(strepenScherm1);
-
-                    }
-
-                    else {
-
-                        //Verminder de strepen van speler 2
-                        strepenx2--;
-                        strepenScherm2 = String.valueOf(strepenx2);
-                        strepen2.setText(strepenScherm2);
-
-                    }
-
-
-                    tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
-                    tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
-
-                    numberOfRolls = 3;
-
-                    beurtSpeler1 = true;
-                    beurtSpeler2 = false;
-
-                    dobbelsteen1Vast = false;
-                    dobbelsteen2Vast = false;
-                    dobbelsteen3Vast = false;
-                    dobbelsteen1.setTextColor(argb(255,255,255,255));
-                    dobbelsteen2.setTextColor(argb(255,255,255,255));
-                    dobbelsteen3.setTextColor(argb(255,255,255,255));
-
-
-                }*/
-
-                //Elke keer je op pas klikt moeten je weer met alle dobbelstenen kunnen gooien en moeten ze aan staan (wit)
-                //Dobbelstenen mogen niet vast beginnen
-                dobbelsteen1Vast = false;
-                dobbelsteen2Vast = false;
-                dobbelsteen3Vast = false;
-
-                //Kleur van de dobbelstenen veranderen
-                dobbelsteen1.setTextColor(argb(255,255,255,255));
-                dobbelsteen2.setTextColor(argb(255,255,255,255));
-                dobbelsteen3.setTextColor(argb(255,255,255,255));
-
-                if (beurtSpeler1 == true && beurtSpeler2 == false) {
-                  if (numberOfRolls == 2) {
-                    //De tweede speler mag maar evenveel gooien als de eerste speler
-                    numberOfRolls = 1;
-
-                  }
-
-                  else if (numberOfRolls == 1) {
-                    //Beurt veranderen
-                    numberOfRolls = 2;
-
-                  }
-
+                else if (numberOfRolls == 1) {
                   //Beurt veranderen
-                  beurtSpeler1 = false;
-                  beurtSpeler2 = true;
-
-                  //De kleuren van de spelers veradnderen
-                  tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
-                  tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
+                  numberOfRolls = 2;
 
                 }
 
-                else if (beurtSpeler1 == false && beurtSpeler2 == true) {
-                  int punten1 = Integer.parseInt((String) puntenSpeler1.getText());
-                  int punten2 = Integer.parseInt((String) puntenSpeler2.getText());
+                //Beurt veranderen
+                beurtSpeler1 = false;
+                beurtSpeler2 = true;
 
-                  if (punten1 > punten2) {
+                //De kleuren van de spelers veradnderen
+                tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
+                tv2.setTypeface(tv2.getTypeface(), Typeface.BOLD_ITALIC);
 
-                    //Verminder de strepen van speler 1
-                    strepenx1--;
-                    strepenScherm1 = String.valueOf(strepenx1);
-                    strepen1.setText(strepenScherm1);
+              }
 
-                  }
+              else if (beurtSpeler1 == false && beurtSpeler2 == true) {
+                int punten1 = Integer.parseInt((String) puntenSpeler1.getText());
+                int punten2 = Integer.parseInt((String) puntenSpeler2.getText());
 
-                  else {
-                    //Verminder de strepen van speler 2
-                    strepenx2--;
-                    strepenScherm2 = String.valueOf(strepenx2);
-                    strepen2.setText(strepenScherm2);
+                if (punten1 > punten2) {
 
-                  }
+                  //Verminder de strepen van speler 1
+                  strepenx1--;
+                  strepenScherm1 = String.valueOf(strepenx1);
+                  strepen1.setText("Streepjes " + st + strepenScherm1);
 
-                  beurtSpeler1 = true;
-                  beurtSpeler2 = false;
-                  //De eerste speler mag terug met drie dobbelstenen gooien
-                  numberOfRolls = 3;
-
-                  //De kleuren van de spelers veradnderen
-                  tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
-                  tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
                 }
+
+                else {
+                  //Verminder de strepen van speler 2
+                  strepenx2--;
+                  strepenScherm2 = String.valueOf(strepenx2);
+                  strepen2.setText("Streepjes " + st2 + strepenScherm2);
+
+                }
+
+                beurtSpeler1 = true;
+                beurtSpeler2 = false;
+                //De eerste speler mag terug met drie dobbelstenen gooien
+                numberOfRolls = 3;
+
+                //De kleuren van de spelers veradnderen
+                tv.setTypeface(tv.getTypeface(), Typeface.BOLD_ITALIC);
+                tv2.setTypeface(tv2.getTypeface(), Typeface.ITALIC);
+              }
             }
         });
 

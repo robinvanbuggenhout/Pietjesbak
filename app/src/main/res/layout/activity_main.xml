@@ -18,7 +18,8 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/beurt"
-        app:srcCompat="@drawable/bak" />
+        app:srcCompat="@drawable/bak"
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:id="@+id/textView"
@@ -47,38 +48,39 @@
         tools:ignore="MissingConstraints" />
 
     <!--Dobbelsteen 1-->
-    <TextView
-        android:id="@+id/t_aantal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="388dp"
-        android:onClick="vastzetten"
-        android:text="@string/aantal"
-        android:textAlignment="textStart"
-        android:textColor="#ffffff"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
 
     <!--Dobbelsteen 2-->
 
     <!--Dobbelsteen 3-->
 
     <TextView
+        android:id="@+id/t_aantal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="380dp"
+        android:onClick="vastzetten"
+        android:text="@string/aantal"
+        android:textAlignment="textStart"
+        android:textColor="#ffffff"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
         android:id="@+id/t_aantal2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="388dp"
         android:layout_marginEnd="110dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="380dp"
         android:onClick="vastzetten2"
         android:text="@string/aantal"
         android:textAlignment="textStart"
         android:textColor="#ffffff"
-        android:textSize="40sp"
+        android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/t_aantal3"
         app:layout_constraintHorizontal_bias="0.513"
@@ -90,13 +92,13 @@
         android:id="@+id/t_aantal3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="388dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginTop="380dp"
         android:onClick="vastzetten3"
         android:text="@string/aantal"
         android:textAlignment="textStart"
         android:textColor="#ffffff"
-        android:textSize="40sp"
+        android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
