@@ -51,8 +51,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //btnLogin.setVisibility(View.INVISIBLE);
 
-                final String mail = userMail.getText().toString();
-                final String password = userPassword.getText().toString();
+                final String mail = userMail.getText().toString().trim();
+                final String password = userPassword.getText().toString().trim();
 
                 if (mail.trim().isEmpty() || password.trim().isEmpty()){
                     showMessage("Please Verify All Fields");

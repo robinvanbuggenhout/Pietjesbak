@@ -9,7 +9,7 @@
 
     <EditText
         android:id="@+id/logMail"
-        android:layout_width="265dp"
+        android:layout_width="296dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
@@ -24,7 +24,7 @@
 
     <EditText
         android:id="@+id/logPassword"
-        android:layout_width="265dp"
+        android:layout_width="296dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -39,7 +39,7 @@
 
     <Button
         android:id="@+id/logBtn"
-        android:layout_width="265dp"
+        android:layout_width="296dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
@@ -47,13 +47,14 @@
         android:background="@drawable/reg_btn_style"
         android:text="@string/login"
         android:textColor="#ffffff"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/logBtn2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/logBtn2"
-        android:layout_width="265dp"
+        android:layout_width="296dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
@@ -61,6 +62,7 @@
         android:background="@drawable/reg_btn_style"
         android:text="@string/register"
         android:textColor="#ffffff"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
