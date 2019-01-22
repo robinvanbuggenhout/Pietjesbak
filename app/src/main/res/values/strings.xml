@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Pietjesbak</string>
-    <string name="werp">WERP</string>
+    <string name="werp">THROW</string>
     <string name="aantal">0</string>
     <string name="pass">PASS</string>
     <string name="score_2">Score 2</string>
@@ -13,8 +13,8 @@
     <string name="value2">Value2</string>
     <string name="value">Value</string>
     <string name="_3">Worpen: 3</string>
-    <string name="streepjes1">Streepjes: 5</string>
-    <string name="streepjes2">Streepjes: 5</string>
+    <string name="streepjes1">Stripes: 5</string>
+    <string name="streepjes2">Stripes: 5</string>
     <string name="log_out">Log out</string>
     <string name="todo">TODO</string>
     <string name="login">Login</string>
