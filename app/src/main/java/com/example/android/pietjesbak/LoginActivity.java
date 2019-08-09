@@ -72,6 +72,7 @@ public class LoginActivity extends AppCompatActivity {
     private void signIn(String mail, String password) {
 
         mAuth.signInWithEmailAndPassword(mail, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            //signInWithEmailAndPassword neemt email en paswoord en valideert deze. daarna logt hij de gebruiker in via deze methode.
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 

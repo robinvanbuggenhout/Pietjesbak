@@ -81,6 +81,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                             //update profile information
                             updateUserInfo(name, mAuth.getCurrentUser());
+                            //getCurrentUser is methode die gegevens/data van ingelogde gebruiker opvraagd
 
                         }
 
