@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
+    // Aanmaken van variabelen
     private EditText userMail, userPassword;
     private Button btnLogin, btnLogin2;
     private FirebaseAuth mAuth;
@@ -26,19 +27,22 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Login scherm tonen
         setContentView(R.layout.activity_login);
 
+        // De velden van de layout in een variabele zetten
         userMail = findViewById(R.id.logMail);
         userPassword = findViewById(R.id.logPassword);
         btnLogin = findViewById(R.id.logBtn);
         btnLogin2 = findViewById(R.id.logBtn2);
+
         mAuth = FirebaseAuth.getInstance();
         SecondActivity = new Intent(this, com.example.android.pietjesbak.SecondActivity.class);
 
+        // Indien je nog geen account hebt ga je naar het registreerscherm
         btnLogin2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent registerActivity = new Intent(getApplicationContext(),RegisterActivity.class);
                 startActivity(registerActivity);
                 finish();
@@ -46,19 +50,23 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        // Als je op de login knop klikt
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //btnLogin.setVisibility(View.INVISIBLE);
 
+                // De waarde vanuit de ingevulde velden halen
+                // Set a variable to final, to prevent it from being overridden/modified
                 final String mail = userMail.getText().toString().trim();
                 final String password = userPassword.getText().toString().trim();
 
+                // Check of alle velden zijn ingevuld
+                // Trim() -> de onnodige spaties voor en achter de ingevulde tekst wegdoen
                 if (mail.trim().isEmpty() || password.trim().isEmpty()){
                     showMessage("Please Verify All Fields");
-                    //btnLogin.setVisibility(View.VISIBLE);
                 }
 
+                // Indien alle velden zijn ingevuld gebeurt er een sign in
                 else {
                     signIn(mail, password);
                 }
@@ -76,14 +84,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
+                // Indien het inloggen gelukt is gaat de app door naar het volgende scherm
                 if(task.isSuccessful()) {
-                    //btnLogin.setVisibility(View.VISIBLE);
                     updateUI();
-
                 }
+
+                // Indien het niet gelukt is stuurt hij een error message
                 else {
                     showMessage(task.getException().getMessage());
-                    //btnLogin.setVisibility(View.VISIBLE);
                 }
 
             }
@@ -91,11 +99,10 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    // Verder gaan naar het scherm om de namen in te vullen
     private void updateUI() {
-
         startActivity(SecondActivity);
         finish();
-
     }
 
     private void showMessage(String text) {
@@ -103,21 +110,4 @@ public class LoginActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),text, Toast.LENGTH_LONG).show();
 
     }
-
-    //Automatische herkenning van de gebruiker
-    /*
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser user = mAuth.getCurrentUser();
-
-        if(user != null){
-            //user is already connected
-            //redirect him to mainactivty
-            showMessage("User recognized");
-            updateUI();
-        }
-
-
-    }*/
 }
